@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>wx</artifactId>
+        <groupId>com.zty</groupId>
+        <version>${zty-wheels.version}</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>wx-web</artifactId>
+    <groupId>com.zty</groupId>
+    <version>${zty-wheels.version}</version>
+
+
+    <dependencies>
+        <dependency>
+            <groupId>com.zty</groupId>
+            <artifactId>wx-bo</artifactId>
+            <version>${zty-wheels.version}</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.zty</groupId>
+            <artifactId>framework-web</artifactId>
+            <version>${zty-wheels.version}</version>
+            <scope>compile</scope>
+        </dependency>
+    </dependencies>
+</project>

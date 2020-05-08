@@ -1,0 +1,22 @@
+# 开发环境配置文件
+
+spring:
+  datasource:
+    driver-class-apartmentName: com.mysql.jdbc.Driver   #mysql的驱动
+    url: jdbc:mysql://localhost:3306/zty_wheel?useUnicode=true&characterEncoding=utf-8&useLegacyDatetimeCode=false&serverTimezone=GMT%2B8   #有时若不设置时区有时会报错
+    username: root
+    password: root
+
+server:
+  servlet:
+    context-path: /wheels
+  port: 8091
+
+filePath:
+  root: ./files
+  map: ./files/map
+
+#开启sql语句打印
+logging:
+  level:
+    com.zty.bo.dao: DEBUG

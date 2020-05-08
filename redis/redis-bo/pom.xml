@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>redis</artifactId>
+        <groupId>com.zty</groupId>
+        <version>${zty-wheels.version}</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>redis-bo</artifactId>
+    <groupId>com.zty</groupId>
+    <version>${zty-wheels.version}</version>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.zty</groupId>
+            <artifactId>framework-bo</artifactId>
+            <version>${zty-wheels.version}</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.zty</groupId>
+            <artifactId>redis-common</artifactId>
+            <version>${zty-wheels.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-redis</artifactId>
+            <version>2.1.9.RELEASE</version>
+            <scope>compile</scope>
+            <exclusions>
+                <exclusion>
+                    <artifactId>jcl-over-slf4j</artifactId>
+                    <groupId>org.slf4j</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+        </dependency>
+    </dependencies>
+</project>

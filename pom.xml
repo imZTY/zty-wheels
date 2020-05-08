@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <!-- 声明打包方式为"面向项目" -->
+    <packaging>pom</packaging>
+
+    <!-- 继承 SpringBoot -->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.2.4.RELEASE</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+
+    <!-- 设置 groupId 与 artifactId -->
+    <groupId>com.zty</groupId>
+    <artifactId>wheels</artifactId>
+    <!-- 集中管理版本号（子模块可沿用） -->
+    <version>${zty-wheels.version}</version>
+
+    <properties>
+        <zty-wheels.version>0.8.1</zty-wheels.version>
+    </properties>
+    <!-- 定义规划内的子模块 -->
+    <modules>
+        <module>wx</module>
+        <module>file</module>
+        <module>account</module>
+        <module>redis</module>
+        <module>wheel-gateway</module>
+        <module>framework</module>
+    </modules>
+</project>

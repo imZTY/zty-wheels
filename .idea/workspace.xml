@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="591a7ef7-1a26-4d97-a74b-59989a9f55c2" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CompilerWorkspaceConfiguration">
+    <option name="MAKE_PROJECT_ON_SAVE" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="AnnotationType" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="D:\Program Files\JetBrains\repository" />
+        <option name="userSettingsFile" value="D:\Program Files\JetBrains\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+        <option name="vmOptionsForImporter" value="-Xmx1024m" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1bI2TakSnzlHbCARtdyCzFURW9r" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/framework/framework-common/src/main/java/com/zty/framework/util" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_interpreter_path" value="D:/Program Files/nodejs/node" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="project.propCompiler" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\study\jidi\career\2020\zty-wheels\account\account-bo\src\main\resources\mapper\account" />
+      <recent name="F:\study\jidi\career\2020\zty-wheels\file\file-bo\src\main\resources\mapper\file" />
+      <recent name="F:\study\jidi\career\2020\zty-wheels\framework" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.zty.common.DO" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\study\jidi\career\2020\zty-wheels\framework\framework-common\src\main\java\com\zty\framework\util" />
+      <recent name="F:\study\jidi\career\2020\zty-wheels\wheel-gateway\wheel-service-customer\src\main\resources" />
+      <recent name="F:\study\jidi\career\2020\zty-wheels\account\account-bo\src\main\resources\mapper" />
+      <recent name="F:\study\jidi\career\2020\zty-wheels\file\file-bo\src\main\resources\mapper" />
+      <recent name="F:\study\jidi\career\2020\zty-wheels\file\file-bo\src\main\java\com\zty\bo\dao" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.zty.framework.annotation" />
+      <recent name="com.zty.web.controller" />
+      <recent name="com.zty.web.config" />
+      <recent name="com.zty.bo.service.impl" />
+      <recent name="com.zty.framework.dto" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.zty.bo.service.impl" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.WheelServiceCustomerApplication">
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <module />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="static in wheel-service-customer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="wheel-service-customer" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="static.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="static" />
+      <option name="TEST_OBJECT" value="package" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WheelServiceCustomerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="wheel-service-customer" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.zty.wheel.WheelServiceCustomerApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="TestNG">
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file enabled="true" id="idea.log" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.static in wheel-service-customer" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <option name="contentProportion" value="0.22495896" />
+          <treeState>
+            <expand>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="Spring Boot" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="Spring Boot" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="Finished" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+            </expand>
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="591a7ef7-1a26-4d97-a74b-59989a9f55c2" name="Default Changelist" comment="" />
+      <created>1588305302398</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1588305302398</updated>
+      <workItem from="1588305319089" duration="20212000" />
+      <workItem from="1588334295449" duration="16158000" />
+      <workItem from="1588388566231" duration="3493000" />
+      <workItem from="1588415237819" duration="19566000" />
+      <workItem from="1588491533504" duration="1974000" />
+      <workItem from="1588563179842" duration="20129000" />
+      <workItem from="1588692411542" duration="215000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="451" y="93" key="#Project_Structure" timestamp="1588352941955">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="451" y="93" key="#Project_Structure/0.0.1920.1032@0.0.1920.1032" timestamp="1588352941955" />
+    <state x="717" y="154" key="#com.intellij.ide.util.MemberChooser" timestamp="1588433992081">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="717" y="154" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1032@0.0.1920.1032" timestamp="1588433992081" />
+    <state x="488" y="132" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog" timestamp="1588334354816">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="488" y="132" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog/0.0.1920.1032@0.0.1920.1032" timestamp="1588334354816" />
+    <state x="402" y="429" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1588413350739">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="402" y="429" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1920.1032@0.0.1920.1032" timestamp="1588413350739" />
+    <state x="582" y="383" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages" timestamp="1588326019116">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="582" y="383" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages/0.0.1920.1032@0.0.1920.1032" timestamp="1588326019116" />
+    <state x="377" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1588430816017">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="377" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1032@0.0.1920.1032" timestamp="1588430816017" />
+    <state x="686" y="136" key="FileChooserDialogImpl" timestamp="1588654474930">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="686" y="136" key="FileChooserDialogImpl/0.0.1920.1032@0.0.1920.1032" timestamp="1588654474930" />
+    <state width="1415" height="209" key="GridCell.Tab.0.bottom" timestamp="1588679006258">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state width="1415" height="209" key="GridCell.Tab.0.bottom/0.0.1920.1032@0.0.1920.1032" timestamp="1588679006258" />
+    <state width="1415" height="209" key="GridCell.Tab.0.center" timestamp="1588679006258">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state width="1415" height="209" key="GridCell.Tab.0.center/0.0.1920.1032@0.0.1920.1032" timestamp="1588679006258" />
+    <state width="1415" height="209" key="GridCell.Tab.0.left" timestamp="1588679006258">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state width="1415" height="209" key="GridCell.Tab.0.left/0.0.1920.1032@0.0.1920.1032" timestamp="1588679006258" />
+    <state width="1415" height="209" key="GridCell.Tab.0.right" timestamp="1588679006258">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state width="1415" height="209" key="GridCell.Tab.0.right/0.0.1920.1032@0.0.1920.1032" timestamp="1588679006258" />
+    <state width="1415" height="209" key="GridCell.Tab.1.bottom" timestamp="1588679006259">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state width="1415" height="209" key="GridCell.Tab.1.bottom/0.0.1920.1032@0.0.1920.1032" timestamp="1588679006259" />
+    <state width="1415" height="209" key="GridCell.Tab.1.center" timestamp="1588679006259">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state width="1415" height="209" key="GridCell.Tab.1.center/0.0.1920.1032@0.0.1920.1032" timestamp="1588679006259" />
+    <state width="1415" height="209" key="GridCell.Tab.1.left" timestamp="1588679006259">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state width="1415" height="209" key="GridCell.Tab.1.left/0.0.1920.1032@0.0.1920.1032" timestamp="1588679006259" />
+    <state width="1415" height="209" key="GridCell.Tab.1.right" timestamp="1588679006259">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state width="1415" height="209" key="GridCell.Tab.1.right/0.0.1920.1032@0.0.1920.1032" timestamp="1588679006259" />
+    <state x="441" y="102" key="Registry" timestamp="1588692664550">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="441" y="102" key="Registry/0.0.1920.1032@0.0.1920.1032" timestamp="1588692664550" />
+    <state x="339" y="56" key="SettingsEditor" timestamp="1588692529550">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="339" y="56" key="SettingsEditor/0.0.1920.1032@0.0.1920.1032" timestamp="1588692529550" />
+    <state x="707" y="280" key="chooseDestDirectoryDialog" timestamp="1588324971636">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="707" y="280" key="chooseDestDirectoryDialog/0.0.1920.1032@0.0.1920.1032" timestamp="1588324971636" />
+    <state x="574" y="300" key="com.intellij.ide.util.TipDialog" timestamp="1588692411790">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="574" y="300" key="com.intellij.ide.util.TipDialog/0.0.1920.1032@0.0.1920.1032" timestamp="1588692411790" />
+    <state x="263" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1588341106648">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="263" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1032@0.0.1920.1032" timestamp="1588341106648" />
+    <state x="242" y="213" key="new project wizard" timestamp="1588646003838">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="242" y="213" key="new project wizard/0.0.1920.1032@0.0.1920.1032" timestamp="1588646003838" />
+    <state x="539" y="0" width="840" height="1030" key="search.everywhere.popup" timestamp="1588427408483">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="539" y="0" width="840" height="1030" key="search.everywhere.popup/0.0.1920.1032@0.0.1920.1032" timestamp="1588427408483" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/account/account-bo/src/main/java/com/zty/bo/service/impl/UserServiceImpl.java</url>
+          <line>71</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

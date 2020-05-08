@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zty.bo.dao.FileInfoDOMapper" >
+  <resultMap id="BaseResultMap" type="com.zty.common.DO.FileInfoDO" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="file_kind" property="fileKind" jdbcType="SMALLINT" />
+    <result column="public_url" property="publicUrl" jdbcType="VARCHAR" />
+    <result column="private_url" property="privateUrl" jdbcType="VARCHAR" />
+    <result column="download_time" property="downloadTime" jdbcType="INTEGER" />
+    <result column="like_time" property="likeTime" jdbcType="INTEGER" />
+    <result column="create_by" property="createBy" jdbcType="INTEGER" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, name, file_kind, public_url, private_url, download_time, like_time, create_by, 
+    create_time
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.zty.common.DO.example.FileInfoDOExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from file_info
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from file_info
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from file_info
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.zty.common.DO.example.FileInfoDOExample" >
+    delete from file_info
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.zty.common.DO.FileInfoDO" >
+    insert into file_info (id, name, file_kind, 
+      public_url, private_url, download_time, 
+      like_time, create_by, create_time
+      )
+    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{fileKind,jdbcType=SMALLINT}, 
+      #{publicUrl,jdbcType=VARCHAR}, #{privateUrl,jdbcType=VARCHAR}, #{downloadTime,jdbcType=INTEGER}, 
+      #{likeTime,jdbcType=INTEGER}, #{createBy,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.zty.common.DO.FileInfoDO" >
+    insert into file_info
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="name != null" >
+        name,
+      </if>
+      <if test="fileKind != null" >
+        file_kind,
+      </if>
+      <if test="publicUrl != null" >
+        public_url,
+      </if>
+      <if test="privateUrl != null" >
+        private_url,
+      </if>
+      <if test="downloadTime != null" >
+        download_time,
+      </if>
+      <if test="likeTime != null" >
+        like_time,
+      </if>
+      <if test="createBy != null" >
+        create_by,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="fileKind != null" >
+        #{fileKind,jdbcType=SMALLINT},
+      </if>
+      <if test="publicUrl != null" >
+        #{publicUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="privateUrl != null" >
+        #{privateUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="downloadTime != null" >
+        #{downloadTime,jdbcType=INTEGER},
+      </if>
+      <if test="likeTime != null" >
+        #{likeTime,jdbcType=INTEGER},
+      </if>
+      <if test="createBy != null" >
+        #{createBy,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.zty.common.DO.example.FileInfoDOExample" resultType="java.lang.Integer" >
+    select count(*) from file_info
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update file_info
+    <set >
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.name != null" >
+        name = #{record.name,jdbcType=VARCHAR},
+      </if>
+      <if test="record.fileKind != null" >
+        file_kind = #{record.fileKind,jdbcType=SMALLINT},
+      </if>
+      <if test="record.publicUrl != null" >
+        public_url = #{record.publicUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="record.privateUrl != null" >
+        private_url = #{record.privateUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="record.downloadTime != null" >
+        download_time = #{record.downloadTime,jdbcType=INTEGER},
+      </if>
+      <if test="record.likeTime != null" >
+        like_time = #{record.likeTime,jdbcType=INTEGER},
+      </if>
+      <if test="record.createBy != null" >
+        create_by = #{record.createBy,jdbcType=INTEGER},
+      </if>
+      <if test="record.createTime != null" >
+        create_time = #{record.createTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update file_info
+    set id = #{record.id,jdbcType=INTEGER},
+      name = #{record.name,jdbcType=VARCHAR},
+      file_kind = #{record.fileKind,jdbcType=SMALLINT},
+      public_url = #{record.publicUrl,jdbcType=VARCHAR},
+      private_url = #{record.privateUrl,jdbcType=VARCHAR},
+      download_time = #{record.downloadTime,jdbcType=INTEGER},
+      like_time = #{record.likeTime,jdbcType=INTEGER},
+      create_by = #{record.createBy,jdbcType=INTEGER},
+      create_time = #{record.createTime,jdbcType=TIMESTAMP}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zty.common.DO.FileInfoDO" >
+    update file_info
+    <set >
+      <if test="name != null" >
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="fileKind != null" >
+        file_kind = #{fileKind,jdbcType=SMALLINT},
+      </if>
+      <if test="publicUrl != null" >
+        public_url = #{publicUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="privateUrl != null" >
+        private_url = #{privateUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="downloadTime != null" >
+        download_time = #{downloadTime,jdbcType=INTEGER},
+      </if>
+      <if test="likeTime != null" >
+        like_time = #{likeTime,jdbcType=INTEGER},
+      </if>
+      <if test="createBy != null" >
+        create_by = #{createBy,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zty.common.DO.FileInfoDO" >
+    update file_info
+    set name = #{name,jdbcType=VARCHAR},
+      file_kind = #{fileKind,jdbcType=SMALLINT},
+      public_url = #{publicUrl,jdbcType=VARCHAR},
+      private_url = #{privateUrl,jdbcType=VARCHAR},
+      download_time = #{downloadTime,jdbcType=INTEGER},
+      like_time = #{likeTime,jdbcType=INTEGER},
+      create_by = #{createBy,jdbcType=INTEGER},
+      create_time = #{createTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
