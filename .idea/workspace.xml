@@ -2,9 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="591a7ef7-1a26-4d97-a74b-59989a9f55c2" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/static/1588354820958.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wheel-gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/wheel-gateway/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account/account-common/src/main/java/com/zty/common/dto/UserInfoDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/account/account-common/src/main/java/com/zty/common/dto/UserInfoDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account/account-web/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/account/account-web/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account/account-web/src/main/java/com/zty/web/controller/AccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/account/account-web/src/main/java/com/zty/web/controller/AccountController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/file/file-common/src/main/java/com/zty/common/config/PathConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/file/file-common/src/main/java/com/zty/common/config/PathConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/file/file-web/src/main/java/com/zty/web/controller/FileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/file/file-web/src/main/java/com/zty/web/controller/FileController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/framework-web/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/framework/framework-web/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wheel-gateway/wheel-service-customer/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/wheel-gateway/wheel-service-customer/src/main/resources/application-dev.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wheel-gateway/wheel-service-customer/src/main/resources/application-prod.yml" beforeDir="false" afterPath="$PROJECT_DIR$/wheel-gateway/wheel-service-customer/src/main/resources/application-prod.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wheel-gateway/wheel-service-customer/src/main/resources/application-test.yml" beforeDir="false" afterPath="$PROJECT_DIR$/wheel-gateway/wheel-service-customer/src/main/resources/application-test.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -199,7 +208,7 @@
       <workItem from="1588563179842" duration="20129000" />
       <workItem from="1588692411542" duration="215000" />
       <workItem from="1588927906224" duration="2475000" />
-      <workItem from="1589004145073" duration="323000" />
+      <workItem from="1589004145073" duration="12755000" />
     </task>
     <servers />
   </component>
@@ -211,10 +220,10 @@
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state x="451" y="93" key="#Project_Structure/0.0.1920.1032@0.0.1920.1032" timestamp="1588352941955" />
-    <state x="717" y="154" key="#com.intellij.ide.util.MemberChooser" timestamp="1588433992081">
+    <state x="717" y="154" key="#com.intellij.ide.util.MemberChooser" timestamp="1589035333629">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state x="717" y="154" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1032@0.0.1920.1032" timestamp="1588433992081" />
+    <state x="717" y="154" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1032@0.0.1920.1032" timestamp="1589035333629" />
     <state x="488" y="132" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog" timestamp="1588334354816">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
@@ -235,22 +244,22 @@
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state x="686" y="136" key="FileChooserDialogImpl/0.0.1920.1032@0.0.1920.1032" timestamp="1588654474930" />
-    <state width="1864" height="357" key="GridCell.Tab.0.bottom" timestamp="1589004579755">
+    <state width="1864" height="320" key="GridCell.Tab.0.bottom" timestamp="1589035176565">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state width="1864" height="357" key="GridCell.Tab.0.bottom/0.0.1920.1032@0.0.1920.1032" timestamp="1589004579755" />
-    <state width="1864" height="357" key="GridCell.Tab.0.center" timestamp="1589004579755">
+    <state width="1864" height="320" key="GridCell.Tab.0.bottom/0.0.1920.1032@0.0.1920.1032" timestamp="1589035176565" />
+    <state width="1864" height="320" key="GridCell.Tab.0.center" timestamp="1589035176564">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state width="1864" height="357" key="GridCell.Tab.0.center/0.0.1920.1032@0.0.1920.1032" timestamp="1589004579755" />
-    <state width="1864" height="357" key="GridCell.Tab.0.left" timestamp="1589004579755">
+    <state width="1864" height="320" key="GridCell.Tab.0.center/0.0.1920.1032@0.0.1920.1032" timestamp="1589035176564" />
+    <state width="1864" height="320" key="GridCell.Tab.0.left" timestamp="1589035176564">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state width="1864" height="357" key="GridCell.Tab.0.left/0.0.1920.1032@0.0.1920.1032" timestamp="1589004579755" />
-    <state width="1864" height="357" key="GridCell.Tab.0.right" timestamp="1589004579755">
+    <state width="1864" height="320" key="GridCell.Tab.0.left/0.0.1920.1032@0.0.1920.1032" timestamp="1589035176564" />
+    <state width="1864" height="320" key="GridCell.Tab.0.right" timestamp="1589035176565">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state width="1864" height="357" key="GridCell.Tab.0.right/0.0.1920.1032@0.0.1920.1032" timestamp="1589004579755" />
+    <state width="1864" height="320" key="GridCell.Tab.0.right/0.0.1920.1032@0.0.1920.1032" timestamp="1589035176565" />
     <state width="1415" height="248" key="GridCell.Tab.1.bottom" timestamp="1588948071876">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
@@ -287,10 +296,10 @@
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state x="263" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1032@0.0.1920.1032" timestamp="1588341106648" />
-    <state x="242" y="213" key="new project wizard" timestamp="1588646003838">
+    <state x="242" y="213" key="new project wizard" timestamp="1589017403745">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state x="242" y="213" key="new project wizard/0.0.1920.1032@0.0.1920.1032" timestamp="1588646003838" />
+    <state x="242" y="213" key="new project wizard/0.0.1920.1032@0.0.1920.1032" timestamp="1589017403745" />
     <state x="539" y="0" width="840" height="1030" key="search.everywhere.popup" timestamp="1588427408483">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>

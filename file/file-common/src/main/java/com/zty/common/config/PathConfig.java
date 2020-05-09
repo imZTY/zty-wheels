@@ -26,6 +26,9 @@ public class PathConfig {
     @Value("${filePath.static}")
     private String staticDir;
 
+    @Value("${filePath.publicUrl}")
+    private String publicUrl;
+
     @PostConstruct
     private void init(){
         System.out.println("PathConfig初始化文件夹...");
@@ -53,5 +56,9 @@ public class PathConfig {
 
     public String getStaticDir() {
         return staticDir;
+    }
+
+    public String getPublicUrl() {
+        return publicUrl;
     }
 }

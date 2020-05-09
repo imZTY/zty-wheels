@@ -1,9 +1,12 @@
 package com.zty.web.controller;
 
+import com.zty.bo.api.LoginCacheApi;
 import com.zty.bo.service.UserService;
 import com.zty.common.DO.UserInfoDO;
 import com.zty.common.dto.UserInfoDTO;
+import com.zty.framework.annotation.CheckToken;
 import com.zty.framework.dto.ResultDTO;
+import com.zty.framework.util.UUidUtil;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -26,6 +29,9 @@ public class AccountController {
 
     @Autowired
     private UserService userService;
+
+    @Autowired
+    private LoginCacheApi loginCacheApi;
 
     /**
      * @apiDefine Account 账号
@@ -89,6 +95,7 @@ public class AccountController {
             if (rt == null){
                 return ResultDTO.error(444, "手机号或密码错误");
             }else {
+                loginCacheApi.setTokenAndUserId(UUidUtil.uuid(), rt.getId());
                 return ResultDTO.success(rt);
             }
         } catch (NoSuchAlgorithmException e) {
@@ -171,6 +178,7 @@ public class AccountController {
         }
     }
 
+    @CheckToken
     /**
      * @api {post} /account/update 修改账号信息
      * @apiGroup Account
@@ -218,6 +226,10 @@ public class AccountController {
     @PostMapping("/update")
     public ResultDTO update(UserInfoDO userInfoDO){
         // 参数校验
+        if (userInfoDO.getCurrentUID() == 0){
+            return ResultDTO.error(403, "用户未登陆");
+        }
+        userInfoDO.setId(userInfoDO.getCurrentUID());
         if (userInfoDO.getId() == null || userInfoDO.getId() == 0){
             return ResultDTO.error(403, "用户id不可为空或为0");
         }

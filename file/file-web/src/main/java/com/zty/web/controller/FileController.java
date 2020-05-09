@@ -2,6 +2,7 @@ package com.zty.web.controller;
 
 import com.zty.bo.service.FileService;
 import com.zty.common.DO.FileInfoDO;
+import com.zty.framework.annotation.CheckToken;
 import com.zty.framework.dto.ResultDTO;
 import com.zty.framework.util.FileUtil;
 import com.zty.common.config.PathConfig;
@@ -46,7 +47,7 @@ public class FileController {
      */
 
     /**
-     * @api {post} /file/upload 上传地图
+     * @api {post} /file/upload 上传文件
      * @apiGroup File
      * @apiParam {String} province 省份文字
      * @apiParam {String} city 城市文字
@@ -70,8 +71,9 @@ public class FileController {
      *     "count": 0
      * }
      */
+    @CheckToken
     @PostMapping("/upload")
-    public ResultDTO upload(@RequestParam("pictureFile") MultipartFile pictureFile, FileInfoDO mapInfoDO){
+    public ResultDTO upload(FileInfoDO mapInfoDO, @RequestParam("pictureFile") MultipartFile pictureFile){
         if (pictureFile.isEmpty()) {
             // 判断文件是否为空
             log.error("上传的文件为空");
@@ -91,7 +93,7 @@ public class FileController {
                 // 存储路径
                 String privateUrl = mapPathConfig.getStaticDir() + "/" + filename;
                 // 外部访问路径
-                String publicUrl = "/zhihao/map/download?filename=" + filename;
+                String publicUrl = mapPathConfig.getPublicUrl() + filename;
                 // 存储文件
                 FileUtil.saveFile(privateUrl, byt);
 

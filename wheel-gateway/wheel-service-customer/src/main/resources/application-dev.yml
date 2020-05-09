@@ -15,6 +15,7 @@ server:
 filePath:
   cache: ./files/cache
   static: ./files/static
+  publicUrl: /zhihao/map/download?filename=
 
 #开启sql语句打印
 logging:

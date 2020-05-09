@@ -13,8 +13,9 @@ server:
   port: 8091
 
 filePath:
-  root: ./files
-  map: ./files/map
+  cache: ./files/cache
+  static: ./files/static
+  publicUrl: /zhihao/map/download?filename=
 
 #开启sql语句打印
 #logging:
