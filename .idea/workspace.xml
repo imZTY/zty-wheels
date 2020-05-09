@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="591a7ef7-1a26-4d97-a74b-59989a9f55c2" name="Default Changelist" comment="" />
+    <list default="true" id="591a7ef7-1a26-4d97-a74b-59989a9f55c2" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/static/1588354820958.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wheel-gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/wheel-gateway/pom.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,6 +22,9 @@
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -54,7 +61,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="project.propCompiler" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -167,11 +174,6 @@
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
                 <item name="Spring Boot" type="7427dc5b:ServiceModel$ServiceGroupNode" />
               </path>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="Spring Boot" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="Finished" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              </path>
             </expand>
             <select />
           </treeState>
@@ -196,6 +198,8 @@
       <workItem from="1588491533504" duration="1974000" />
       <workItem from="1588563179842" duration="20129000" />
       <workItem from="1588692411542" duration="215000" />
+      <workItem from="1588927906224" duration="2475000" />
+      <workItem from="1589004145073" duration="323000" />
     </task>
     <servers />
   </component>
@@ -231,54 +235,54 @@
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state x="686" y="136" key="FileChooserDialogImpl/0.0.1920.1032@0.0.1920.1032" timestamp="1588654474930" />
-    <state width="1415" height="209" key="GridCell.Tab.0.bottom" timestamp="1588679006258">
+    <state width="1864" height="357" key="GridCell.Tab.0.bottom" timestamp="1589004579755">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state width="1415" height="209" key="GridCell.Tab.0.bottom/0.0.1920.1032@0.0.1920.1032" timestamp="1588679006258" />
-    <state width="1415" height="209" key="GridCell.Tab.0.center" timestamp="1588679006258">
+    <state width="1864" height="357" key="GridCell.Tab.0.bottom/0.0.1920.1032@0.0.1920.1032" timestamp="1589004579755" />
+    <state width="1864" height="357" key="GridCell.Tab.0.center" timestamp="1589004579755">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state width="1415" height="209" key="GridCell.Tab.0.center/0.0.1920.1032@0.0.1920.1032" timestamp="1588679006258" />
-    <state width="1415" height="209" key="GridCell.Tab.0.left" timestamp="1588679006258">
+    <state width="1864" height="357" key="GridCell.Tab.0.center/0.0.1920.1032@0.0.1920.1032" timestamp="1589004579755" />
+    <state width="1864" height="357" key="GridCell.Tab.0.left" timestamp="1589004579755">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state width="1415" height="209" key="GridCell.Tab.0.left/0.0.1920.1032@0.0.1920.1032" timestamp="1588679006258" />
-    <state width="1415" height="209" key="GridCell.Tab.0.right" timestamp="1588679006258">
+    <state width="1864" height="357" key="GridCell.Tab.0.left/0.0.1920.1032@0.0.1920.1032" timestamp="1589004579755" />
+    <state width="1864" height="357" key="GridCell.Tab.0.right" timestamp="1589004579755">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state width="1415" height="209" key="GridCell.Tab.0.right/0.0.1920.1032@0.0.1920.1032" timestamp="1588679006258" />
-    <state width="1415" height="209" key="GridCell.Tab.1.bottom" timestamp="1588679006259">
+    <state width="1864" height="357" key="GridCell.Tab.0.right/0.0.1920.1032@0.0.1920.1032" timestamp="1589004579755" />
+    <state width="1415" height="248" key="GridCell.Tab.1.bottom" timestamp="1588948071876">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state width="1415" height="209" key="GridCell.Tab.1.bottom/0.0.1920.1032@0.0.1920.1032" timestamp="1588679006259" />
-    <state width="1415" height="209" key="GridCell.Tab.1.center" timestamp="1588679006259">
+    <state width="1415" height="248" key="GridCell.Tab.1.bottom/0.0.1920.1032@0.0.1920.1032" timestamp="1588948071876" />
+    <state width="1415" height="248" key="GridCell.Tab.1.center" timestamp="1588948071875">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state width="1415" height="209" key="GridCell.Tab.1.center/0.0.1920.1032@0.0.1920.1032" timestamp="1588679006259" />
-    <state width="1415" height="209" key="GridCell.Tab.1.left" timestamp="1588679006259">
+    <state width="1415" height="248" key="GridCell.Tab.1.center/0.0.1920.1032@0.0.1920.1032" timestamp="1588948071875" />
+    <state width="1415" height="248" key="GridCell.Tab.1.left" timestamp="1588948071875">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state width="1415" height="209" key="GridCell.Tab.1.left/0.0.1920.1032@0.0.1920.1032" timestamp="1588679006259" />
-    <state width="1415" height="209" key="GridCell.Tab.1.right" timestamp="1588679006259">
+    <state width="1415" height="248" key="GridCell.Tab.1.left/0.0.1920.1032@0.0.1920.1032" timestamp="1588948071875" />
+    <state width="1415" height="248" key="GridCell.Tab.1.right" timestamp="1588948071875">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state width="1415" height="209" key="GridCell.Tab.1.right/0.0.1920.1032@0.0.1920.1032" timestamp="1588679006259" />
+    <state width="1415" height="248" key="GridCell.Tab.1.right/0.0.1920.1032@0.0.1920.1032" timestamp="1588948071875" />
     <state x="441" y="102" key="Registry" timestamp="1588692664550">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state x="441" y="102" key="Registry/0.0.1920.1032@0.0.1920.1032" timestamp="1588692664550" />
-    <state x="339" y="56" key="SettingsEditor" timestamp="1588692529550">
+    <state x="339" y="56" key="SettingsEditor" timestamp="1588929797620">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state x="339" y="56" key="SettingsEditor/0.0.1920.1032@0.0.1920.1032" timestamp="1588692529550" />
+    <state x="339" y="56" key="SettingsEditor/0.0.1920.1032@0.0.1920.1032" timestamp="1588929797620" />
     <state x="707" y="280" key="chooseDestDirectoryDialog" timestamp="1588324971636">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state x="707" y="280" key="chooseDestDirectoryDialog/0.0.1920.1032@0.0.1920.1032" timestamp="1588324971636" />
-    <state x="574" y="300" key="com.intellij.ide.util.TipDialog" timestamp="1588692411790">
+    <state x="574" y="300" key="com.intellij.ide.util.TipDialog" timestamp="1588927928767">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state x="574" y="300" key="com.intellij.ide.util.TipDialog/0.0.1920.1032@0.0.1920.1032" timestamp="1588692411790" />
+    <state x="574" y="300" key="com.intellij.ide.util.TipDialog/0.0.1920.1032@0.0.1920.1032" timestamp="1588927928767" />
     <state x="263" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1588341106648">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>

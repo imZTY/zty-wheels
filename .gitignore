@@ -1,0 +1,11 @@
+﻿
+/files/
+*/files/*
+*.zip
+
+*.class
+
+*.jar
+
+/.idea/
+**/target/
