@@ -26,8 +26,11 @@ public class ReflectUtil {
         if (sourceObj == null){
             return null;
         }
+        if (sourceObj.getClass().equals(ArrayList.class)){
+            return propertyMapperForList((ArrayList<Object>) sourceObj, clazz1, clazz2);
+        }
         if (!sourceObj.getClass().equals(clazz1)){
-            throw new ClassCastException("参数类型不匹配");
+            throw new ClassCastException("参数类型不匹配，sourceClass="+sourceObj.getClass());
         }
         Field[] clazz1Fields = clazz1.getDeclaredFields();
         Set<String> clazz2Fields = Arrays.stream(clazz2.getDeclaredFields()).map(field -> field.getName()).collect(Collectors.toSet());
@@ -44,7 +47,9 @@ public class ReflectUtil {
                     // 判断是否为空
                     if (declaredField.get(sourceObj) != null){
                         // 非空则复制value
-                        declaredField.set(rtObj, declaredField.get(sourceObj));
+                        Field class2Field = clazz2.getDeclaredField(declaredField.getName());
+                        class2Field.setAccessible(true);
+                        class2Field.set(rtObj, declaredField.get(sourceObj));
                     }
                 }
             }
@@ -53,6 +58,9 @@ public class ReflectUtil {
             throw e;
         } catch (IllegalAccessException e) {
             throw e;
+        } catch (NoSuchFieldException e) {
+            // 不可能事件
+            return null;
         }
     }
 
@@ -65,7 +73,7 @@ public class ReflectUtil {
      * @throws InstantiationException 实例化失败
      * @throws IllegalAccessException 访问非法
      */
-    public static List<Object> propertyMapper(List<Object> sourceObjList, Class clazz1, Class clazz2) throws InstantiationException, IllegalAccessException {
+    public static List<Object> propertyMapperForList(List<Object> sourceObjList, Class clazz1, Class clazz2) throws InstantiationException, IllegalAccessException {
         if (sourceObjList.isEmpty()){
             throw new IndexOutOfBoundsException("sourceObjList不能为空");
         }
@@ -75,7 +83,7 @@ public class ReflectUtil {
         Field[] clazz1Fields = clazz1.getDeclaredFields();
         Set<String> clazz2Fields = Arrays.stream(clazz2.getDeclaredFields()).map(field -> field.getName()).collect(Collectors.toSet());
         try {
-            // 反射生成的对象
+            // 反射生成的对象列表
             List<Object> rtObjList = new ArrayList<>();
             for (int j = 0; j < sourceObjList.size(); j++) {
                 Object sourceObj = sourceObjList.get(j);
@@ -90,7 +98,9 @@ public class ReflectUtil {
                         // 判断是否为空
                         if (declaredField.get(sourceObj) != null){
                             // 非空则复制value
-                            declaredField.set(rtObj, declaredField.get(sourceObj));
+                            Field class2Field = clazz2.getDeclaredField(declaredField.getName());
+                            class2Field.setAccessible(true);
+                            class2Field.set(rtObj, declaredField.get(sourceObj));
                         }
                     }
                 }
@@ -101,6 +111,9 @@ public class ReflectUtil {
             throw e;
         } catch (IllegalAccessException e) {
             throw e;
+        } catch (NoSuchFieldException e) {
+            // 不可能事件
+            return null;
         }
     }
 

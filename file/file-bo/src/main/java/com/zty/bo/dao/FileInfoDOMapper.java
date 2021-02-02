@@ -32,4 +32,6 @@ public interface FileInfoDOMapper {
     int updateByPrimaryKeySelective(FileInfoDO record);
 
     int updateByPrimaryKey(FileInfoDO record);
+
+    int getMaxID();
 }

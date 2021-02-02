@@ -38,4 +38,27 @@ public class ReadTextUtil {
 		return rt;
 	}
 
+	/**
+	 * 返回文件的每一行内容
+	 * @param filePath 文件路径
+	 * @return
+	 * @throws IOException
+	 */
+	public static StringBuilder getLineStringBuilder(String filePath) throws IOException {
+		// 创建返回对象
+		StringBuilder rt = new StringBuilder();
+
+		// 创建 reader
+		BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(filePath)));
+
+		// 逐行读取内容
+		String temp = reader.readLine();
+		while( temp != null && temp != "\n") {
+			rt.append(temp + "\n");
+			temp = reader.readLine();
+		}
+
+		// 返回读取结果
+		return rt;
+	}
 }

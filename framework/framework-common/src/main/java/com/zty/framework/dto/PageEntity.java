@@ -18,9 +18,9 @@ public class PageEntity implements Serializable {
      */
     private int rows = 30;
 
-    private int page;
+    private int page = 0;
 
-    private int pageStart;
+    private int pageStart = 0;
 
     public int[] getIds() {
         return ids;

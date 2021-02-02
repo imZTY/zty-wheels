@@ -34,7 +34,7 @@ public class DanceEditor {
         try {
             osw = new OutputStreamWriter(new FileOutputStream(file), "UTF-8");
             // 手动加上BOM标识
-            osw.write(new String(new byte[] { (byte) 0xEF, (byte) 0xBB, (byte) 0xBF }));
+//            osw.write(new String(new byte[] { (byte) 0xEF, (byte) 0xBB, (byte) 0xBF }));
             bw = new BufferedWriter(osw);
             bw.append(dancer.headDance());
             bw.append(dancer.rowDance());

@@ -2,18 +2,50 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="591a7ef7-1a26-4d97-a74b-59989a9f55c2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/account/account-common/src/main/java/com/zty/common/config/TokenConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/file/file-common/src/main/java/com/zty/common/dto/FileInfoDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/framework/framework-common/src/main/java/com/zty/framework/controller/CRUDController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/framework/framework-common/src/main/java/com/zty/framework/service/CRUDService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/framework/framework-common/src/main/java/com/zty/framework/util/UrlUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/framework/framework-common/src/main/java/com/zty/framework/util/dataSave/CsvDancer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/framework/framework-common/src/main/java/com/zty/framework/util/date/DateUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/framework/framework-common/src/main/java/com/zty/framework/util/request/HttpRequestor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/framework/framework-common/src/main/java/com/zty/framework/util/spring/SpringUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/framework/framework-spider/framework/framework-spider.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/framework/framework-spider/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/framework/framework-spider/src/main/java/com/zty/spider/SpiderThread.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/framework/framework-spider/src/test/java/BasicTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/redis/redis-bo/src/main/java/com/zty/bo/service/SetService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/redis/redis-bo/src/main/java/com/zty/bo/service/impl/ListServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/redis/redis-common/src/main/java/com/zty/common/dto/TaskDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account/account-common/src/main/java/com/zty/common/dto/UserInfoDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/account/account-common/src/main/java/com/zty/common/dto/UserInfoDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account/account-web/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/account/account-web/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/account/account-web/src/main/java/com/zty/web/controller/AccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/account/account-web/src/main/java/com/zty/web/controller/AccountController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/file/file-bo/src/main/java/com/zty/bo/dao/FileInfoDOMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/file/file-bo/src/main/java/com/zty/bo/dao/FileInfoDOMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/file/file-bo/src/main/java/com/zty/bo/service/FileService.java" beforeDir="false" afterPath="$PROJECT_DIR$/file/file-bo/src/main/java/com/zty/bo/service/FileService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/file/file-bo/src/main/java/com/zty/bo/service/impl/FileServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/file/file-bo/src/main/java/com/zty/bo/service/impl/FileServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/file/file-bo/src/main/resources/mapper/FileInfoDOMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/file/file-bo/src/main/resources/mapper/FileInfoDOMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/file/file-common/src/main/java/com/zty/common/DO/FileInfoDO.java" beforeDir="false" afterPath="$PROJECT_DIR$/file/file-common/src/main/java/com/zty/common/DO/FileInfoDO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/file/file-common/src/main/java/com/zty/common/config/PathConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/file/file-common/src/main/java/com/zty/common/config/PathConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/file/file-web/src/main/java/com/zty/web/controller/FileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/file/file-web/src/main/java/com/zty/web/controller/FileController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/framework-common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/framework/framework-common/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/framework-common/src/main/java/com/zty/framework/dto/PageEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/framework-common/src/main/java/com/zty/framework/dto/PageEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/framework-common/src/main/java/com/zty/framework/util/DateFormatUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/framework-common/src/main/java/com/zty/framework/util/date/DateFormatUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/framework-common/src/main/java/com/zty/framework/util/ReflectUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/framework-common/src/main/java/com/zty/framework/util/ReflectUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/framework-common/src/main/java/com/zty/framework/util/dataSave/DanceEditor.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/framework-common/src/main/java/com/zty/framework/util/dataSave/DanceEditor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/framework-common/src/main/java/com/zty/framework/util/read/ReadTextUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/framework-common/src/main/java/com/zty/framework/util/read/ReadTextUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/framework-springboot-app/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/framework/framework-springboot-app/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/framework/framework-web/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/framework/framework-web/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/framework/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/redis/redis-bo/src/main/java/com/zty/bo/service/ListService.java" beforeDir="false" afterPath="$PROJECT_DIR$/redis/redis-bo/src/main/java/com/zty/bo/service/ListService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wheel-gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/wheel-gateway/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wheel-gateway/wheel-service-customer/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/wheel-gateway/wheel-service-customer/src/main/resources/application-dev.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wheel-gateway/wheel-service-customer/src/main/resources/application-prod.yml" beforeDir="false" afterPath="$PROJECT_DIR$/wheel-gateway/wheel-service-customer/src/main/resources/application-prod.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wheel-gateway/wheel-service-customer/src/main/resources/application-test.yml" beforeDir="false" afterPath="$PROJECT_DIR$/wheel-gateway/wheel-service-customer/src/main/resources/application-test.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wx/wx-common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/wx/wx-common/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wx/wx-common/src/main/java/com/zty/common/util/request/ApacheHttpRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/framework-common/src/main/java/com/zty/framework/util/request/ApacheHttpRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wx/wx-common/src/main/java/com/zty/common/util/request/HttpRequestor.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,11 +55,27 @@
   <component name="CompilerWorkspaceConfiguration">
     <option name="MAKE_PROJECT_ON_SAVE" value="true" />
   </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="AnnotationType" />
+        <option value="Interface" />
+        <option value="JUnit4 Test Class" />
+        <option value="JUnit5 Test Class" />
         <option value="Class" />
       </list>
     </option>
@@ -49,6 +97,9 @@
       </MavenImportingSettings>
     </option>
   </component>
+  <component name="MavenRunner">
+    <option name="skipTests" value="true" />
+  </component>
   <component name="ProjectId" id="1bI2TakSnzlHbCARtdyCzFURW9r" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -57,9 +108,13 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/framework/framework-common/src/main/java/com/zty/framework/util" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../2021/02/0117-_物流查询系统/kuaidi100-java-demo/pom.xml" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -73,27 +128,34 @@
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.zty.framework.util" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+      <recent name="com.zty.common.DO" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="F:\study\jidi\career\2020\zty-wheels\account\account-bo\src\main\resources\mapper\account" />
       <recent name="F:\study\jidi\career\2020\zty-wheels\file\file-bo\src\main\resources\mapper\file" />
       <recent name="F:\study\jidi\career\2020\zty-wheels\framework" />
     </key>
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="com.zty.common.DO" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\study\jidi\career\2020\zty-wheels\framework\framework-common\src\main\java\com\zty\framework\util\request" />
       <recent name="F:\study\jidi\career\2020\zty-wheels\framework\framework-common\src\main\java\com\zty\framework\util" />
       <recent name="F:\study\jidi\career\2020\zty-wheels\wheel-gateway\wheel-service-customer\src\main\resources" />
       <recent name="F:\study\jidi\career\2020\zty-wheels\account\account-bo\src\main\resources\mapper" />
       <recent name="F:\study\jidi\career\2020\zty-wheels\file\file-bo\src\main\resources\mapper" />
-      <recent name="F:\study\jidi\career\2020\zty-wheels\file\file-bo\src\main\java\com\zty\bo\dao" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.zty.framework.util.dataSave" />
       <recent name="com.zty.framework.annotation" />
       <recent name="com.zty.web.controller" />
       <recent name="com.zty.web.config" />
       <recent name="com.zty.bo.service.impl" />
-      <recent name="com.zty.framework.dto" />
     </key>
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.zty.bo.service.impl" />
@@ -106,7 +168,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.WheelServiceCustomerApplication">
+  <component name="RunManager" selected="JUnit.BasicTest.dealTest">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="WIDTH" value="400" />
       <option name="HEIGHT" value="300" />
@@ -115,6 +177,17 @@
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BasicTest.dealTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="framework-spider" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="BasicTest" />
+      <option name="METHOD_NAME" value="dealTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -168,6 +241,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.BasicTest.dealTest" />
         <item itemvalue="JUnit.static in wheel-service-customer" />
       </list>
     </recent_temporary>
@@ -176,12 +250,17 @@
     <option name="viewStates">
       <list>
         <serviceView>
-          <option name="contentProportion" value="0.22495896" />
+          <option name="contentProportion" value="0.23207444" />
           <treeState>
             <expand>
               <path>
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
                 <item name="Spring Boot" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="Spring Boot" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="Finished" type="7427dc5b:ServiceModel$ServiceGroupNode" />
               </path>
             </expand>
             <select />
@@ -189,6 +268,9 @@
         </serviceView>
       </list>
     </option>
+  </component>
+  <component name="SpringBeansView">
+    <option name="beanDetailsProportion" value="0.3" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -209,6 +291,50 @@
       <workItem from="1588692411542" duration="215000" />
       <workItem from="1588927906224" duration="2475000" />
       <workItem from="1589004145073" duration="12755000" />
+      <workItem from="1589353029086" duration="134000" />
+      <workItem from="1589370203762" duration="122000" />
+      <workItem from="1589389729903" duration="3760000" />
+      <workItem from="1589396159684" duration="2246000" />
+      <workItem from="1590053960950" duration="5637000" />
+      <workItem from="1590067086207" duration="3565000" />
+      <workItem from="1590142949313" duration="5410000" />
+      <workItem from="1590148856348" duration="6795000" />
+      <workItem from="1590163335800" duration="734000" />
+      <workItem from="1590217546255" duration="4712000" />
+      <workItem from="1590462108599" duration="1604000" />
+      <workItem from="1590841367705" duration="3711000" />
+      <workItem from="1590905192758" duration="2134000" />
+      <workItem from="1591038885928" duration="628000" />
+      <workItem from="1600609885255" duration="220000" />
+      <workItem from="1608422345432" duration="1553000" />
+      <workItem from="1608423977381" duration="2234000" />
+      <workItem from="1608438306551" duration="4414000" />
+      <workItem from="1608514790352" duration="2650000" />
+      <workItem from="1608746567054" duration="33000" />
+      <workItem from="1608903797202" duration="1806000" />
+      <workItem from="1609076378851" duration="148000" />
+      <workItem from="1609076684478" duration="671000" />
+      <workItem from="1609089595311" duration="902000" />
+      <workItem from="1609185246601" duration="3402000" />
+      <workItem from="1609244367761" duration="591000" />
+      <workItem from="1609250021715" duration="663000" />
+      <workItem from="1609807403290" duration="80000" />
+      <workItem from="1609851714794" duration="7968000" />
+      <workItem from="1610244693300" duration="2723000" />
+      <workItem from="1610466644890" duration="114000" />
+      <workItem from="1610551980514" duration="942000" />
+      <workItem from="1610777810062" duration="3122000" />
+      <workItem from="1611142683247" duration="3910000" />
+      <workItem from="1611275357306" duration="7325000" />
+      <workItem from="1611587075099" duration="215000" />
+      <workItem from="1611755035285" duration="859000" />
+      <workItem from="1611838856505" duration="971000" />
+      <workItem from="1611839985346" duration="195000" />
+      <workItem from="1611841501658" duration="1464000" />
+      <workItem from="1611879481784" duration="102000" />
+      <workItem from="1612186413855" duration="4479000" />
+      <workItem from="1612198604193" duration="1451000" />
+      <workItem from="1612270076489" duration="1238000" />
     </task>
     <servers />
   </component>
@@ -216,94 +342,84 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="451" y="93" key="#Project_Structure" timestamp="1588352941955">
+    <state x="573" y="358" width="774" height="323" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1608424224127">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state x="451" y="93" key="#Project_Structure/0.0.1920.1032@0.0.1920.1032" timestamp="1588352941955" />
-    <state x="717" y="154" key="#com.intellij.ide.util.MemberChooser" timestamp="1589035333629">
+    <state x="573" y="358" width="774" height="323" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1920.1032@0.0.1920.1032" timestamp="1608424224127" />
+    <state x="239" y="109" key="#xdebugger.evaluate" timestamp="1609893332571">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state x="717" y="154" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1032@0.0.1920.1032" timestamp="1589035333629" />
-    <state x="488" y="132" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog" timestamp="1588334354816">
+    <state x="239" y="109" key="#xdebugger.evaluate/0.0.1920.1032@0.0.1920.1032" timestamp="1609893332571" />
+    <state x="583" y="172" key="FileChooserDialogImpl" timestamp="1612197762681">
+      <screen x="0" y="0" width="1600" height="852" />
+    </state>
+    <state x="583" y="172" key="FileChooserDialogImpl/0.0.1600.852@0.0.1600.852" timestamp="1612197762681" />
+    <state x="699" y="208" key="FileChooserDialogImpl/0.0.1920.1032@0.0.1920.1032" timestamp="1611451600533" />
+    <state width="1544" height="198" key="GridCell.Tab.0.bottom" timestamp="1611879583742">
+      <screen x="0" y="0" width="1600" height="852" />
+    </state>
+    <state width="1544" height="198" key="GridCell.Tab.0.bottom/0.0.1600.852@0.0.1600.852" timestamp="1611879583742" />
+    <state width="1864" height="207" key="GridCell.Tab.0.bottom/0.0.1920.1032@0.0.1920.1032" timestamp="1611755903258" />
+    <state width="1544" height="198" key="GridCell.Tab.0.center" timestamp="1611879583742">
+      <screen x="0" y="0" width="1600" height="852" />
+    </state>
+    <state width="1544" height="198" key="GridCell.Tab.0.center/0.0.1600.852@0.0.1600.852" timestamp="1611879583742" />
+    <state width="1864" height="207" key="GridCell.Tab.0.center/0.0.1920.1032@0.0.1920.1032" timestamp="1611755903258" />
+    <state width="1544" height="198" key="GridCell.Tab.0.left" timestamp="1611879583741">
+      <screen x="0" y="0" width="1600" height="852" />
+    </state>
+    <state width="1544" height="198" key="GridCell.Tab.0.left/0.0.1600.852@0.0.1600.852" timestamp="1611879583741" />
+    <state width="1864" height="207" key="GridCell.Tab.0.left/0.0.1920.1032@0.0.1920.1032" timestamp="1611755903258" />
+    <state width="1544" height="198" key="GridCell.Tab.0.right" timestamp="1611879583742">
+      <screen x="0" y="0" width="1600" height="852" />
+    </state>
+    <state width="1544" height="198" key="GridCell.Tab.0.right/0.0.1600.852@0.0.1600.852" timestamp="1611879583742" />
+    <state width="1864" height="207" key="GridCell.Tab.0.right/0.0.1920.1032@0.0.1920.1032" timestamp="1611755903258" />
+    <state width="1864" height="392" key="GridCell.Tab.1.bottom" timestamp="1611473702690">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state x="488" y="132" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog/0.0.1920.1032@0.0.1920.1032" timestamp="1588334354816" />
-    <state x="402" y="429" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1588413350739">
+    <state width="1864" height="392" key="GridCell.Tab.1.bottom/0.0.1920.1032@0.0.1920.1032" timestamp="1611473702690" />
+    <state width="1864" height="392" key="GridCell.Tab.1.center" timestamp="1611473702690">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state x="402" y="429" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1920.1032@0.0.1920.1032" timestamp="1588413350739" />
-    <state x="582" y="383" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages" timestamp="1588326019116">
+    <state width="1864" height="392" key="GridCell.Tab.1.center/0.0.1920.1032@0.0.1920.1032" timestamp="1611473702690" />
+    <state width="1864" height="392" key="GridCell.Tab.1.left" timestamp="1611473702690">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state x="582" y="383" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages/0.0.1920.1032@0.0.1920.1032" timestamp="1588326019116" />
-    <state x="377" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1588430816017">
+    <state width="1864" height="392" key="GridCell.Tab.1.left/0.0.1920.1032@0.0.1920.1032" timestamp="1611473702690" />
+    <state width="1864" height="392" key="GridCell.Tab.1.right" timestamp="1611473702690">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state x="377" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1032@0.0.1920.1032" timestamp="1588430816017" />
-    <state x="686" y="136" key="FileChooserDialogImpl" timestamp="1588654474930">
+    <state width="1864" height="392" key="GridCell.Tab.1.right/0.0.1920.1032@0.0.1920.1032" timestamp="1611473702690" />
+    <state x="339" y="56" key="SettingsEditor" timestamp="1610780317409">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state x="686" y="136" key="FileChooserDialogImpl/0.0.1920.1032@0.0.1920.1032" timestamp="1588654474930" />
-    <state width="1864" height="320" key="GridCell.Tab.0.bottom" timestamp="1589035176565">
+    <state x="339" y="56" key="SettingsEditor/0.0.1920.1032@0.0.1920.1032" timestamp="1610780317409" />
+    <state width="969" height="525" key="XDebugger.FullValuePopup" timestamp="1611146208687">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state width="1864" height="320" key="GridCell.Tab.0.bottom/0.0.1920.1032@0.0.1920.1032" timestamp="1589035176565" />
-    <state width="1864" height="320" key="GridCell.Tab.0.center" timestamp="1589035176564">
+    <state width="969" height="525" key="XDebugger.FullValuePopup/0.0.1920.1032@0.0.1920.1032" timestamp="1611146208687" />
+    <state x="478" y="248" key="com.intellij.ide.util.TipDialog" timestamp="1612187213170">
+      <screen x="0" y="0" width="1600" height="852" />
+    </state>
+    <state x="478" y="248" key="com.intellij.ide.util.TipDialog/0.0.1600.852@0.0.1600.852" timestamp="1612187213170" />
+    <state x="574" y="300" key="com.intellij.ide.util.TipDialog/0.0.1920.1032@0.0.1920.1032" timestamp="1611275559806" />
+    <state x="703" y="413" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1608515395855">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state width="1864" height="320" key="GridCell.Tab.0.center/0.0.1920.1032@0.0.1920.1032" timestamp="1589035176564" />
-    <state width="1864" height="320" key="GridCell.Tab.0.left" timestamp="1589035176564">
+    <state x="703" y="413" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1032@0.0.1920.1032" timestamp="1608515395855" />
+    <state x="691" y="167" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1608515445244">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state width="1864" height="320" key="GridCell.Tab.0.left/0.0.1920.1032@0.0.1920.1032" timestamp="1589035176564" />
-    <state width="1864" height="320" key="GridCell.Tab.0.right" timestamp="1589035176565">
+    <state x="691" y="167" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1920.1032@0.0.1920.1032" timestamp="1608515445244" />
+    <state x="170" y="211" key="new project wizard" timestamp="1611451642829">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state width="1864" height="320" key="GridCell.Tab.0.right/0.0.1920.1032@0.0.1920.1032" timestamp="1589035176565" />
-    <state width="1415" height="248" key="GridCell.Tab.1.bottom" timestamp="1588948071876">
+    <state x="170" y="211" key="new project wizard/0.0.1920.1032@0.0.1920.1032" timestamp="1611451642829" />
+    <state x="539" y="0" width="840" height="1030" key="search.everywhere.popup" timestamp="1611755062557">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state width="1415" height="248" key="GridCell.Tab.1.bottom/0.0.1920.1032@0.0.1920.1032" timestamp="1588948071876" />
-    <state width="1415" height="248" key="GridCell.Tab.1.center" timestamp="1588948071875">
-      <screen x="0" y="0" width="1920" height="1032" />
-    </state>
-    <state width="1415" height="248" key="GridCell.Tab.1.center/0.0.1920.1032@0.0.1920.1032" timestamp="1588948071875" />
-    <state width="1415" height="248" key="GridCell.Tab.1.left" timestamp="1588948071875">
-      <screen x="0" y="0" width="1920" height="1032" />
-    </state>
-    <state width="1415" height="248" key="GridCell.Tab.1.left/0.0.1920.1032@0.0.1920.1032" timestamp="1588948071875" />
-    <state width="1415" height="248" key="GridCell.Tab.1.right" timestamp="1588948071875">
-      <screen x="0" y="0" width="1920" height="1032" />
-    </state>
-    <state width="1415" height="248" key="GridCell.Tab.1.right/0.0.1920.1032@0.0.1920.1032" timestamp="1588948071875" />
-    <state x="441" y="102" key="Registry" timestamp="1588692664550">
-      <screen x="0" y="0" width="1920" height="1032" />
-    </state>
-    <state x="441" y="102" key="Registry/0.0.1920.1032@0.0.1920.1032" timestamp="1588692664550" />
-    <state x="339" y="56" key="SettingsEditor" timestamp="1588929797620">
-      <screen x="0" y="0" width="1920" height="1032" />
-    </state>
-    <state x="339" y="56" key="SettingsEditor/0.0.1920.1032@0.0.1920.1032" timestamp="1588929797620" />
-    <state x="707" y="280" key="chooseDestDirectoryDialog" timestamp="1588324971636">
-      <screen x="0" y="0" width="1920" height="1032" />
-    </state>
-    <state x="707" y="280" key="chooseDestDirectoryDialog/0.0.1920.1032@0.0.1920.1032" timestamp="1588324971636" />
-    <state x="574" y="300" key="com.intellij.ide.util.TipDialog" timestamp="1588927928767">
-      <screen x="0" y="0" width="1920" height="1032" />
-    </state>
-    <state x="574" y="300" key="com.intellij.ide.util.TipDialog/0.0.1920.1032@0.0.1920.1032" timestamp="1588927928767" />
-    <state x="263" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1588341106648">
-      <screen x="0" y="0" width="1920" height="1032" />
-    </state>
-    <state x="263" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1032@0.0.1920.1032" timestamp="1588341106648" />
-    <state x="242" y="213" key="new project wizard" timestamp="1589017403745">
-      <screen x="0" y="0" width="1920" height="1032" />
-    </state>
-    <state x="242" y="213" key="new project wizard/0.0.1920.1032@0.0.1920.1032" timestamp="1589017403745" />
-    <state x="539" y="0" width="840" height="1030" key="search.everywhere.popup" timestamp="1588427408483">
-      <screen x="0" y="0" width="1920" height="1032" />
-    </state>
-    <state x="539" y="0" width="840" height="1030" key="search.everywhere.popup/0.0.1920.1032@0.0.1920.1032" timestamp="1588427408483" />
+    <state x="539" y="0" width="840" height="1030" key="search.everywhere.popup/0.0.1920.1032@0.0.1920.1032" timestamp="1611755062557" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

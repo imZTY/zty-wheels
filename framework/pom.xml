@@ -21,5 +21,6 @@
         <module>framework-web</module>
         <module>framework-bo</module>
         <module>framework-springboot-app</module>
+        <module>framework-spider</module>
     </modules>
 </project>

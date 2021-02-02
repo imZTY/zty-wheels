@@ -17,16 +17,16 @@ public class PathConfig {
     /**
      * 临时文件目录，临时保存，定期清理
      */
-    @Value("${filePath.cache}")
+    @Value("${zty-framework.filePath.cache}")
     private String cacheDir;
 
     /**
      * 永久文件目录，永久保存，定期备份
      */
-    @Value("${filePath.static}")
+    @Value("${zty-framework.filePath.static}")
     private String staticDir;
 
-    @Value("${filePath.publicUrl}")
+    @Value("${zty-framework.filePath.publicUrl}")
     private String publicUrl;
 
     @PostConstruct

@@ -182,6 +182,9 @@
       <include refid="Example_Where_Clause" />
     </if>
   </select>
+  <select id="getMaxID" resultType="java.lang.Integer">
+    select max(id) from file_info;
+  </select>
   <update id="updateByExampleSelective" parameterType="map" >
     update file_info
     <set >

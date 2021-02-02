@@ -18,4 +18,8 @@ public interface FileService {
      * @return
      */
     public List<FileInfoDO> listMine(int userId);
+
+    public FileInfoDO createAndReturnRecord(FileInfoDO fileInfoDO);
+
+    public FileInfoDO findById(int id);
 }

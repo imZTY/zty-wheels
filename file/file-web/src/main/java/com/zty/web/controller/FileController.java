@@ -16,7 +16,6 @@ import org.springframework.web.multipart.MultipartFile;
 import javax.servlet.http.HttpServletResponse;
 import java.io.*;
 import java.util.Date;
-import java.util.List;
 
 /**
  * @author tianyi
@@ -49,46 +48,49 @@ public class FileController {
     /**
      * @api {post} /file/upload 上传文件
      * @apiGroup File
-     * @apiParam {String} province 省份文字
-     * @apiParam {String} city 城市文字
-     * @apiParam {String} cityCode 城市电话区号【必传】
-     * @apiParam {int} createBy 当前用户的id【必传】
-     * @apiParam {File} pictureFile 地图文件【必传】
+     * @apiParam {File} uploadFile 文件【必传】
      * @apiSuccessExample Success-Request:
      * {
-     *     createBy:1
-     * province:广东省
-     * city:阳春市
-     * cityCode:0662
-     *     pictureFile: 阳春中心公园.jpg
+     *     uploadFile: 二维码.jpg
      * }
      * @apiUse ResultDTO
      * @apiSuccessExample Success-Response:
      * {
      *     "resultCode": 200,
      *     "resultMsg": "成功",
-     *     "data": 1,
+     *     "data": {
+     *         "id": 5,
+     *         "name": "wxQRC.jpg",
+     *         "fileKind": null,
+     *         "publicUrl": "/zhihao/map/download?filename=1590148804080.jpg",
+     *         "createBy": 2,
+     *         "createTime": "2020-05-22T12:00:04.000+0000"
+     *     },
      *     "count": 0
      * }
      */
     @CheckToken
     @PostMapping("/upload")
-    public ResultDTO upload(FileInfoDO mapInfoDO, @RequestParam("pictureFile") MultipartFile pictureFile){
-        if (pictureFile.isEmpty()) {
+    public ResultDTO upload(FileInfoDO fileInfoDO, @RequestParam("uploadFile") MultipartFile uploadFile){
+        if (uploadFile.isEmpty()) {
             // 判断文件是否为空
             log.error("上传的文件为空");
             return ResultDTO.error(403, "上传的文件为空");
         }else{
+            // 参数校验
+            if (fileInfoDO.getCurrentUID() == 0){
+                return ResultDTO.error(403, "用户未登陆");
+            }
             try {
                 // 获取文件内容字节数组
-                InputStream input = pictureFile.getInputStream();
+                InputStream input = uploadFile.getInputStream();
                 byte[] byt = new byte[input.available()];
                 input.read(byt);
                 // 关闭用完的流
                 input.close();
 
                 // 获取原始文件名
-                String originalFilename = pictureFile.getOriginalFilename();
+                String originalFilename = uploadFile.getOriginalFilename();
                 String filename = System.currentTimeMillis() + originalFilename.substring(originalFilename.lastIndexOf("."));
                 // 存储路径
                 String privateUrl = mapPathConfig.getStaticDir() + "/" + filename;
@@ -98,14 +100,15 @@ public class FileController {
                 FileUtil.saveFile(privateUrl, byt);
 
                 // 存入数据库
-                mapInfoDO.setName(originalFilename);
-                mapInfoDO.setPrivateUrl(privateUrl);
-                mapInfoDO.setPublicUrl(publicUrl);
-                mapInfoDO.setCreateTime(new Date());
+                fileInfoDO.setName(originalFilename);
+                fileInfoDO.setPrivateUrl(privateUrl);
+                fileInfoDO.setPublicUrl(publicUrl);
+                fileInfoDO.setCreateTime(new Date());
+                fileInfoDO.setCreateBy(fileInfoDO.getCurrentUID());
 
-                int count = fileService.create(mapInfoDO);
-                if (count != 0){
-                    return ResultDTO.success(count);
+                FileInfoDO record = fileService.createAndReturnRecord(fileInfoDO);
+                if (record != null){
+                    return ResultDTO.success(record.parseFileInfoDTO());
                 }else{
                     return ResultDTO.error(500, "存入数据库时失败，原因未知");
                 }
@@ -115,6 +118,12 @@ public class FileController {
             } catch (IOException e) {
                 log.error("系统错误，字节传输时出现异常, IOException, ",e);
                 return ResultDTO.error(500, "系统错误，字节传输时出现异常");
+            } catch (IllegalAccessException e) {
+                log.error("反射脱敏时，字段访问非法", e);
+                return ResultDTO.error(500, "反射脱敏时，字段访问非法");
+            } catch (InstantiationException e) {
+                log.error("反射脱敏时，实例化失败", e);
+                return ResultDTO.error(500, "反射脱敏时，实例化失败");
             }
         }
     }

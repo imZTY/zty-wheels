@@ -1,9 +1,13 @@
-package com.zty.common.util.request;
+package com.zty.framework.util.request;
+
 
 import org.apache.http.*;
 import org.apache.http.auth.AuthScope;
 import org.apache.http.auth.UsernamePasswordCredentials;
-import org.apache.http.client.*;
+import org.apache.http.client.AuthCache;
+import org.apache.http.client.ClientProtocolException;
+import org.apache.http.client.CredentialsProvider;
+import org.apache.http.client.HttpClient;
 import org.apache.http.client.config.RequestConfig;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
@@ -61,6 +65,7 @@ public class ApacheHttpRequest extends HttpRequestor {
 
 	private CredentialsProvider credsProvider = null;
 	private RequestConfig reqConfig = null;
+
 
 	private boolean isIPDynamic = false;
 
@@ -188,9 +193,11 @@ public class ApacheHttpRequest extends HttpRequestor {
 	            rt = EntityUtils.toString(response.getEntity());
 	        }
 		} catch (ClientProtocolException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 			throw e;
 		} catch (IOException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 			throw e;
 		} finally {
@@ -268,7 +275,8 @@ public class ApacheHttpRequest extends HttpRequestor {
 	        }else{
 //	        	Thread.sleep(4000);
 	        	InputStream inStream = entity.getContent();
-
+	        	
+	        	// TODO 过程可以用 bufferReader 来完善吗？感觉这样写有点麻烦，有机会试一下 bufferReader
 	        	List<Byte> list = new ArrayList<Byte>();
         		Integer r = inStream.read();
         		while(r != -1) {
@@ -288,9 +296,11 @@ public class ApacheHttpRequest extends HttpRequestor {
 				inStream.close();
 	        }
 		} catch (ClientProtocolException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 			throw e;
 		} catch (IOException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 			throw e;
 		} finally {

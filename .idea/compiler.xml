@@ -23,8 +23,12 @@
         <module name="framework-web" />
         <module name="account-web" />
         <module name="framework-springboot-app" />
+        <module name="framework-spider" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="zty-wheels" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
@@ -38,6 +42,7 @@
       <module name="file-web" options="-parameters" />
       <module name="framework-bo" options="-parameters" />
       <module name="framework-common" options="-parameters" />
+      <module name="framework-spider" options="-parameters" />
       <module name="framework-springboot-app" options="-parameters" />
       <module name="framework-web" options="-parameters" />
       <module name="redis" options="-parameters" />

@@ -3,6 +3,7 @@ package com.zty.web.controller;
 import com.zty.bo.api.LoginCacheApi;
 import com.zty.bo.service.UserService;
 import com.zty.common.DO.UserInfoDO;
+import com.zty.common.config.TokenConfig;
 import com.zty.common.dto.UserInfoDTO;
 import com.zty.framework.annotation.CheckToken;
 import com.zty.framework.dto.ResultDTO;
@@ -15,6 +16,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletResponse;
 import java.security.NoSuchAlgorithmException;
 
 /**
@@ -26,6 +29,9 @@ import java.security.NoSuchAlgorithmException;
 public class AccountController {
 
     Logger log = LoggerFactory.getLogger(AccountController.class);
+
+    @Autowired
+    private TokenConfig tokenConfig;
 
     @Autowired
     private UserService userService;
@@ -57,7 +63,30 @@ public class AccountController {
      * }
      * @apiUse ResultDTO
      * @apiSuccessExample Success-Response:
-     * {}
+     * {
+     *     "resultCode": 200,
+     *     "resultMsg": "成功",
+     *     "data": {
+     *         "id": 2,
+     *         "name": "曾天臆",
+     *         "phone": "18320444515",
+     *         "headPic": null,
+     *         "sex": 0,
+     *         "email": null,
+     *         "province": null,
+     *         "city": null,
+     *         "country": null,
+     *         "accountKind": 1,
+     *         "openid": null,
+     *         "roleId": null,
+     *         "age": null,
+     *         "job": null,
+     *         "organization": null,
+     *         "createTime": "2020-05-02T04:54:33.000+0000",
+     *         "updateTime": "2020-05-02T04:54:33.000+0000"
+     *     },
+     *     "count": 0
+     * }
      * @apiErrorExample Error-Respinse-有空:
      * {
      *     "resultCode": 403,
@@ -81,7 +110,7 @@ public class AccountController {
      * }
      */
     @PostMapping("/login")
-    public ResultDTO<UserInfoDTO> login(UserInfoDO userInfoDO){
+    public ResultDTO<UserInfoDTO> login(UserInfoDO userInfoDO, HttpServletResponse response){
         // 参数校验
         if (StringUtils.isBlank(userInfoDO.getPhone())){
             return ResultDTO.error(403, "登录手机号不能为空");
@@ -95,7 +124,13 @@ public class AccountController {
             if (rt == null){
                 return ResultDTO.error(444, "手机号或密码错误");
             }else {
-                loginCacheApi.setTokenAndUserId(UUidUtil.uuid(), rt.getId());
+                String token = UUidUtil.uuid();
+                loginCacheApi.setTokenAndUserId(token, rt.getId());
+                Cookie cookie = new Cookie("token", token);
+                cookie.setPath(tokenConfig.getPath());
+                cookie.setMaxAge(tokenConfig.getExpires()); //单位秒，60*60*8=28800
+                cookie.setHttpOnly(true);
+                response.addCookie(cookie);
                 return ResultDTO.success(rt);
             }
         } catch (NoSuchAlgorithmException e) {
@@ -110,19 +145,16 @@ public class AccountController {
     }
 
     /**
-     * @api {post} /account/register 注册账号
+     * @api {post} /account/register 注册平台账号
      * @apiGroup Account
      * @apiParam {String} name 姓名/昵称【必填】
      * @apiParam {String} phone 手机号【必填】
      * @apiParam {String} password 密码【必填】
-     * @apiParam {float} iofAge 定向年龄
-     * @apiParam {String} organization 所属组织/机构
      * @apiSuccessExample Success-Request:
      * {
      *     name:zty
      * phone:18XXXXXXXX5
      * password:abc123
-     * organization:广州中医药大学定向越野协会
      * }
      * @apiUse ResultDTO
      * @apiSuccessExample Success-Response:
@@ -165,6 +197,7 @@ public class AccountController {
         }
         // 执行业务
         try {
+            userInfoDO.setAccountKind((byte) 1);
             int count = userService.register(userInfoDO);
             if (count == -1){
                 return ResultDTO.error(444, "注册失败，手机号已存在");
@@ -178,16 +211,12 @@ public class AccountController {
         }
     }
 
-    @CheckToken
     /**
      * @api {post} /account/update 修改账号信息
      * @apiGroup Account
-     * @apiParam {int} id 用户id【必填】
      * @apiParam {String} name 姓名/昵称【可选】
      * @apiParam {String} phone 手机号【可选】
      * @apiParam {String} password 密码【可选】
-     * @apiParam {float} iofAge 定向年龄【可选】
-     * @apiParam {String} organization 所属组织/机构【可选】
      * @apiSuccessExample Success-Request:
      * {
      *     id:1
@@ -223,6 +252,7 @@ public class AccountController {
      *     "count": 0
      * }
      */
+    @CheckToken
     @PostMapping("/update")
     public ResultDTO update(UserInfoDO userInfoDO){
         // 参数校验
@@ -235,6 +265,7 @@ public class AccountController {
         }
         // 执行业务
         try {
+            userInfoDO.setAccountKind((byte) 1);
             int count = userService.update(userInfoDO);
             if (count == 0){
                 return ResultDTO.error(500, "修改失败，未知原因");

@@ -12,10 +12,14 @@ server:
     context-path: /wheels
   port: 8091
 
-filePath:
-  cache: ./files/cache
-  static: ./files/static
-  publicUrl: /zhihao/map/download?filename=
+zty-framework:
+  token:
+    path: /wheels
+    expires: 28800  #单位:秒
+  filePath:
+    cache: ./files/cache
+    static: ./files/static
+    publicUrl: /wheels/file/download?filename=
 
 #开启sql语句打印
 logging:

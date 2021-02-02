@@ -1,6 +1,8 @@
 package com.zty.common.DO;
 
+import com.zty.common.dto.FileInfoDTO;
 import com.zty.framework.dto.DataDTO;
+import com.zty.framework.util.ReflectUtil;
 
 import java.util.Date;
 
@@ -22,6 +24,16 @@ public class FileInfoDO extends DataDTO {
     private Integer createBy;
 
     private Date createTime;
+
+    public FileInfoDTO parseFileInfoDTO() throws IllegalAccessException, InstantiationException {
+        try {
+            return (FileInfoDTO) ReflectUtil.propertyMapper(this, FileInfoDO.class, FileInfoDTO.class);
+        } catch (InstantiationException e) {
+            throw e;
+        } catch (IllegalAccessException e) {
+            throw e;
+        }
+    }
 
     public Integer getId() {
         return id;
