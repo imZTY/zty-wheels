@@ -33,11 +33,53 @@ public class DanceEditor {
         BufferedWriter bw = null;
         try {
             osw = new OutputStreamWriter(new FileOutputStream(file), "UTF-8");
-            // 手动加上BOM标识
-//            osw.write(new String(new byte[] { (byte) 0xEF, (byte) 0xBB, (byte) 0xBF }));
             bw = new BufferedWriter(osw);
             bw.append(dancer.headDance());
             bw.append(dancer.rowDance());
+        }catch(Exception e) {
+            e.printStackTrace();
+        }finally {
+            try {
+                bw.close();
+                osw.close();
+            } catch (IOException e) {
+//                e.printStackTrace();
+                throw e;
+            }
+        }
+    }
+
+    /**
+     * 若文件不存在，则创建
+     * 若文件已存在，则在末尾加内容
+     * @throws IOException
+     */
+    public void bufferDance() throws IOException{
+        File file = new File( this.filePath );
+        boolean isFirstDance = false;
+        if(!file.exists()) {
+            try {
+                isFirstDance = true;
+                file.createNewFile();
+            } catch (IOException e) {
+                throw e;
+            }
+        }
+        OutputStreamWriter osw = null;
+        BufferedWriter bw = null;
+        try {
+            if (isFirstDance) {
+                // 初舞，创建文件并写入标题
+                osw = new OutputStreamWriter(new FileOutputStream(file), "UTF-8");
+                bw = new BufferedWriter(osw);
+                bw.append(dancer.headDance());
+                bw.append(dancer.rowDance());
+            }else {
+                // 续舞，在末尾添加内容
+                osw = new OutputStreamWriter(new FileOutputStream(file, true), "UTF-8");
+                bw = new BufferedWriter(osw);
+                bw.append(dancer.rowDance());
+            }
         }catch(Exception e) {
             e.printStackTrace();
         }finally {

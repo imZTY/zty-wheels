@@ -1,17 +1,13 @@
 package com.zty.common.DO;
 
-import com.zty.common.dto.FileInfoDTO;
-import com.zty.framework.dto.DataDTO;
-import com.zty.framework.util.ReflectUtil;
-
 import java.util.Date;
 
-public class FileInfoDO extends DataDTO {
+public class FileInfoDO {
     private Integer id;
 
     private String name;
 
-    private Short fileKind;
+    private Byte fileKind;
 
     private String publicUrl;
 
@@ -25,15 +21,17 @@ public class FileInfoDO extends DataDTO {
 
     private Date createTime;
 
-    public FileInfoDTO parseFileInfoDTO() throws IllegalAccessException, InstantiationException {
-        try {
-            return (FileInfoDTO) ReflectUtil.propertyMapper(this, FileInfoDO.class, FileInfoDTO.class);
-        } catch (InstantiationException e) {
-            throw e;
-        } catch (IllegalAccessException e) {
-            throw e;
-        }
-    }
+    private Date updateTime;
+
+    private Integer fldN1;
+
+    private Integer fldN2;
+
+    private Long fldL1;
+
+    private String fldS1;
+
+    private String fldS2;
 
     public Integer getId() {
         return id;
@@ -51,11 +49,11 @@ public class FileInfoDO extends DataDTO {
         this.name = name;
     }
 
-    public Short getFileKind() {
+    public Byte getFileKind() {
         return fileKind;
     }
 
-    public void setFileKind(Short fileKind) {
+    public void setFileKind(Byte fileKind) {
         this.fileKind = fileKind;
     }
 
@@ -105,5 +103,53 @@ public class FileInfoDO extends DataDTO {
 
     public void setCreateTime(Date createTime) {
         this.createTime = createTime;
+    }
+
+    public Date getUpdateTime() {
+        return updateTime;
+    }
+
+    public void setUpdateTime(Date updateTime) {
+        this.updateTime = updateTime;
+    }
+
+    public Integer getFldN1() {
+        return fldN1;
+    }
+
+    public void setFldN1(Integer fldN1) {
+        this.fldN1 = fldN1;
+    }
+
+    public Integer getFldN2() {
+        return fldN2;
+    }
+
+    public void setFldN2(Integer fldN2) {
+        this.fldN2 = fldN2;
+    }
+
+    public Long getFldL1() {
+        return fldL1;
+    }
+
+    public void setFldL1(Long fldL1) {
+        this.fldL1 = fldL1;
+    }
+
+    public String getFldS1() {
+        return fldS1;
+    }
+
+    public void setFldS1(String fldS1) {
+        this.fldS1 = fldS1;
+    }
+
+    public String getFldS2() {
+        return fldS2;
+    }
+
+    public void setFldS2(String fldS2) {
+        this.fldS2 = fldS2;
     }
 }

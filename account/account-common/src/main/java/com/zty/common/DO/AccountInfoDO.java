@@ -2,12 +2,20 @@ package com.zty.common.DO;
 
 import java.util.Date;
 
-public class RoleInfoDO {
+public class AccountInfoDO {
     private Integer id;
+
+    private String account;
+
+    private Byte accountType;
 
     private String name;
 
-    private String rights;
+    private String phone;
+
+    private String openid;
+
+    private String password;
 
     private Byte disabled;
 
@@ -35,6 +43,22 @@ public class RoleInfoDO {
         this.id = id;
     }
 
+    public String getAccount() {
+        return account;
+    }
+
+    public void setAccount(String account) {
+        this.account = account;
+    }
+
+    public Byte getAccountType() {
+        return accountType;
+    }
+
+    public void setAccountType(Byte accountType) {
+        this.accountType = accountType;
+    }
+
     public String getName() {
         return name;
     }
@@ -43,12 +67,28 @@ public class RoleInfoDO {
         this.name = name;
     }
 
-    public String getRights() {
-        return rights;
+    public String getPhone() {
+        return phone;
     }
 
-    public void setRights(String rights) {
-        this.rights = rights;
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getOpenid() {
+        return openid;
+    }
+
+    public void setOpenid(String openid) {
+        this.openid = openid;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public Byte getDisabled() {

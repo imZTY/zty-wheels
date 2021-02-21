@@ -1,23 +1,21 @@
 package com.zty.common.DO;
 
-import com.zty.framework.dto.DataDTO;
-
 import java.util.Date;
 
-public class UserInfoDO extends DataDTO {
-    private Integer id;
-
-    private String name;
-
-    private String phone;
-
-    private String password;
+public class UserInfoDO {
+    private Integer accountId;
 
     private String headPic;
 
     private Byte sex;
 
+    private Float age;
+
     private String email;
+
+    private String cardNo;
+
+    private Byte cardType;
 
     private String province;
 
@@ -25,52 +23,32 @@ public class UserInfoDO extends DataDTO {
 
     private String country;
 
-    private Byte accountKind;
-
-    private String openid;
-
-    private Integer roleId;
-
-    private Float age;
-
     private String job;
 
     private String organization;
+
+    private String description;
 
     private Date createTime;
 
     private Date updateTime;
 
-    public Integer getId() {
-        return id;
+    private Integer fldN1;
+
+    private Integer fldN2;
+
+    private Long fldL1;
+
+    private String fldS1;
+
+    private String fldS2;
+
+    public Integer getAccountId() {
+        return accountId;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getPhone() {
-        return phone;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
+    public void setAccountId(Integer accountId) {
+        this.accountId = accountId;
     }
 
     public String getHeadPic() {
@@ -89,12 +67,36 @@ public class UserInfoDO extends DataDTO {
         this.sex = sex;
     }
 
+    public Float getAge() {
+        return age;
+    }
+
+    public void setAge(Float age) {
+        this.age = age;
+    }
+
     public String getEmail() {
         return email;
     }
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getCardNo() {
+        return cardNo;
+    }
+
+    public void setCardNo(String cardNo) {
+        this.cardNo = cardNo;
+    }
+
+    public Byte getCardType() {
+        return cardType;
+    }
+
+    public void setCardType(Byte cardType) {
+        this.cardType = cardType;
     }
 
     public String getProvince() {
@@ -121,38 +123,6 @@ public class UserInfoDO extends DataDTO {
         this.country = country;
     }
 
-    public Byte getAccountKind() {
-        return accountKind;
-    }
-
-    public void setAccountKind(Byte accountKind) {
-        this.accountKind = accountKind;
-    }
-
-    public String getOpenid() {
-        return openid;
-    }
-
-    public void setOpenid(String openid) {
-        this.openid = openid;
-    }
-
-    public Integer getRoleId() {
-        return roleId;
-    }
-
-    public void setRoleId(Integer roleId) {
-        this.roleId = roleId;
-    }
-
-    public Float getAge() {
-        return age;
-    }
-
-    public void setAge(Float age) {
-        this.age = age;
-    }
-
     public String getJob() {
         return job;
     }
@@ -169,6 +139,14 @@ public class UserInfoDO extends DataDTO {
         this.organization = organization;
     }
 
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
     public Date getCreateTime() {
         return createTime;
     }
@@ -183,5 +161,45 @@ public class UserInfoDO extends DataDTO {
 
     public void setUpdateTime(Date updateTime) {
         this.updateTime = updateTime;
+    }
+
+    public Integer getFldN1() {
+        return fldN1;
+    }
+
+    public void setFldN1(Integer fldN1) {
+        this.fldN1 = fldN1;
+    }
+
+    public Integer getFldN2() {
+        return fldN2;
+    }
+
+    public void setFldN2(Integer fldN2) {
+        this.fldN2 = fldN2;
+    }
+
+    public Long getFldL1() {
+        return fldL1;
+    }
+
+    public void setFldL1(Long fldL1) {
+        this.fldL1 = fldL1;
+    }
+
+    public String getFldS1() {
+        return fldS1;
+    }
+
+    public void setFldS1(String fldS1) {
+        this.fldS1 = fldS1;
+    }
+
+    public String getFldS2() {
+        return fldS2;
+    }
+
+    public void setFldS2(String fldS2) {
+        this.fldS2 = fldS2;
     }
 }

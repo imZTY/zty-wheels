@@ -8,8 +8,8 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Component;
 
-@Component
 @Mapper
+@Component
 public interface FileInfoDOMapper {
     int countByExample(FileInfoDOExample example);
 
@@ -32,6 +32,4 @@ public interface FileInfoDOMapper {
     int updateByPrimaryKeySelective(FileInfoDO record);
 
     int updateByPrimaryKey(FileInfoDO record);
-
-    int getMaxID();
 }

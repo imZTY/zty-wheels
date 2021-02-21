@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.springframework.util.CollectionUtils;
 
+import java.io.File;
 import java.util.Date;
 import java.util.List;
 import java.util.concurrent.CountDownLatch;
@@ -35,6 +36,30 @@ public abstract class SpiderThread extends Thread {
 
     @Override
     public abstract void run();
+
+    protected void mkdirIfNotExist(String path){
+        File dir = new File(path);
+        if (!dir.exists()){
+            dir.mkdirs();
+        }
+    }
+
+    protected String getCsvRow(String... fields){
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < fields.length; i++) {
+            sb.append("\"" + fields[i] + "\",");
+        }
+        return sb.deleteCharAt(sb.length() - 1).toString() + "\r";
+    }
+
+    protected String getHrefByDriverAndCss(WebDriver driver, String cssSelector) {
+        try {
+            return driver.findElement(By.cssSelector(cssSelector)).getAttribute("href").replaceAll("\n","");
+        }catch (NoSuchElementException e){
+            logWithThreadName("driver找不到链接标签:{}"+ cssSelector);
+            return "";
+        }
+    }
 
     protected String getByDriverAndCss(WebDriver driver, String cssSelector) {
         try {

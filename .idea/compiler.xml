@@ -15,14 +15,14 @@
         <module name="wx-web" />
         <module name="wx-common" />
         <module name="wx-bo" />
-        <module name="redis-bo" />
-        <module name="file-web" />
+        <module name="framework-web" />
+        <module name="framework-springboot-app" />
         <module name="account-bo" />
         <module name="file-common" />
         <module name="framework-common" />
-        <module name="framework-web" />
+        <module name="redis-bo" />
         <module name="account-web" />
-        <module name="framework-springboot-app" />
+        <module name="file-web" />
         <module name="framework-spider" />
       </profile>
     </annotationProcessing>

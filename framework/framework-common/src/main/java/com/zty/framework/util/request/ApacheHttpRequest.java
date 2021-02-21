@@ -210,7 +210,7 @@ public class ApacheHttpRequest extends HttpRequestor {
 	@SuppressWarnings({ "resource", "deprecation" })
 	@Override
 	public byte[] sendGet(String url, String param) throws Exception {
-
+		System.out.println("即将GET请求："+url);
 		HttpClient httpClient = null;
 		if (!isIPDynamic) {
 			httpClient = new DefaultHttpClient();
@@ -265,13 +265,14 @@ public class ApacheHttpRequest extends HttpRequestor {
 			// 检验返回码
 	        int statusCode = response.getStatusLine().getStatusCode();
 	        HttpEntity entity = response.getEntity();
-	        if(statusCode != HttpStatus.SC_OK){
+	        if(statusCode >= HttpStatus.SC_BAD_REQUEST){
 	            System.out.println("请求出错: "+statusCode);
 	            Header[] headers = response.getAllHeaders();
 				for (Header header : headers){
 					System.out.println(header.getName() + " : " + header.getValue());
 				}
-	            rt = (statusCode+"").getBytes();  // 请求出错则返回错误代码
+				throw new RuntimeException("访问http资源失败，响应码"+statusCode);
+//	            rt = (statusCode+"").getBytes();  // 请求出错则返回错误代码
 	        }else{
 //	        	Thread.sleep(4000);
 	        	InputStream inStream = entity.getContent();

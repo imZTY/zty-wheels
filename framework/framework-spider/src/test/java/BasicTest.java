@@ -1,7 +1,11 @@
 import com.zty.framework.util.dataSave.CsvDancer;
 import com.zty.framework.util.dataSave.DanceEditor;
 import com.zty.framework.util.dataSave.DataDancer;
+import com.zty.framework.util.picture.FileDancer;
+import com.zty.framework.util.picture.PictureDancer;
 import com.zty.framework.util.read.ReadTextUtil;
+import com.zty.framework.util.request.ApacheHttpRequest;
+import com.zty.framework.util.request.HttpRequestor;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -73,6 +77,18 @@ public class BasicTest {
             } catch (IOException e) {
                 e.printStackTrace();
             }
+        }
+    }
+
+    @Test
+    public void http404Test(){
+        HttpRequestor httpRequestor = new ApacheHttpRequest();
+        FileDancer fileDancer = new PictureDancer();
+        try {
+            fileDancer.saveFile("test.html",
+                    httpRequestor.sendGet("http://www.ccgp-gansu.gov.cn/web/article/402882817665002701768e3b13445fcc.html", ""));
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 }

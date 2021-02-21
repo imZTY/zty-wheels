@@ -50,7 +50,8 @@ public class FileServiceImpl implements FileService {
         if (count == 0){
             return null;
         }else{
-            maxId = fileInfoDOMapper.getMaxID();
+            // FIXME: 2021/2/21 
+//            maxId = fileInfoDOMapper.getMaxID();
         }
         FileInfoDO rt = fileInfoDOMapper.selectByPrimaryKey(maxId);
         return rt;

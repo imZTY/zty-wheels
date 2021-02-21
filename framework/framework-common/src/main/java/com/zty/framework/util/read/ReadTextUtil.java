@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,7 +26,8 @@ public class ReadTextUtil {
 		List<String> rt = new ArrayList<String>();
 		
 		// 创建 reader
-		BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(filePath)));
+		BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(filePath),
+				StandardCharsets.UTF_8));
 		
 		// 逐行读取内容
 		String temp = reader.readLine();

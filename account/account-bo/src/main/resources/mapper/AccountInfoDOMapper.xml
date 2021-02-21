@@ -1,20 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.zty.bo.dao.UserInfoDOMapper" >
-  <resultMap id="BaseResultMap" type="com.zty.common.DO.UserInfoDO" >
-    <id column="account_id" property="accountId" jdbcType="INTEGER" />
-    <result column="head_pic" property="headPic" jdbcType="VARCHAR" />
-    <result column="sex" property="sex" jdbcType="TINYINT" />
-    <result column="age" property="age" jdbcType="REAL" />
-    <result column="email" property="email" jdbcType="VARCHAR" />
-    <result column="card_no" property="cardNo" jdbcType="VARCHAR" />
-    <result column="card_type" property="cardType" jdbcType="TINYINT" />
-    <result column="province" property="province" jdbcType="VARCHAR" />
-    <result column="city" property="city" jdbcType="VARCHAR" />
-    <result column="country" property="country" jdbcType="VARCHAR" />
-    <result column="job" property="job" jdbcType="VARCHAR" />
-    <result column="organization" property="organization" jdbcType="VARCHAR" />
-    <result column="description" property="description" jdbcType="VARCHAR" />
+<mapper namespace="com.zty.bo.dao.AccountInfoDOMapper" >
+  <resultMap id="BaseResultMap" type="com.zty.common.DO.AccountInfoDO" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="account" property="account" jdbcType="VARCHAR" />
+    <result column="account_type" property="accountType" jdbcType="TINYINT" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="phone" property="phone" jdbcType="VARCHAR" />
+    <result column="openid" property="openid" jdbcType="VARCHAR" />
+    <result column="password" property="password" jdbcType="VARCHAR" />
+    <result column="disabled" property="disabled" jdbcType="TINYINT" />
+    <result column="create_by" property="createBy" jdbcType="INTEGER" />
     <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
     <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
     <result column="fld_n1" property="fldN1" jdbcType="INTEGER" />
@@ -82,18 +78,17 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    account_id, head_pic, sex, age, email, card_no, card_type, province, city, country, 
-    job, organization, description, create_time, update_time, fld_n1, fld_n2, fld_l1, 
-    fld_s1, fld_s2
+    id, account, account_type, name, phone, openid, password, disabled, create_by, create_time, 
+    update_time, fld_n1, fld_n2, fld_l1, fld_s1, fld_s2
   </sql>
-  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.zty.common.DO.example.UserInfoDOExample" >
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.zty.common.DO.example.AccountInfoDOExample" >
     select
     <if test="distinct" >
       distinct
     </if>
     'true' as QUERYID,
     <include refid="Base_Column_List" />
-    from user_info
+    from account_info
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
@@ -104,76 +99,62 @@
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />
-    from user_info
-    where account_id = #{accountId,jdbcType=INTEGER}
+    from account_info
+    where id = #{id,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
-    delete from user_info
-    where account_id = #{accountId,jdbcType=INTEGER}
+    delete from account_info
+    where id = #{id,jdbcType=INTEGER}
   </delete>
-  <delete id="deleteByExample" parameterType="com.zty.common.DO.example.UserInfoDOExample" >
-    delete from user_info
+  <delete id="deleteByExample" parameterType="com.zty.common.DO.example.AccountInfoDOExample" >
+    delete from account_info
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.zty.common.DO.UserInfoDO" >
-    insert into user_info (account_id, head_pic, sex, 
-      age, email, card_no, card_type, 
-      province, city, country, 
-      job, organization, description, 
+  <insert id="insert" parameterType="com.zty.common.DO.AccountInfoDO" >
+    insert into account_info (id, account, account_type, 
+      name, phone, openid, 
+      password, disabled, create_by, 
       create_time, update_time, fld_n1, 
       fld_n2, fld_l1, fld_s1, 
       fld_s2)
-    values (#{accountId,jdbcType=INTEGER}, #{headPic,jdbcType=VARCHAR}, #{sex,jdbcType=TINYINT}, 
-      #{age,jdbcType=REAL}, #{email,jdbcType=VARCHAR}, #{cardNo,jdbcType=VARCHAR}, #{cardType,jdbcType=TINYINT}, 
-      #{province,jdbcType=VARCHAR}, #{city,jdbcType=VARCHAR}, #{country,jdbcType=VARCHAR}, 
-      #{job,jdbcType=VARCHAR}, #{organization,jdbcType=VARCHAR}, #{description,jdbcType=VARCHAR}, 
+    values (#{id,jdbcType=INTEGER}, #{account,jdbcType=VARCHAR}, #{accountType,jdbcType=TINYINT}, 
+      #{name,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, #{openid,jdbcType=VARCHAR}, 
+      #{password,jdbcType=VARCHAR}, #{disabled,jdbcType=TINYINT}, #{createBy,jdbcType=INTEGER}, 
       #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, #{fldN1,jdbcType=INTEGER}, 
       #{fldN2,jdbcType=INTEGER}, #{fldL1,jdbcType=BIGINT}, #{fldS1,jdbcType=VARCHAR}, 
       #{fldS2,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.zty.common.DO.UserInfoDO" >
-    insert into user_info
+  <insert id="insertSelective" parameterType="com.zty.common.DO.AccountInfoDO" >
+    insert into account_info
     <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="accountId != null" >
-        account_id,
+      <if test="id != null" >
+        id,
       </if>
-      <if test="headPic != null" >
-        head_pic,
+      <if test="account != null" >
+        account,
       </if>
-      <if test="sex != null" >
-        sex,
+      <if test="accountType != null" >
+        account_type,
       </if>
-      <if test="age != null" >
-        age,
+      <if test="name != null" >
+        name,
       </if>
-      <if test="email != null" >
-        email,
+      <if test="phone != null" >
+        phone,
       </if>
-      <if test="cardNo != null" >
-        card_no,
+      <if test="openid != null" >
+        openid,
       </if>
-      <if test="cardType != null" >
-        card_type,
+      <if test="password != null" >
+        password,
       </if>
-      <if test="province != null" >
-        province,
+      <if test="disabled != null" >
+        disabled,
       </if>
-      <if test="city != null" >
-        city,
-      </if>
-      <if test="country != null" >
-        country,
-      </if>
-      <if test="job != null" >
-        job,
-      </if>
-      <if test="organization != null" >
-        organization,
-      </if>
-      <if test="description != null" >
-        description,
+      <if test="createBy != null" >
+        create_by,
       </if>
       <if test="createTime != null" >
         create_time,
@@ -198,44 +179,32 @@
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="accountId != null" >
-        #{accountId,jdbcType=INTEGER},
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
       </if>
-      <if test="headPic != null" >
-        #{headPic,jdbcType=VARCHAR},
+      <if test="account != null" >
+        #{account,jdbcType=VARCHAR},
       </if>
-      <if test="sex != null" >
-        #{sex,jdbcType=TINYINT},
+      <if test="accountType != null" >
+        #{accountType,jdbcType=TINYINT},
       </if>
-      <if test="age != null" >
-        #{age,jdbcType=REAL},
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
       </if>
-      <if test="email != null" >
-        #{email,jdbcType=VARCHAR},
+      <if test="phone != null" >
+        #{phone,jdbcType=VARCHAR},
       </if>
-      <if test="cardNo != null" >
-        #{cardNo,jdbcType=VARCHAR},
+      <if test="openid != null" >
+        #{openid,jdbcType=VARCHAR},
       </if>
-      <if test="cardType != null" >
-        #{cardType,jdbcType=TINYINT},
+      <if test="password != null" >
+        #{password,jdbcType=VARCHAR},
       </if>
-      <if test="province != null" >
-        #{province,jdbcType=VARCHAR},
+      <if test="disabled != null" >
+        #{disabled,jdbcType=TINYINT},
       </if>
-      <if test="city != null" >
-        #{city,jdbcType=VARCHAR},
-      </if>
-      <if test="country != null" >
-        #{country,jdbcType=VARCHAR},
-      </if>
-      <if test="job != null" >
-        #{job,jdbcType=VARCHAR},
-      </if>
-      <if test="organization != null" >
-        #{organization,jdbcType=VARCHAR},
-      </if>
-      <if test="description != null" >
-        #{description,jdbcType=VARCHAR},
+      <if test="createBy != null" >
+        #{createBy,jdbcType=INTEGER},
       </if>
       <if test="createTime != null" >
         #{createTime,jdbcType=TIMESTAMP},
@@ -260,53 +229,41 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.zty.common.DO.example.UserInfoDOExample" resultType="java.lang.Integer" >
-    select count(*) from user_info
+  <select id="countByExample" parameterType="com.zty.common.DO.example.AccountInfoDOExample" resultType="java.lang.Integer" >
+    select count(*) from account_info
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
   </select>
   <update id="updateByExampleSelective" parameterType="map" >
-    update user_info
+    update account_info
     <set >
-      <if test="record.accountId != null" >
-        account_id = #{record.accountId,jdbcType=INTEGER},
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=INTEGER},
       </if>
-      <if test="record.headPic != null" >
-        head_pic = #{record.headPic,jdbcType=VARCHAR},
+      <if test="record.account != null" >
+        account = #{record.account,jdbcType=VARCHAR},
       </if>
-      <if test="record.sex != null" >
-        sex = #{record.sex,jdbcType=TINYINT},
+      <if test="record.accountType != null" >
+        account_type = #{record.accountType,jdbcType=TINYINT},
       </if>
-      <if test="record.age != null" >
-        age = #{record.age,jdbcType=REAL},
+      <if test="record.name != null" >
+        name = #{record.name,jdbcType=VARCHAR},
       </if>
-      <if test="record.email != null" >
-        email = #{record.email,jdbcType=VARCHAR},
+      <if test="record.phone != null" >
+        phone = #{record.phone,jdbcType=VARCHAR},
       </if>
-      <if test="record.cardNo != null" >
-        card_no = #{record.cardNo,jdbcType=VARCHAR},
+      <if test="record.openid != null" >
+        openid = #{record.openid,jdbcType=VARCHAR},
       </if>
-      <if test="record.cardType != null" >
-        card_type = #{record.cardType,jdbcType=TINYINT},
+      <if test="record.password != null" >
+        password = #{record.password,jdbcType=VARCHAR},
       </if>
-      <if test="record.province != null" >
-        province = #{record.province,jdbcType=VARCHAR},
+      <if test="record.disabled != null" >
+        disabled = #{record.disabled,jdbcType=TINYINT},
       </if>
-      <if test="record.city != null" >
-        city = #{record.city,jdbcType=VARCHAR},
-      </if>
-      <if test="record.country != null" >
-        country = #{record.country,jdbcType=VARCHAR},
-      </if>
-      <if test="record.job != null" >
-        job = #{record.job,jdbcType=VARCHAR},
-      </if>
-      <if test="record.organization != null" >
-        organization = #{record.organization,jdbcType=VARCHAR},
-      </if>
-      <if test="record.description != null" >
-        description = #{record.description,jdbcType=VARCHAR},
+      <if test="record.createBy != null" >
+        create_by = #{record.createBy,jdbcType=INTEGER},
       </if>
       <if test="record.createTime != null" >
         create_time = #{record.createTime,jdbcType=TIMESTAMP},
@@ -335,20 +292,16 @@
     </if>
   </update>
   <update id="updateByExample" parameterType="map" >
-    update user_info
-    set account_id = #{record.accountId,jdbcType=INTEGER},
-      head_pic = #{record.headPic,jdbcType=VARCHAR},
-      sex = #{record.sex,jdbcType=TINYINT},
-      age = #{record.age,jdbcType=REAL},
-      email = #{record.email,jdbcType=VARCHAR},
-      card_no = #{record.cardNo,jdbcType=VARCHAR},
-      card_type = #{record.cardType,jdbcType=TINYINT},
-      province = #{record.province,jdbcType=VARCHAR},
-      city = #{record.city,jdbcType=VARCHAR},
-      country = #{record.country,jdbcType=VARCHAR},
-      job = #{record.job,jdbcType=VARCHAR},
-      organization = #{record.organization,jdbcType=VARCHAR},
-      description = #{record.description,jdbcType=VARCHAR},
+    update account_info
+    set id = #{record.id,jdbcType=INTEGER},
+      account = #{record.account,jdbcType=VARCHAR},
+      account_type = #{record.accountType,jdbcType=TINYINT},
+      name = #{record.name,jdbcType=VARCHAR},
+      phone = #{record.phone,jdbcType=VARCHAR},
+      openid = #{record.openid,jdbcType=VARCHAR},
+      password = #{record.password,jdbcType=VARCHAR},
+      disabled = #{record.disabled,jdbcType=TINYINT},
+      create_by = #{record.createBy,jdbcType=INTEGER},
       create_time = #{record.createTime,jdbcType=TIMESTAMP},
       update_time = #{record.updateTime,jdbcType=TIMESTAMP},
       fld_n1 = #{record.fldN1,jdbcType=INTEGER},
@@ -360,44 +313,32 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.zty.common.DO.UserInfoDO" >
-    update user_info
+  <update id="updateByPrimaryKeySelective" parameterType="com.zty.common.DO.AccountInfoDO" >
+    update account_info
     <set >
-      <if test="headPic != null" >
-        head_pic = #{headPic,jdbcType=VARCHAR},
+      <if test="account != null" >
+        account = #{account,jdbcType=VARCHAR},
       </if>
-      <if test="sex != null" >
-        sex = #{sex,jdbcType=TINYINT},
+      <if test="accountType != null" >
+        account_type = #{accountType,jdbcType=TINYINT},
       </if>
-      <if test="age != null" >
-        age = #{age,jdbcType=REAL},
+      <if test="name != null" >
+        name = #{name,jdbcType=VARCHAR},
       </if>
-      <if test="email != null" >
-        email = #{email,jdbcType=VARCHAR},
+      <if test="phone != null" >
+        phone = #{phone,jdbcType=VARCHAR},
       </if>
-      <if test="cardNo != null" >
-        card_no = #{cardNo,jdbcType=VARCHAR},
+      <if test="openid != null" >
+        openid = #{openid,jdbcType=VARCHAR},
       </if>
-      <if test="cardType != null" >
-        card_type = #{cardType,jdbcType=TINYINT},
+      <if test="password != null" >
+        password = #{password,jdbcType=VARCHAR},
       </if>
-      <if test="province != null" >
-        province = #{province,jdbcType=VARCHAR},
+      <if test="disabled != null" >
+        disabled = #{disabled,jdbcType=TINYINT},
       </if>
-      <if test="city != null" >
-        city = #{city,jdbcType=VARCHAR},
-      </if>
-      <if test="country != null" >
-        country = #{country,jdbcType=VARCHAR},
-      </if>
-      <if test="job != null" >
-        job = #{job,jdbcType=VARCHAR},
-      </if>
-      <if test="organization != null" >
-        organization = #{organization,jdbcType=VARCHAR},
-      </if>
-      <if test="description != null" >
-        description = #{description,jdbcType=VARCHAR},
+      <if test="createBy != null" >
+        create_by = #{createBy,jdbcType=INTEGER},
       </if>
       <if test="createTime != null" >
         create_time = #{createTime,jdbcType=TIMESTAMP},
@@ -421,22 +362,18 @@
         fld_s2 = #{fldS2,jdbcType=VARCHAR},
       </if>
     </set>
-    where account_id = #{accountId,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.zty.common.DO.UserInfoDO" >
-    update user_info
-    set head_pic = #{headPic,jdbcType=VARCHAR},
-      sex = #{sex,jdbcType=TINYINT},
-      age = #{age,jdbcType=REAL},
-      email = #{email,jdbcType=VARCHAR},
-      card_no = #{cardNo,jdbcType=VARCHAR},
-      card_type = #{cardType,jdbcType=TINYINT},
-      province = #{province,jdbcType=VARCHAR},
-      city = #{city,jdbcType=VARCHAR},
-      country = #{country,jdbcType=VARCHAR},
-      job = #{job,jdbcType=VARCHAR},
-      organization = #{organization,jdbcType=VARCHAR},
-      description = #{description,jdbcType=VARCHAR},
+  <update id="updateByPrimaryKey" parameterType="com.zty.common.DO.AccountInfoDO" >
+    update account_info
+    set account = #{account,jdbcType=VARCHAR},
+      account_type = #{accountType,jdbcType=TINYINT},
+      name = #{name,jdbcType=VARCHAR},
+      phone = #{phone,jdbcType=VARCHAR},
+      openid = #{openid,jdbcType=VARCHAR},
+      password = #{password,jdbcType=VARCHAR},
+      disabled = #{disabled,jdbcType=TINYINT},
+      create_by = #{createBy,jdbcType=INTEGER},
       create_time = #{createTime,jdbcType=TIMESTAMP},
       update_time = #{updateTime,jdbcType=TIMESTAMP},
       fld_n1 = #{fldN1,jdbcType=INTEGER},
@@ -444,6 +381,6 @@
       fld_l1 = #{fldL1,jdbcType=BIGINT},
       fld_s1 = #{fldS1,jdbcType=VARCHAR},
       fld_s2 = #{fldS2,jdbcType=VARCHAR}
-    where account_id = #{accountId,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

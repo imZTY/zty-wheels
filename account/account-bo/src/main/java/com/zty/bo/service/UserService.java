@@ -1,6 +1,6 @@
 package com.zty.bo.service;
 
-import com.zty.common.DO.UserInfoDO;
+import com.zty.common.DO.AccountInfoDO;
 import com.zty.common.dto.UserInfoDTO;
 
 import java.security.NoSuchAlgorithmException;
@@ -16,21 +16,21 @@ public interface UserService {
      * @param loginInfo
      * @return
      */
-    public UserInfoDTO login(UserInfoDO loginInfo) throws NoSuchAlgorithmException, IllegalAccessException, InstantiationException;
+    public UserInfoDTO login(AccountInfoDO loginInfo) throws NoSuchAlgorithmException, IllegalAccessException, InstantiationException;
 
     /**
      * 用户注册
-     * @param userInfoDO
+     * @param AccountInfoDO
      * @return
      */
-    public int register(UserInfoDO userInfoDO) throws NoSuchAlgorithmException;
+    public int register(AccountInfoDO AccountInfoDO) throws NoSuchAlgorithmException;
 
     /**
      * 修改账号信息（包括密码）
-     * @param userInfoDO 传进来的密码要先完成MD5加密
+     * @param AccountInfoDO 传进来的密码要先完成MD5加密
      * @return
      */
-    public int update(UserInfoDO userInfoDO) throws NoSuchAlgorithmException;
+    public int update(AccountInfoDO AccountInfoDO) throws NoSuchAlgorithmException;
 
     public UserInfoDTO checkByOpenid(String openid) throws IllegalAccessException, InstantiationException;
 }

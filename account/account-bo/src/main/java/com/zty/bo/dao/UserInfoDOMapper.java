@@ -8,14 +8,14 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Component;
 
-@Component
 @Mapper
+@Component
 public interface UserInfoDOMapper {
     int countByExample(UserInfoDOExample example);
 
     int deleteByExample(UserInfoDOExample example);
 
-    int deleteByPrimaryKey(Integer id);
+    int deleteByPrimaryKey(Integer accountId);
 
     int insert(UserInfoDO record);
 
@@ -23,7 +23,7 @@ public interface UserInfoDOMapper {
 
     List<UserInfoDO> selectByExample(UserInfoDOExample example);
 
-    UserInfoDO selectByPrimaryKey(Integer id);
+    UserInfoDO selectByPrimaryKey(Integer accountId);
 
     int updateByExampleSelective(@Param("record") UserInfoDO record, @Param("example") UserInfoDOExample example);
 

@@ -1,19 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.zty.bo.dao.RoleInfoDOMapper" >
-  <resultMap id="BaseResultMap" type="com.zty.common.DO.RoleInfoDO" >
+<mapper namespace="com.zty.bo.dao.AccountRoleRelationDOMapper" >
+  <resultMap id="BaseResultMap" type="com.zty.common.DO.AccountRoleRelationDO" >
     <id column="id" property="id" jdbcType="INTEGER" />
-    <result column="name" property="name" jdbcType="VARCHAR" />
-    <result column="rights" property="rights" jdbcType="VARCHAR" />
+    <result column="account_id" property="accountId" jdbcType="INTEGER" />
+    <result column="role_id" property="roleId" jdbcType="INTEGER" />
     <result column="disabled" property="disabled" jdbcType="TINYINT" />
-    <result column="create_by" property="createBy" jdbcType="INTEGER" />
     <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
     <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
-    <result column="fld_n1" property="fldN1" jdbcType="INTEGER" />
-    <result column="fld_n2" property="fldN2" jdbcType="INTEGER" />
-    <result column="fld_l1" property="fldL1" jdbcType="BIGINT" />
-    <result column="fld_s1" property="fldS1" jdbcType="VARCHAR" />
-    <result column="fld_s2" property="fldS2" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Example_Where_Clause" >
     <where >
@@ -74,17 +68,16 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    id, name, rights, disabled, create_by, create_time, update_time, fld_n1, fld_n2, 
-    fld_l1, fld_s1, fld_s2
+    id, account_id, role_id, disabled, create_time, update_time
   </sql>
-  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.zty.common.DO.example.RoleInfoDOExample" >
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.zty.common.DO.example.AccountRoleRelationDOExample" >
     select
     <if test="distinct" >
       distinct
     </if>
     'true' as QUERYID,
     <include refid="Base_Column_List" />
-    from role_info
+    from account_role_relation
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
@@ -95,46 +88,41 @@
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />
-    from role_info
+    from account_role_relation
     where id = #{id,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
-    delete from role_info
+    delete from account_role_relation
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <delete id="deleteByExample" parameterType="com.zty.common.DO.example.RoleInfoDOExample" >
-    delete from role_info
+  <delete id="deleteByExample" parameterType="com.zty.common.DO.example.AccountRoleRelationDOExample" >
+    delete from account_role_relation
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.zty.common.DO.RoleInfoDO" >
-    insert into role_info (id, name, rights, 
-      disabled, create_by, create_time, 
-      update_time, fld_n1, fld_n2, 
-      fld_l1, fld_s1, fld_s2)
-    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{rights,jdbcType=VARCHAR}, 
-      #{disabled,jdbcType=TINYINT}, #{createBy,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, 
-      #{updateTime,jdbcType=TIMESTAMP}, #{fldN1,jdbcType=INTEGER}, #{fldN2,jdbcType=INTEGER}, 
-      #{fldL1,jdbcType=BIGINT}, #{fldS1,jdbcType=VARCHAR}, #{fldS2,jdbcType=VARCHAR})
+  <insert id="insert" parameterType="com.zty.common.DO.AccountRoleRelationDO" >
+    insert into account_role_relation (id, account_id, role_id, 
+      disabled, create_time, update_time
+      )
+    values (#{id,jdbcType=INTEGER}, #{accountId,jdbcType=INTEGER}, #{roleId,jdbcType=INTEGER}, 
+      #{disabled,jdbcType=TINYINT}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}
+      )
   </insert>
-  <insert id="insertSelective" parameterType="com.zty.common.DO.RoleInfoDO" >
-    insert into role_info
+  <insert id="insertSelective" parameterType="com.zty.common.DO.AccountRoleRelationDO" >
+    insert into account_role_relation
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
         id,
       </if>
-      <if test="name != null" >
-        name,
+      <if test="accountId != null" >
+        account_id,
       </if>
-      <if test="rights != null" >
-        rights,
+      <if test="roleId != null" >
+        role_id,
       </if>
       <if test="disabled != null" >
         disabled,
-      </if>
-      <if test="createBy != null" >
-        create_by,
       </if>
       <if test="createTime != null" >
         create_time,
@@ -142,37 +130,19 @@
       <if test="updateTime != null" >
         update_time,
       </if>
-      <if test="fldN1 != null" >
-        fld_n1,
-      </if>
-      <if test="fldN2 != null" >
-        fld_n2,
-      </if>
-      <if test="fldL1 != null" >
-        fld_l1,
-      </if>
-      <if test="fldS1 != null" >
-        fld_s1,
-      </if>
-      <if test="fldS2 != null" >
-        fld_s2,
-      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="id != null" >
         #{id,jdbcType=INTEGER},
       </if>
-      <if test="name != null" >
-        #{name,jdbcType=VARCHAR},
+      <if test="accountId != null" >
+        #{accountId,jdbcType=INTEGER},
       </if>
-      <if test="rights != null" >
-        #{rights,jdbcType=VARCHAR},
+      <if test="roleId != null" >
+        #{roleId,jdbcType=INTEGER},
       </if>
       <if test="disabled != null" >
         #{disabled,jdbcType=TINYINT},
-      </if>
-      <if test="createBy != null" >
-        #{createBy,jdbcType=INTEGER},
       </if>
       <if test="createTime != null" >
         #{createTime,jdbcType=TIMESTAMP},
@@ -180,46 +150,28 @@
       <if test="updateTime != null" >
         #{updateTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="fldN1 != null" >
-        #{fldN1,jdbcType=INTEGER},
-      </if>
-      <if test="fldN2 != null" >
-        #{fldN2,jdbcType=INTEGER},
-      </if>
-      <if test="fldL1 != null" >
-        #{fldL1,jdbcType=BIGINT},
-      </if>
-      <if test="fldS1 != null" >
-        #{fldS1,jdbcType=VARCHAR},
-      </if>
-      <if test="fldS2 != null" >
-        #{fldS2,jdbcType=VARCHAR},
-      </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.zty.common.DO.example.RoleInfoDOExample" resultType="java.lang.Integer" >
-    select count(*) from role_info
+  <select id="countByExample" parameterType="com.zty.common.DO.example.AccountRoleRelationDOExample" resultType="java.lang.Integer" >
+    select count(*) from account_role_relation
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
   </select>
   <update id="updateByExampleSelective" parameterType="map" >
-    update role_info
+    update account_role_relation
     <set >
       <if test="record.id != null" >
         id = #{record.id,jdbcType=INTEGER},
       </if>
-      <if test="record.name != null" >
-        name = #{record.name,jdbcType=VARCHAR},
+      <if test="record.accountId != null" >
+        account_id = #{record.accountId,jdbcType=INTEGER},
       </if>
-      <if test="record.rights != null" >
-        rights = #{record.rights,jdbcType=VARCHAR},
+      <if test="record.roleId != null" >
+        role_id = #{record.roleId,jdbcType=INTEGER},
       </if>
       <if test="record.disabled != null" >
         disabled = #{record.disabled,jdbcType=TINYINT},
-      </if>
-      <if test="record.createBy != null" >
-        create_by = #{record.createBy,jdbcType=INTEGER},
       </if>
       <if test="record.createTime != null" >
         create_time = #{record.createTime,jdbcType=TIMESTAMP},
@@ -227,58 +179,34 @@
       <if test="record.updateTime != null" >
         update_time = #{record.updateTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="record.fldN1 != null" >
-        fld_n1 = #{record.fldN1,jdbcType=INTEGER},
-      </if>
-      <if test="record.fldN2 != null" >
-        fld_n2 = #{record.fldN2,jdbcType=INTEGER},
-      </if>
-      <if test="record.fldL1 != null" >
-        fld_l1 = #{record.fldL1,jdbcType=BIGINT},
-      </if>
-      <if test="record.fldS1 != null" >
-        fld_s1 = #{record.fldS1,jdbcType=VARCHAR},
-      </if>
-      <if test="record.fldS2 != null" >
-        fld_s2 = #{record.fldS2,jdbcType=VARCHAR},
-      </if>
     </set>
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
   <update id="updateByExample" parameterType="map" >
-    update role_info
+    update account_role_relation
     set id = #{record.id,jdbcType=INTEGER},
-      name = #{record.name,jdbcType=VARCHAR},
-      rights = #{record.rights,jdbcType=VARCHAR},
+      account_id = #{record.accountId,jdbcType=INTEGER},
+      role_id = #{record.roleId,jdbcType=INTEGER},
       disabled = #{record.disabled,jdbcType=TINYINT},
-      create_by = #{record.createBy,jdbcType=INTEGER},
       create_time = #{record.createTime,jdbcType=TIMESTAMP},
-      update_time = #{record.updateTime,jdbcType=TIMESTAMP},
-      fld_n1 = #{record.fldN1,jdbcType=INTEGER},
-      fld_n2 = #{record.fldN2,jdbcType=INTEGER},
-      fld_l1 = #{record.fldL1,jdbcType=BIGINT},
-      fld_s1 = #{record.fldS1,jdbcType=VARCHAR},
-      fld_s2 = #{record.fldS2,jdbcType=VARCHAR}
+      update_time = #{record.updateTime,jdbcType=TIMESTAMP}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.zty.common.DO.RoleInfoDO" >
-    update role_info
+  <update id="updateByPrimaryKeySelective" parameterType="com.zty.common.DO.AccountRoleRelationDO" >
+    update account_role_relation
     <set >
-      <if test="name != null" >
-        name = #{name,jdbcType=VARCHAR},
+      <if test="accountId != null" >
+        account_id = #{accountId,jdbcType=INTEGER},
       </if>
-      <if test="rights != null" >
-        rights = #{rights,jdbcType=VARCHAR},
+      <if test="roleId != null" >
+        role_id = #{roleId,jdbcType=INTEGER},
       </if>
       <if test="disabled != null" >
         disabled = #{disabled,jdbcType=TINYINT},
-      </if>
-      <if test="createBy != null" >
-        create_by = #{createBy,jdbcType=INTEGER},
       </if>
       <if test="createTime != null" >
         create_time = #{createTime,jdbcType=TIMESTAMP},
@@ -286,37 +214,16 @@
       <if test="updateTime != null" >
         update_time = #{updateTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="fldN1 != null" >
-        fld_n1 = #{fldN1,jdbcType=INTEGER},
-      </if>
-      <if test="fldN2 != null" >
-        fld_n2 = #{fldN2,jdbcType=INTEGER},
-      </if>
-      <if test="fldL1 != null" >
-        fld_l1 = #{fldL1,jdbcType=BIGINT},
-      </if>
-      <if test="fldS1 != null" >
-        fld_s1 = #{fldS1,jdbcType=VARCHAR},
-      </if>
-      <if test="fldS2 != null" >
-        fld_s2 = #{fldS2,jdbcType=VARCHAR},
-      </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.zty.common.DO.RoleInfoDO" >
-    update role_info
-    set name = #{name,jdbcType=VARCHAR},
-      rights = #{rights,jdbcType=VARCHAR},
+  <update id="updateByPrimaryKey" parameterType="com.zty.common.DO.AccountRoleRelationDO" >
+    update account_role_relation
+    set account_id = #{accountId,jdbcType=INTEGER},
+      role_id = #{roleId,jdbcType=INTEGER},
       disabled = #{disabled,jdbcType=TINYINT},
-      create_by = #{createBy,jdbcType=INTEGER},
       create_time = #{createTime,jdbcType=TIMESTAMP},
-      update_time = #{updateTime,jdbcType=TIMESTAMP},
-      fld_n1 = #{fldN1,jdbcType=INTEGER},
-      fld_n2 = #{fldN2,jdbcType=INTEGER},
-      fld_l1 = #{fldL1,jdbcType=BIGINT},
-      fld_s1 = #{fldS1,jdbcType=VARCHAR},
-      fld_s2 = #{fldS2,jdbcType=VARCHAR}
+      update_time = #{updateTime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

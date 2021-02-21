@@ -4,13 +4,19 @@
   <resultMap id="BaseResultMap" type="com.zty.common.DO.FileInfoDO" >
     <id column="id" property="id" jdbcType="INTEGER" />
     <result column="name" property="name" jdbcType="VARCHAR" />
-    <result column="file_kind" property="fileKind" jdbcType="SMALLINT" />
+    <result column="file_kind" property="fileKind" jdbcType="TINYINT" />
     <result column="public_url" property="publicUrl" jdbcType="VARCHAR" />
     <result column="private_url" property="privateUrl" jdbcType="VARCHAR" />
     <result column="download_time" property="downloadTime" jdbcType="INTEGER" />
     <result column="like_time" property="likeTime" jdbcType="INTEGER" />
     <result column="create_by" property="createBy" jdbcType="INTEGER" />
     <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+    <result column="fld_n1" property="fldN1" jdbcType="INTEGER" />
+    <result column="fld_n2" property="fldN2" jdbcType="INTEGER" />
+    <result column="fld_l1" property="fldL1" jdbcType="BIGINT" />
+    <result column="fld_s1" property="fldS1" jdbcType="VARCHAR" />
+    <result column="fld_s2" property="fldS2" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Example_Where_Clause" >
     <where >
@@ -72,7 +78,7 @@
   </sql>
   <sql id="Base_Column_List" >
     id, name, file_kind, public_url, private_url, download_time, like_time, create_by, 
-    create_time
+    create_time, update_time, fld_n1, fld_n2, fld_l1, fld_s1, fld_s2
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.zty.common.DO.example.FileInfoDOExample" >
     select
@@ -108,12 +114,14 @@
   <insert id="insert" parameterType="com.zty.common.DO.FileInfoDO" >
     insert into file_info (id, name, file_kind, 
       public_url, private_url, download_time, 
-      like_time, create_by, create_time
-      )
-    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{fileKind,jdbcType=SMALLINT}, 
+      like_time, create_by, create_time, 
+      update_time, fld_n1, fld_n2, 
+      fld_l1, fld_s1, fld_s2)
+    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{fileKind,jdbcType=TINYINT}, 
       #{publicUrl,jdbcType=VARCHAR}, #{privateUrl,jdbcType=VARCHAR}, #{downloadTime,jdbcType=INTEGER}, 
-      #{likeTime,jdbcType=INTEGER}, #{createBy,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}
-      )
+      #{likeTime,jdbcType=INTEGER}, #{createBy,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{updateTime,jdbcType=TIMESTAMP}, #{fldN1,jdbcType=INTEGER}, #{fldN2,jdbcType=INTEGER}, 
+      #{fldL1,jdbcType=BIGINT}, #{fldS1,jdbcType=VARCHAR}, #{fldS2,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.zty.common.DO.FileInfoDO" >
     insert into file_info
@@ -145,6 +153,24 @@
       <if test="createTime != null" >
         create_time,
       </if>
+      <if test="updateTime != null" >
+        update_time,
+      </if>
+      <if test="fldN1 != null" >
+        fld_n1,
+      </if>
+      <if test="fldN2 != null" >
+        fld_n2,
+      </if>
+      <if test="fldL1 != null" >
+        fld_l1,
+      </if>
+      <if test="fldS1 != null" >
+        fld_s1,
+      </if>
+      <if test="fldS2 != null" >
+        fld_s2,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -154,7 +180,7 @@
         #{name,jdbcType=VARCHAR},
       </if>
       <if test="fileKind != null" >
-        #{fileKind,jdbcType=SMALLINT},
+        #{fileKind,jdbcType=TINYINT},
       </if>
       <if test="publicUrl != null" >
         #{publicUrl,jdbcType=VARCHAR},
@@ -174,6 +200,24 @@
       <if test="createTime != null" >
         #{createTime,jdbcType=TIMESTAMP},
       </if>
+      <if test="updateTime != null" >
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="fldN1 != null" >
+        #{fldN1,jdbcType=INTEGER},
+      </if>
+      <if test="fldN2 != null" >
+        #{fldN2,jdbcType=INTEGER},
+      </if>
+      <if test="fldL1 != null" >
+        #{fldL1,jdbcType=BIGINT},
+      </if>
+      <if test="fldS1 != null" >
+        #{fldS1,jdbcType=VARCHAR},
+      </if>
+      <if test="fldS2 != null" >
+        #{fldS2,jdbcType=VARCHAR},
+      </if>
     </trim>
   </insert>
   <select id="countByExample" parameterType="com.zty.common.DO.example.FileInfoDOExample" resultType="java.lang.Integer" >
@@ -181,9 +225,6 @@
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
-  </select>
-  <select id="getMaxID" resultType="java.lang.Integer">
-    select max(id) from file_info;
   </select>
   <update id="updateByExampleSelective" parameterType="map" >
     update file_info
@@ -195,7 +236,7 @@
         name = #{record.name,jdbcType=VARCHAR},
       </if>
       <if test="record.fileKind != null" >
-        file_kind = #{record.fileKind,jdbcType=SMALLINT},
+        file_kind = #{record.fileKind,jdbcType=TINYINT},
       </if>
       <if test="record.publicUrl != null" >
         public_url = #{record.publicUrl,jdbcType=VARCHAR},
@@ -215,6 +256,24 @@
       <if test="record.createTime != null" >
         create_time = #{record.createTime,jdbcType=TIMESTAMP},
       </if>
+      <if test="record.updateTime != null" >
+        update_time = #{record.updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.fldN1 != null" >
+        fld_n1 = #{record.fldN1,jdbcType=INTEGER},
+      </if>
+      <if test="record.fldN2 != null" >
+        fld_n2 = #{record.fldN2,jdbcType=INTEGER},
+      </if>
+      <if test="record.fldL1 != null" >
+        fld_l1 = #{record.fldL1,jdbcType=BIGINT},
+      </if>
+      <if test="record.fldS1 != null" >
+        fld_s1 = #{record.fldS1,jdbcType=VARCHAR},
+      </if>
+      <if test="record.fldS2 != null" >
+        fld_s2 = #{record.fldS2,jdbcType=VARCHAR},
+      </if>
     </set>
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
@@ -224,13 +283,19 @@
     update file_info
     set id = #{record.id,jdbcType=INTEGER},
       name = #{record.name,jdbcType=VARCHAR},
-      file_kind = #{record.fileKind,jdbcType=SMALLINT},
+      file_kind = #{record.fileKind,jdbcType=TINYINT},
       public_url = #{record.publicUrl,jdbcType=VARCHAR},
       private_url = #{record.privateUrl,jdbcType=VARCHAR},
       download_time = #{record.downloadTime,jdbcType=INTEGER},
       like_time = #{record.likeTime,jdbcType=INTEGER},
       create_by = #{record.createBy,jdbcType=INTEGER},
-      create_time = #{record.createTime,jdbcType=TIMESTAMP}
+      create_time = #{record.createTime,jdbcType=TIMESTAMP},
+      update_time = #{record.updateTime,jdbcType=TIMESTAMP},
+      fld_n1 = #{record.fldN1,jdbcType=INTEGER},
+      fld_n2 = #{record.fldN2,jdbcType=INTEGER},
+      fld_l1 = #{record.fldL1,jdbcType=BIGINT},
+      fld_s1 = #{record.fldS1,jdbcType=VARCHAR},
+      fld_s2 = #{record.fldS2,jdbcType=VARCHAR}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -242,7 +307,7 @@
         name = #{name,jdbcType=VARCHAR},
       </if>
       <if test="fileKind != null" >
-        file_kind = #{fileKind,jdbcType=SMALLINT},
+        file_kind = #{fileKind,jdbcType=TINYINT},
       </if>
       <if test="publicUrl != null" >
         public_url = #{publicUrl,jdbcType=VARCHAR},
@@ -262,19 +327,43 @@
       <if test="createTime != null" >
         create_time = #{createTime,jdbcType=TIMESTAMP},
       </if>
+      <if test="updateTime != null" >
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="fldN1 != null" >
+        fld_n1 = #{fldN1,jdbcType=INTEGER},
+      </if>
+      <if test="fldN2 != null" >
+        fld_n2 = #{fldN2,jdbcType=INTEGER},
+      </if>
+      <if test="fldL1 != null" >
+        fld_l1 = #{fldL1,jdbcType=BIGINT},
+      </if>
+      <if test="fldS1 != null" >
+        fld_s1 = #{fldS1,jdbcType=VARCHAR},
+      </if>
+      <if test="fldS2 != null" >
+        fld_s2 = #{fldS2,jdbcType=VARCHAR},
+      </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.zty.common.DO.FileInfoDO" >
     update file_info
     set name = #{name,jdbcType=VARCHAR},
-      file_kind = #{fileKind,jdbcType=SMALLINT},
+      file_kind = #{fileKind,jdbcType=TINYINT},
       public_url = #{publicUrl,jdbcType=VARCHAR},
       private_url = #{privateUrl,jdbcType=VARCHAR},
       download_time = #{downloadTime,jdbcType=INTEGER},
       like_time = #{likeTime,jdbcType=INTEGER},
       create_by = #{createBy,jdbcType=INTEGER},
-      create_time = #{createTime,jdbcType=TIMESTAMP}
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      fld_n1 = #{fldN1,jdbcType=INTEGER},
+      fld_n2 = #{fldN2,jdbcType=INTEGER},
+      fld_l1 = #{fldL1,jdbcType=BIGINT},
+      fld_s1 = #{fldS1,jdbcType=VARCHAR},
+      fld_s2 = #{fldS2,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>
