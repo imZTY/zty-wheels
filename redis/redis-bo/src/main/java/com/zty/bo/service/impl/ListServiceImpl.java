@@ -16,7 +16,7 @@ import javax.annotation.Resource;
 @Service
 public class ListServiceImpl implements ListService {
 
-    Logger log = LoggerFactory.getLogger(ListServiceImpl.class);
+    private static final Logger log = LoggerFactory.getLogger(ListServiceImpl.class);
 
     @Resource
     private RedisTemplate<String, TaskDTO> redisTemplate;

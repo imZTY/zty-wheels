@@ -32,7 +32,9 @@ public class DanceEditor {
         OutputStreamWriter osw = null;
         BufferedWriter bw = null;
         try {
-            osw = new OutputStreamWriter(new FileOutputStream(file), "UTF-8");
+            FileOutputStream fos = new FileOutputStream(file);
+            fos.write(new byte[]{(byte)0xEF, (byte)0xBB, (byte)0xBF});
+            osw = new OutputStreamWriter(fos, "UTF-8");
             bw = new BufferedWriter(osw);
             bw.append(dancer.headDance());
             bw.append(dancer.rowDance());

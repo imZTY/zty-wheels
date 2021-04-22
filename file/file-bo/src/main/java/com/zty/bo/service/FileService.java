@@ -17,9 +17,13 @@ public interface FileService {
      * @param userId
      * @return
      */
-    public List<FileInfoDO> listMine(int userId);
+    public List<FileInfoDO> listMine(int userId, List<Byte> fileKindList);
 
-    public FileInfoDO createAndReturnRecord(FileInfoDO fileInfoDO);
+    public int createAndReturnRows(FileInfoDO fileInfoDO);
 
     public FileInfoDO findById(int id);
+
+    int update(FileInfoDO fileInfoDO);
+
+    List<FileInfoDO> findByFileKind(int userId, byte fileKind);
 }

@@ -17,7 +17,7 @@ import java.util.concurrent.TimeUnit;
 @Service
 public class KVServiceImpl implements KVService {
 
-    Logger log = LoggerFactory.getLogger(KVServiceImpl.class);
+    private static final Logger log = LoggerFactory.getLogger(KVServiceImpl.class);
 
     @Autowired
     private StringRedisTemplate stringRedisTemplate;

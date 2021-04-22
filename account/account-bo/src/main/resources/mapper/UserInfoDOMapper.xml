@@ -6,6 +6,7 @@
     <result column="head_pic" property="headPic" jdbcType="VARCHAR" />
     <result column="sex" property="sex" jdbcType="TINYINT" />
     <result column="age" property="age" jdbcType="REAL" />
+    <result column="address" property="address" jdbcType="VARCHAR" />
     <result column="email" property="email" jdbcType="VARCHAR" />
     <result column="card_no" property="cardNo" jdbcType="VARCHAR" />
     <result column="card_type" property="cardType" jdbcType="TINYINT" />
@@ -82,9 +83,9 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    account_id, head_pic, sex, age, email, card_no, card_type, province, city, country, 
-    job, organization, description, create_time, update_time, fld_n1, fld_n2, fld_l1, 
-    fld_s1, fld_s2
+    account_id, head_pic, sex, age, address, email, card_no, card_type, province, city,
+    country, job, organization, description, create_time, update_time, fld_n1, fld_n2,
+    fld_l1, fld_s1, fld_s2
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.zty.common.DO.example.UserInfoDOExample" >
     select
@@ -119,19 +120,19 @@
   </delete>
   <insert id="insert" parameterType="com.zty.common.DO.UserInfoDO" >
     insert into user_info (account_id, head_pic, sex, 
-      age, email, card_no, card_type, 
-      province, city, country, 
-      job, organization, description, 
-      create_time, update_time, fld_n1, 
-      fld_n2, fld_l1, fld_s1, 
-      fld_s2)
+      age, address, email, card_no,
+      card_type, province, city,
+      country, job, organization,
+      description, create_time, update_time,
+      fld_n1, fld_n2, fld_l1,
+      fld_s1, fld_s2)
     values (#{accountId,jdbcType=INTEGER}, #{headPic,jdbcType=VARCHAR}, #{sex,jdbcType=TINYINT}, 
-      #{age,jdbcType=REAL}, #{email,jdbcType=VARCHAR}, #{cardNo,jdbcType=VARCHAR}, #{cardType,jdbcType=TINYINT}, 
-      #{province,jdbcType=VARCHAR}, #{city,jdbcType=VARCHAR}, #{country,jdbcType=VARCHAR}, 
-      #{job,jdbcType=VARCHAR}, #{organization,jdbcType=VARCHAR}, #{description,jdbcType=VARCHAR}, 
-      #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, #{fldN1,jdbcType=INTEGER}, 
-      #{fldN2,jdbcType=INTEGER}, #{fldL1,jdbcType=BIGINT}, #{fldS1,jdbcType=VARCHAR}, 
-      #{fldS2,jdbcType=VARCHAR})
+      #{age,jdbcType=REAL}, #{address,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, #{cardNo,jdbcType=VARCHAR},
+      #{cardType,jdbcType=TINYINT}, #{province,jdbcType=VARCHAR}, #{city,jdbcType=VARCHAR},
+      #{country,jdbcType=VARCHAR}, #{job,jdbcType=VARCHAR}, #{organization,jdbcType=VARCHAR},
+      #{description,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP},
+      #{fldN1,jdbcType=INTEGER}, #{fldN2,jdbcType=INTEGER}, #{fldL1,jdbcType=BIGINT},
+      #{fldS1,jdbcType=VARCHAR}, #{fldS2,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.zty.common.DO.UserInfoDO" >
     insert into user_info
@@ -147,6 +148,9 @@
       </if>
       <if test="age != null" >
         age,
+      </if>
+      <if test="address != null" >
+        address,
       </if>
       <if test="email != null" >
         email,
@@ -209,6 +213,9 @@
       </if>
       <if test="age != null" >
         #{age,jdbcType=REAL},
+      </if>
+      <if test="address != null" >
+        #{address,jdbcType=VARCHAR},
       </if>
       <if test="email != null" >
         #{email,jdbcType=VARCHAR},
@@ -281,6 +288,9 @@
       <if test="record.age != null" >
         age = #{record.age,jdbcType=REAL},
       </if>
+      <if test="record.address != null" >
+        address = #{record.address,jdbcType=VARCHAR},
+      </if>
       <if test="record.email != null" >
         email = #{record.email,jdbcType=VARCHAR},
       </if>
@@ -340,6 +350,7 @@
       head_pic = #{record.headPic,jdbcType=VARCHAR},
       sex = #{record.sex,jdbcType=TINYINT},
       age = #{record.age,jdbcType=REAL},
+      address = #{record.address,jdbcType=VARCHAR},
       email = #{record.email,jdbcType=VARCHAR},
       card_no = #{record.cardNo,jdbcType=VARCHAR},
       card_type = #{record.cardType,jdbcType=TINYINT},
@@ -371,6 +382,9 @@
       </if>
       <if test="age != null" >
         age = #{age,jdbcType=REAL},
+      </if>
+      <if test="address != null" >
+        address = #{address,jdbcType=VARCHAR},
       </if>
       <if test="email != null" >
         email = #{email,jdbcType=VARCHAR},
@@ -428,6 +442,7 @@
     set head_pic = #{headPic,jdbcType=VARCHAR},
       sex = #{sex,jdbcType=TINYINT},
       age = #{age,jdbcType=REAL},
+      address = #{address,jdbcType=VARCHAR},
       email = #{email,jdbcType=VARCHAR},
       card_no = #{cardNo,jdbcType=VARCHAR},
       card_type = #{cardType,jdbcType=TINYINT},

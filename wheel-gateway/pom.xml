@@ -16,7 +16,7 @@
     <packaging>pom</packaging>
 
     <modules>
-<!--        <module>wheel-service-customer</module>-->
+        <module>wheel-service-customer</module>
     </modules>
 
 </project>

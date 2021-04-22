@@ -17,7 +17,7 @@ public class ResultDTO<T> {
     private T data;
     
     /* (数据库的)(满足条件的)数据总量 */
-    private int count = 0;
+    private long count = 0;
 
     /**
      * 普通构造
@@ -45,6 +45,21 @@ public class ResultDTO<T> {
      * @return
      */
     public static ResultDTO success(Object object, int count){
+        ResultDTO rt=new ResultDTO();
+        rt.setResultCode(200);
+        rt.setResultMsg("成功");
+        rt.setData(object);
+        rt.setCount(count);
+        return rt;
+    }
+
+    /**
+     * 含数据与总量的构造(用于分页)
+     * @param object
+     * @param count
+     * @return
+     */
+    public static ResultDTO success(Object object, long count){
         ResultDTO rt=new ResultDTO();
         rt.setResultCode(200);
         rt.setResultMsg("成功");
@@ -104,11 +119,15 @@ public class ResultDTO<T> {
         this.data = data;
     }
 
-    public int getCount() {
+    public long getCount() {
         return count;
     }
 
     public void setCount(int count) {
+        this.count = count;
+    }
+
+    public void setCount(long count) {
         this.count = count;
     }
 

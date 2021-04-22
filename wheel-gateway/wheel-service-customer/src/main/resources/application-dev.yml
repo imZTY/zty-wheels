@@ -6,22 +6,27 @@ spring:
     url: jdbc:mysql://localhost:3306/zty_wheel?useUnicode=true&characterEncoding=utf-8&useLegacyDatetimeCode=false&serverTimezone=GMT%2B8   #有时若不设置时区有时会报错
     username: root
     password: root
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    database: 1
 
 server:
   servlet:
-    context-path: /wheels
+    context-path: /kdd
   port: 8091
 
 zty-framework:
   token:
-    path: /wheels
+    path: /kdd
     expires: 28800  #单位:秒
   filePath:
     cache: ./files/cache
     static: ./files/static
-    publicUrl: /wheels/file/download?filename=
+    publicUrl: /kdd/file/download?filename=
 
 #开启sql语句打印
 logging:
   level:
+    com.zty.bo.service.impl: DEBUG
     com.zty.bo.dao: DEBUG

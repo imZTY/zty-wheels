@@ -81,6 +81,10 @@
     id, account, account_type, name, phone, openid, password, disabled, create_by, create_time, 
     update_time, fld_n1, fld_n2, fld_l1, fld_s1, fld_s2
   </sql>
+  <sql id="Account_Base_Column_List" >
+    a.id, a.account, a.account_type, a.name, a.phone, a.openid, a.password, a.disabled, a.create_by, a.create_time, a.
+    update_time, a.fld_n1, a.fld_n2, a.fld_l1, a.fld_s1, a.fld_s2
+  </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.zty.common.DO.example.AccountInfoDOExample" >
     select
     <if test="distinct" >
@@ -100,7 +104,7 @@
     select 
     <include refid="Base_Column_List" />
     from account_info
-    where id = #{id,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER};
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from account_info
@@ -383,4 +387,16 @@
       fld_s2 = #{fldS2,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
+  <select id="selectByRoleIds" parameterType="java.util.List" resultMap="BaseResultMap">
+    select
+    <include refid="Account_Base_Column_List" />
+    from account_info a join account_role_relation r
+    ON a.id = r.account_id
+    where r.disabled = 0
+      AND a.disabled = 0
+      AND r.role_id IN
+      <foreach collection="list" item="roleId" open="(" close=")" separator="," >
+        #{roleId}
+      </foreach>
+  </select>
 </mapper>

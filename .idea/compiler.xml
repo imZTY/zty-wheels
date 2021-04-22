@@ -7,23 +7,24 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="account-common" />
-        <module name="redis-web" />
-        <module name="redis-common" />
-        <module name="framework-bo" />
-        <module name="file-bo" />
-        <module name="wheel-service-customer" />
-        <module name="wx-web" />
         <module name="wx-common" />
-        <module name="wx-bo" />
-        <module name="framework-web" />
-        <module name="framework-springboot-app" />
-        <module name="account-bo" />
-        <module name="file-common" />
-        <module name="framework-common" />
         <module name="redis-bo" />
-        <module name="account-web" />
+        <module name="framework-bo" />
+        <module name="wx-web" />
+        <module name="framework-common" />
+        <module name="redis-common" />
+        <module name="wheel-service-customer" />
+        <module name="account-bo" />
+        <module name="redis-web" />
         <module name="file-web" />
+        <module name="file-bo" />
+        <module name="file-common" />
         <module name="framework-spider" />
+        <module name="framework-springboot-app" />
+        <module name="framework-third" />
+        <module name="framework-web" />
+        <module name="account-web" />
+        <module name="wx-bo" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -44,6 +45,7 @@
       <module name="framework-common" options="-parameters" />
       <module name="framework-spider" options="-parameters" />
       <module name="framework-springboot-app" options="-parameters" />
+      <module name="framework-third" options="-parameters" />
       <module name="framework-web" options="-parameters" />
       <module name="redis" options="-parameters" />
       <module name="redis-bo" options="-parameters" />

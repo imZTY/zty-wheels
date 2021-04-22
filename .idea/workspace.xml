@@ -1,44 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="ALL" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="591a7ef7-1a26-4d97-a74b-59989a9f55c2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/account/account-bo/src/main/java/com/zty/bo/dao/AccountInfoDOMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/account/account-bo/src/main/java/com/zty/bo/dao/AccountRoleRelationDOMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/account/account-bo/src/main/resources/mapper/AccountInfoDOMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/account/account-bo/src/main/resources/mapper/AccountRoleRelationDOMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/account/account-common/src/main/java/com/zty/common/DO/AccountInfoDO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/account/account-common/src/main/java/com/zty/common/DO/AccountRoleRelationDO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/account/account-common/src/main/java/com/zty/common/DO/example/AccountInfoDOExample.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/account/account-common/src/main/java/com/zty/common/DO/example/AccountRoleRelationDOExample.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/framework/framework-common/src/main/java/com/zty/framework/util/picture/FileDancer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/framework/framework-common/src/main/java/com/zty/framework/util/picture/PictureDancer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/account/account-bo/src/main/java/com/zty/bo/service/impl/AccountServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/account/account-bo/src/main/java/com/zty/bo/service/impl/RoleServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/account/account-common/src/main/java/com/zty/common/constant/AccountType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/account/account-common/src/main/java/com/zty/common/service/RoleService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/account/account-common/src/main/java/com/zty/common/service/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/account/account-web/src/main/java/com/zty/web/controller/RoleController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/account/account-web/src/main/java/com/zty/web/controller/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/account/account-web/src/main/java/com/zty/web/dto/LoginResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/file/file-common/src/main/java/com/zty/common/enums/FileKindEnum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/framework/framework-common/src/main/java/com/zty/framework/constant/Disabled.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/framework/framework-third/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/framework/framework-third/src/main/java/com/zty/framework/third/RetrofitService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/redis/redis-bo/src/main/java/com/zty/bo/service/impl/HashServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/redis/redis-common/src/main/java/com/zty/common/constant/RedisConstant.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/redis/redis-common/src/main/java/com/zty/common/constant/SpliterConstant.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wheel-gateway/wheel-service-customer/src/main/resources/mybatis-config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account/account-bo/src/main/java/com/zty/bo/dao/RoleInfoDOMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/account/account-bo/src/main/java/com/zty/bo/dao/RoleInfoDOMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account/account-bo/src/main/java/com/zty/bo/dao/UserInfoDOMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/account/account-bo/src/main/java/com/zty/bo/dao/UserInfoDOMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account/account-bo/src/main/java/com/zty/bo/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/account/account-bo/src/main/java/com/zty/bo/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account/account-bo/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/account/account-bo/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account/account-bo/src/main/java/com/zty/bo/dao/AccountInfoDOMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/account/account-bo/src/main/java/com/zty/bo/dao/AccountInfoDOMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account/account-bo/src/main/java/com/zty/bo/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/account/account-common/src/main/java/com/zty/common/service/AccountService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/account/account-bo/src/main/java/com/zty/bo/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/account/account-bo/src/main/java/com/zty/bo/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account/account-bo/src/main/resources/mapper/RoleInfoDOMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/account/account-bo/src/main/resources/mapper/RoleInfoDOMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account/account-bo/src/main/resources/mapper/AccountInfoDOMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/account/account-bo/src/main/resources/mapper/AccountInfoDOMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/account/account-bo/src/main/resources/mapper/UserInfoDOMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/account/account-bo/src/main/resources/mapper/UserInfoDOMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account/account-common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/account/account-common/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account/account-common/src/main/java/com/zty/common/DO/AccountInfoDO.java" beforeDir="false" afterPath="$PROJECT_DIR$/account/account-common/src/main/java/com/zty/common/DO/AccountInfoDO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account/account-common/src/main/java/com/zty/common/DO/AccountRoleRelationDO.java" beforeDir="false" afterPath="$PROJECT_DIR$/account/account-common/src/main/java/com/zty/common/DO/AccountRoleRelationDO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/account/account-common/src/main/java/com/zty/common/DO/RoleInfoDO.java" beforeDir="false" afterPath="$PROJECT_DIR$/account/account-common/src/main/java/com/zty/common/DO/RoleInfoDO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/account/account-common/src/main/java/com/zty/common/DO/UserInfoDO.java" beforeDir="false" afterPath="$PROJECT_DIR$/account/account-common/src/main/java/com/zty/common/DO/UserInfoDO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account/account-common/src/main/java/com/zty/common/DO/example/RoleInfoDOExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/account/account-common/src/main/java/com/zty/common/DO/example/RoleInfoDOExample.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/account/account-common/src/main/java/com/zty/common/DO/example/UserInfoDOExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/account/account-common/src/main/java/com/zty/common/DO/example/UserInfoDOExample.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account/account-common/src/main/java/com/zty/common/dto/UserInfoDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/account/account-common/src/main/java/com/zty/common/dto/LoginInfoDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account/account-web/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/account/account-web/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/account/account-web/src/main/java/com/zty/web/controller/AccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/account/account-web/src/main/java/com/zty/web/controller/AccountController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/file/file-bo/src/main/java/com/zty/bo/dao/FileInfoDOMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/file/file-bo/src/main/java/com/zty/bo/dao/FileInfoDOMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/account/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/file/file-bo/src/main/java/com/zty/bo/service/FileService.java" beforeDir="false" afterPath="$PROJECT_DIR$/file/file-bo/src/main/java/com/zty/bo/service/FileService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/file/file-bo/src/main/java/com/zty/bo/service/impl/FileServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/file/file-bo/src/main/java/com/zty/bo/service/impl/FileServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/file/file-bo/src/main/resources/mapper/FileInfoDOMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/file/file-bo/src/main/resources/mapper/FileInfoDOMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/file/file-common/src/main/java/com/zty/common/DO/FileInfoDO.java" beforeDir="false" afterPath="$PROJECT_DIR$/file/file-common/src/main/java/com/zty/common/DO/FileInfoDO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/file/file-common/src/main/java/com/zty/common/DO/example/FileInfoDOExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/file/file-common/src/main/java/com/zty/common/DO/example/FileInfoDOExample.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/file/file-web/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/file/file-web/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/file/file-web/src/main/java/com/zty/web/controller/FileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/file/file-web/src/main/java/com/zty/web/controller/FileController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/framework-common/src/main/java/com/zty/framework/dto/PageEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/framework-common/src/main/java/com/zty/framework/dto/PageEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/framework-common/src/main/java/com/zty/framework/dto/ResultDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/framework-common/src/main/java/com/zty/framework/dto/ResultDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/framework-common/src/main/java/com/zty/framework/util/ReflectUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/framework-common/src/main/java/com/zty/framework/util/ReflectUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/framework/framework-common/src/main/java/com/zty/framework/util/dataSave/DanceEditor.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/framework-common/src/main/java/com/zty/framework/util/dataSave/DanceEditor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/framework/framework-common/src/main/java/com/zty/framework/util/read/ReadTextUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/framework-common/src/main/java/com/zty/framework/util/read/ReadTextUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/framework/framework-common/src/main/java/com/zty/framework/util/request/ApacheHttpRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/framework-common/src/main/java/com/zty/framework/util/request/ApacheHttpRequest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/framework/framework-spider/src/main/java/com/zty/spider/SpiderThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/framework-spider/src/main/java/com/zty/spider/SpiderThread.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/framework/framework-spider/src/test/java/BasicTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/framework-spider/src/test/java/BasicTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/framework-web/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/framework/framework-web/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/framework/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/redis/redis-bo/src/main/java/com/zty/bo/api/LoginCacheApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/redis/redis-bo/src/main/java/com/zty/bo/api/LoginCacheApi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/redis/redis-bo/src/main/java/com/zty/bo/service/HashService.java" beforeDir="false" afterPath="$PROJECT_DIR$/redis/redis-bo/src/main/java/com/zty/bo/service/HashService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/redis/redis-bo/src/main/java/com/zty/bo/service/impl/KVServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/redis/redis-bo/src/main/java/com/zty/bo/service/impl/KVServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/redis/redis-bo/src/main/java/com/zty/bo/service/impl/ListServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/redis/redis-bo/src/main/java/com/zty/bo/service/impl/ListServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wheel-gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/wheel-gateway/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wheel-gateway/wheel-service-customer/src/main/java/com/zty/wheel/aop/LoginCheck.java" beforeDir="false" afterPath="$PROJECT_DIR$/wheel-gateway/wheel-service-customer/src/main/java/com/zty/wheel/aop/LoginCheck.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wheel-gateway/wheel-service-customer/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/wheel-gateway/wheel-service-customer/src/main/resources/application-dev.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wheel-gateway/wheel-service-customer/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/wheel-gateway/wheel-service-customer/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wx/wx-bo/src/main/java/com/zty/bo/api/PcAuthorizeApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/wx/wx-bo/src/main/java/com/zty/bo/api/PcAuthorizeApi.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wx/wx-bo/src/main/java/com/zty/bo/api/WxAuthorizeApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/wx/wx-bo/src/main/java/com/zty/bo/api/WxAuthorizeApi.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wx/wx-web/src/main/java/com/zty/web/controller/WxController.java" beforeDir="false" afterPath="$PROJECT_DIR$/wx/wx-web/src/main/java/com/zty/web/controller/WxController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,15 +91,24 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="AnnotationType" />
-        <option value="Interface" />
         <option value="JUnit4 Test Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Interface" />
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -85,7 +119,6 @@
     </option>
     <option name="importingSettings">
       <MavenImportingSettings>
-        <option name="importAutomatically" value="true" />
         <option name="vmOptionsForImporter" value="-Xmx1024m" />
       </MavenImportingSettings>
     </option>
@@ -96,7 +129,6 @@
   <component name="ProjectId" id="1bI2TakSnzlHbCARtdyCzFURW9r" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
@@ -107,7 +139,7 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/account/account-bo/src/main/resources/mapper" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/account/account-common/src/main/java/com/zty/common/dto" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -118,18 +150,24 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.repository.indices" />
+  </component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CreateTestDialog.RecentsKey">
-      <recent name="com.zty.framework.util" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.zty.bo.service.impl" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\study\jidi\career\2020\zty-wheels\account\account-common\src\main\java\com\zty\common\dto" />
+      <recent name="F:\study\jidi\career\2020\zty-wheels\account\account-bo\src\main\resources" />
+      <recent name="F:\study\jidi\career\2020\zty-wheels\account\account-bo\src\main\resources\mapper" />
+      <recent name="F:\study\jidi\career\2020\zty-wheels\account\account-bo\src\main\java\com\zty\bo\dao" />
+      <recent name="F:\study\jidi\career\2020\zty-wheels\account\account-common\src\main\java\com\zty\common\DO" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
-    </key>
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="" />
-      <recent name="com.zty.common.DO" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="F:\study\jidi\career\2020\zty-wheels\file\file-bo\src\main\resources\mapper" />
@@ -137,22 +175,19 @@
       <recent name="F:\study\jidi\career\2020\zty-wheels\file\file-bo\src\main\resources\mapper\file" />
       <recent name="F:\study\jidi\career\2020\zty-wheels\framework" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="F:\study\jidi\career\2020\zty-wheels\account\account-bo\src\main\resources\mapper" />
-      <recent name="F:\study\jidi\career\2020\zty-wheels\account\account-bo\src\main\java\com\zty\bo\dao" />
-      <recent name="F:\study\jidi\career\2020\zty-wheels\account\account-common\src\main\java\com\zty\common\DO" />
-      <recent name="F:\study\jidi\career\2020\zty-wheels\framework\framework-common\src\main\java\com\zty\framework\util\picture" />
-      <recent name="F:\study\jidi\career\2020\zty-wheels\framework\framework-common\src\main\java\com\zty\framework\util\request" />
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+      <recent name="com.zty.common.DO" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.zty.framework.util" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.zty.web.dto" />
+      <recent name="com.zty.framework.util" />
       <recent name="com.zty.framework.util.dataSave" />
       <recent name="com.zty.framework.annotation" />
       <recent name="com.zty.web.controller" />
-      <recent name="com.zty.web.config" />
-      <recent name="com.zty.bo.service.impl" />
-    </key>
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="com.zty.bo.service.impl" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -162,12 +197,34 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.BasicTest.http404Test">
+  <component name="RunManager" selected="Application.DealCsv (1)">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="WIDTH" value="400" />
       <option name="HEIGHT" value="300" />
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <module />
+    </configuration>
+    <configuration name="DealCsv (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.zty.framework.util.DealCsv" />
+      <module name="framework-common" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.zty.framework.util.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DealCsv" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="DealCsv" />
+      <module name="framework-spider" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -246,6 +303,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.DealCsv (1)" />
+        <item itemvalue="Application.DealCsv" />
         <item itemvalue="JUnit.BasicTest.http404Test" />
         <item itemvalue="JUnit.BasicTest.dealTest" />
         <item itemvalue="JUnit.static in wheel-service-customer" />
@@ -275,6 +334,7 @@
       </list>
     </option>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SpringBeansView">
     <option name="beanDetailsProportion" value="0.3" />
   </component>
@@ -346,101 +406,40 @@
       <workItem from="1612708324332" duration="4733000" />
       <workItem from="1612790274215" duration="888000" />
       <workItem from="1613888319903" duration="4349000" />
+      <workItem from="1614021469106" duration="1292000" />
+      <workItem from="1614517332008" duration="5601000" />
+      <workItem from="1614643636707" duration="665000" />
+      <workItem from="1616598380135" duration="4030000" />
+      <workItem from="1617284735686" duration="10083000" />
+      <workItem from="1617382807630" duration="2613000" />
+      <workItem from="1617411204485" duration="4226000" />
+      <workItem from="1617602174811" duration="25575000" />
+      <workItem from="1617713509070" duration="22606000" />
+      <workItem from="1617974430445" duration="4909000" />
+      <workItem from="1618059068002" duration="7244000" />
+      <workItem from="1618076220951" duration="16025000" />
+      <workItem from="1618241954419" duration="854000" />
+      <workItem from="1618244912373" duration="3634000" />
+      <workItem from="1618315681729" duration="11455000" />
+      <workItem from="1618341245247" duration="52000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="573" y="358" width="774" height="323" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1608424224127">
-      <screen x="0" y="0" width="1920" height="1032" />
-    </state>
-    <state x="573" y="358" width="774" height="323" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1920.1032@0.0.1920.1032" timestamp="1608424224127" />
-    <state x="239" y="109" key="#xdebugger.evaluate" timestamp="1609893332571">
-      <screen x="0" y="0" width="1920" height="1032" />
-    </state>
-    <state x="239" y="109" key="#xdebugger.evaluate/0.0.1920.1032@0.0.1920.1032" timestamp="1609893332571" />
-    <state x="583" y="172" key="FileChooserDialogImpl" timestamp="1612197762681">
-      <screen x="0" y="0" width="1600" height="852" />
-    </state>
-    <state x="583" y="172" key="FileChooserDialogImpl/0.0.1600.852@0.0.1600.852" timestamp="1612197762681" />
-    <state x="699" y="208" key="FileChooserDialogImpl/0.0.1920.1032@0.0.1920.1032" timestamp="1611451600533" />
-    <state width="1544" height="186" key="GridCell.Tab.0.bottom" timestamp="1613893147650">
-      <screen x="0" y="0" width="1600" height="852" />
-    </state>
-    <state width="1544" height="186" key="GridCell.Tab.0.bottom/0.0.1600.852@0.0.1600.852" timestamp="1613893147650" />
-    <state width="1864" height="207" key="GridCell.Tab.0.bottom/0.0.1920.1032@0.0.1920.1032" timestamp="1611755903258" />
-    <state width="1544" height="186" key="GridCell.Tab.0.center" timestamp="1613893147650">
-      <screen x="0" y="0" width="1600" height="852" />
-    </state>
-    <state width="1544" height="186" key="GridCell.Tab.0.center/0.0.1600.852@0.0.1600.852" timestamp="1613893147650" />
-    <state width="1864" height="207" key="GridCell.Tab.0.center/0.0.1920.1032@0.0.1920.1032" timestamp="1611755903258" />
-    <state width="1544" height="186" key="GridCell.Tab.0.left" timestamp="1613893147650">
-      <screen x="0" y="0" width="1600" height="852" />
-    </state>
-    <state width="1544" height="186" key="GridCell.Tab.0.left/0.0.1600.852@0.0.1600.852" timestamp="1613893147650" />
-    <state width="1864" height="207" key="GridCell.Tab.0.left/0.0.1920.1032@0.0.1920.1032" timestamp="1611755903258" />
-    <state width="1544" height="186" key="GridCell.Tab.0.right" timestamp="1613893147650">
-      <screen x="0" y="0" width="1600" height="852" />
-    </state>
-    <state width="1544" height="186" key="GridCell.Tab.0.right/0.0.1600.852@0.0.1600.852" timestamp="1613893147650" />
-    <state width="1864" height="207" key="GridCell.Tab.0.right/0.0.1920.1032@0.0.1920.1032" timestamp="1611755903258" />
-    <state width="1864" height="392" key="GridCell.Tab.1.bottom" timestamp="1611473702690">
-      <screen x="0" y="0" width="1920" height="1032" />
-    </state>
-    <state width="1864" height="392" key="GridCell.Tab.1.bottom/0.0.1920.1032@0.0.1920.1032" timestamp="1611473702690" />
-    <state width="1864" height="392" key="GridCell.Tab.1.center" timestamp="1611473702690">
-      <screen x="0" y="0" width="1920" height="1032" />
-    </state>
-    <state width="1864" height="392" key="GridCell.Tab.1.center/0.0.1920.1032@0.0.1920.1032" timestamp="1611473702690" />
-    <state width="1864" height="392" key="GridCell.Tab.1.left" timestamp="1611473702690">
-      <screen x="0" y="0" width="1920" height="1032" />
-    </state>
-    <state width="1864" height="392" key="GridCell.Tab.1.left/0.0.1920.1032@0.0.1920.1032" timestamp="1611473702690" />
-    <state width="1864" height="392" key="GridCell.Tab.1.right" timestamp="1611473702690">
-      <screen x="0" y="0" width="1920" height="1032" />
-    </state>
-    <state width="1864" height="392" key="GridCell.Tab.1.right/0.0.1920.1032@0.0.1920.1032" timestamp="1611473702690" />
-    <state x="339" y="56" key="SettingsEditor" timestamp="1610780317409">
-      <screen x="0" y="0" width="1920" height="1032" />
-    </state>
-    <state x="339" y="56" key="SettingsEditor/0.0.1920.1032@0.0.1920.1032" timestamp="1610780317409" />
-    <state width="969" height="525" key="XDebugger.FullValuePopup" timestamp="1611146208687">
-      <screen x="0" y="0" width="1920" height="1032" />
-    </state>
-    <state width="969" height="525" key="XDebugger.FullValuePopup/0.0.1920.1032@0.0.1920.1032" timestamp="1611146208687" />
-    <state x="478" y="248" key="com.intellij.ide.util.TipDialog" timestamp="1612187213170">
-      <screen x="0" y="0" width="1600" height="852" />
-    </state>
-    <state x="478" y="248" key="com.intellij.ide.util.TipDialog/0.0.1600.852@0.0.1600.852" timestamp="1612187213170" />
-    <state x="574" y="300" key="com.intellij.ide.util.TipDialog/0.0.1920.1032@0.0.1920.1032" timestamp="1611275559806" />
-    <state x="703" y="413" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1608515395855">
-      <screen x="0" y="0" width="1920" height="1032" />
-    </state>
-    <state x="703" y="413" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1032@0.0.1920.1032" timestamp="1608515395855" />
-    <state x="691" y="167" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1608515445244">
-      <screen x="0" y="0" width="1920" height="1032" />
-    </state>
-    <state x="691" y="167" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1920.1032@0.0.1920.1032" timestamp="1608515445244" />
-    <state x="0" y="122" key="new project wizard" timestamp="1612457025654">
-      <screen x="0" y="0" width="1600" height="852" />
-    </state>
-    <state x="0" y="122" key="new project wizard/0.0.1600.852@0.0.1600.852" timestamp="1612457025654" />
-    <state x="170" y="211" key="new project wizard/0.0.1920.1032@0.0.1920.1032" timestamp="1611451642829" />
-    <state x="449" y="0" width="840" height="851" key="search.everywhere.popup" timestamp="1612708420754">
-      <screen x="0" y="0" width="1600" height="852" />
-    </state>
-    <state x="449" y="0" width="840" height="851" key="search.everywhere.popup/0.0.1600.852@0.0.1600.852" timestamp="1612708420754" />
-    <state x="539" y="0" width="840" height="1030" key="search.everywhere.popup/0.0.1920.1032@0.0.1920.1032" timestamp="1611755062557" />
+    <option name="version" value="3" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/account/account-bo/src/main/java/com/zty/bo/service/impl/UserServiceImpl.java</url>
-          <line>71</line>
+          <url>file://$PROJECT_DIR$/account/account-bo/src/main/java/com/zty/bo/service/impl/AccountServiceImpl.java</url>
+          <line>93</line>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/wheel-gateway/wheel-service-customer/src/main/java/com/zty/wheel/aop/LoginCheck.java</url>
+          <line>55</line>
+          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

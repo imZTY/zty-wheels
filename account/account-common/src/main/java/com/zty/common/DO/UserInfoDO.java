@@ -2,7 +2,9 @@ package com.zty.common.DO;
 
 import java.util.Date;
 
-public class UserInfoDO {
+import com.zty.framework.dto.DataDTO;
+
+public class UserInfoDO extends DataDTO {
     private Integer accountId;
 
     private String headPic;
@@ -11,11 +13,16 @@ public class UserInfoDO {
 
     private Float age;
 
+    private String address;
+
     private String email;
 
     private String cardNo;
 
-    private Byte cardType;
+    /**
+     * 1 = 身份证
+     */
+    private Byte cardType = 1;
 
     private String province;
 
@@ -73,6 +80,14 @@ public class UserInfoDO {
 
     public void setAge(Float age) {
         this.age = age;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     public String getEmail() {

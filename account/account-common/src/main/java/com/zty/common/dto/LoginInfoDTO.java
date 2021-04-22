@@ -2,12 +2,14 @@ package com.zty.common.dto;
 
 import java.util.Date;
 
+import com.zty.framework.dto.DataDTO;
+
 /**
  * 脱敏信息DTO
  * @author tianyi
  * @date 2020-05-01 18:29
  */
-public class UserInfoDTO {
+public class LoginInfoDTO extends DataDTO {
     private Integer id;
 
     private String name;
@@ -30,7 +32,10 @@ public class UserInfoDTO {
 
     private String openid;
 
-    private Integer roleId;
+    private Byte disabled;
+
+    // 设置字符串类型，是为了兼容多角色
+    private String roleId = "1";
 
     private Float age;
 
@@ -130,11 +135,19 @@ public class UserInfoDTO {
         this.openid = openid;
     }
 
-    public Integer getRoleId() {
+    public Byte getDisabled() {
+        return disabled;
+    }
+
+    public void setDisabled(Byte disabled) {
+        this.disabled = disabled;
+    }
+
+    public String getRoleId() {
         return roleId;
     }
 
-    public void setRoleId(Integer roleId) {
+    public void setRoleId(String roleId) {
         this.roleId = roleId;
     }
 

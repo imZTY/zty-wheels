@@ -32,4 +32,6 @@ public interface AccountInfoDOMapper {
     int updateByPrimaryKeySelective(AccountInfoDO record);
 
     int updateByPrimaryKey(AccountInfoDO record);
+
+    List<AccountInfoDO> selectByRoleIds(List<Integer> roleIds);
 }
