@@ -5,65 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="591a7ef7-1a26-4d97-a74b-59989a9f55c2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/account/account-bo/src/main/java/com/zty/bo/service/impl/AccountServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/account/account-bo/src/main/java/com/zty/bo/service/impl/RoleServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/account/account-common/src/main/java/com/zty/common/constant/AccountType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/account/account-common/src/main/java/com/zty/common/service/RoleService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/account/account-common/src/main/java/com/zty/common/service/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/account/account-web/src/main/java/com/zty/web/controller/RoleController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/account/account-web/src/main/java/com/zty/web/controller/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/account/account-web/src/main/java/com/zty/web/dto/LoginResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/file/file-common/src/main/java/com/zty/common/enums/FileKindEnum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/framework/framework-common/src/main/java/com/zty/framework/constant/Disabled.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/framework/framework-third/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/framework/framework-third/src/main/java/com/zty/framework/third/RetrofitService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/redis/redis-bo/src/main/java/com/zty/bo/service/impl/HashServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/redis/redis-common/src/main/java/com/zty/common/constant/RedisConstant.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/redis/redis-common/src/main/java/com/zty/common/constant/SpliterConstant.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wheel-gateway/wheel-service-customer/src/main/resources/mybatis-config.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/framework/framework-common/framework-common.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/framework/framework-common/src/main/java/com/zty/framework/exception/BusinessException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/framework/framework-common/src/main/java/com/zty/framework/exception/NetworkException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/framework/framework-common/src/main/java/com/zty/framework/exception/ParamCheckException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account/account-bo/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/account/account-bo/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account/account-bo/src/main/java/com/zty/bo/dao/AccountInfoDOMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/account/account-bo/src/main/java/com/zty/bo/dao/AccountInfoDOMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account/account-bo/src/main/java/com/zty/bo/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/account/account-common/src/main/java/com/zty/common/service/AccountService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account/account-bo/src/main/java/com/zty/bo/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/account/account-bo/src/main/java/com/zty/bo/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account/account-bo/src/main/resources/mapper/AccountInfoDOMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/account/account-bo/src/main/resources/mapper/AccountInfoDOMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account/account-bo/src/main/resources/mapper/UserInfoDOMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/account/account-bo/src/main/resources/mapper/UserInfoDOMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account/account-common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/account/account-common/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account/account-common/src/main/java/com/zty/common/DO/AccountInfoDO.java" beforeDir="false" afterPath="$PROJECT_DIR$/account/account-common/src/main/java/com/zty/common/DO/AccountInfoDO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account/account-common/src/main/java/com/zty/common/DO/AccountRoleRelationDO.java" beforeDir="false" afterPath="$PROJECT_DIR$/account/account-common/src/main/java/com/zty/common/DO/AccountRoleRelationDO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account/account-common/src/main/java/com/zty/common/DO/RoleInfoDO.java" beforeDir="false" afterPath="$PROJECT_DIR$/account/account-common/src/main/java/com/zty/common/DO/RoleInfoDO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account/account-common/src/main/java/com/zty/common/DO/UserInfoDO.java" beforeDir="false" afterPath="$PROJECT_DIR$/account/account-common/src/main/java/com/zty/common/DO/UserInfoDO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account/account-common/src/main/java/com/zty/common/DO/example/UserInfoDOExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/account/account-common/src/main/java/com/zty/common/DO/example/UserInfoDOExample.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account/account-common/src/main/java/com/zty/common/dto/UserInfoDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/account/account-common/src/main/java/com/zty/common/dto/LoginInfoDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account/account-web/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/account/account-web/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account/account-web/src/main/java/com/zty/web/controller/AccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/account/account-web/src/main/java/com/zty/web/controller/AccountController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/account/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/file/file-bo/src/main/java/com/zty/bo/service/FileService.java" beforeDir="false" afterPath="$PROJECT_DIR$/file/file-bo/src/main/java/com/zty/bo/service/FileService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/file/file-bo/src/main/java/com/zty/bo/service/impl/FileServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/file/file-bo/src/main/java/com/zty/bo/service/impl/FileServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/file/file-common/src/main/java/com/zty/common/DO/FileInfoDO.java" beforeDir="false" afterPath="$PROJECT_DIR$/file/file-common/src/main/java/com/zty/common/DO/FileInfoDO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/file/file-web/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/file/file-web/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/file/file-web/src/main/java/com/zty/web/controller/FileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/file/file-web/src/main/java/com/zty/web/controller/FileController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/framework/framework-common/src/main/java/com/zty/framework/dto/PageEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/framework-common/src/main/java/com/zty/framework/dto/PageEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/framework/framework-common/src/main/java/com/zty/framework/dto/ResultDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/framework-common/src/main/java/com/zty/framework/dto/ResultDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/framework/framework-common/src/main/java/com/zty/framework/util/ReflectUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/framework-common/src/main/java/com/zty/framework/util/ReflectUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/framework/framework-common/src/main/java/com/zty/framework/util/dataSave/DanceEditor.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/framework-common/src/main/java/com/zty/framework/util/dataSave/DanceEditor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/framework/framework-spider/src/main/java/com/zty/spider/SpiderThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/framework-spider/src/main/java/com/zty/spider/SpiderThread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/framework/framework-spider/src/test/java/BasicTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/framework-spider/src/test/java/BasicTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/framework/framework-web/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/framework/framework-web/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/framework/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/framework/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redis/redis-bo/src/main/java/com/zty/bo/api/LoginCacheApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/redis/redis-bo/src/main/java/com/zty/bo/api/LoginCacheApi.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redis/redis-bo/src/main/java/com/zty/bo/service/HashService.java" beforeDir="false" afterPath="$PROJECT_DIR$/redis/redis-bo/src/main/java/com/zty/bo/service/HashService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redis/redis-bo/src/main/java/com/zty/bo/service/impl/KVServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/redis/redis-bo/src/main/java/com/zty/bo/service/impl/KVServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redis/redis-bo/src/main/java/com/zty/bo/service/impl/ListServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/redis/redis-bo/src/main/java/com/zty/bo/service/impl/ListServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wheel-gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/wheel-gateway/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wheel-gateway/wheel-service-customer/src/main/java/com/zty/wheel/aop/LoginCheck.java" beforeDir="false" afterPath="$PROJECT_DIR$/wheel-gateway/wheel-service-customer/src/main/java/com/zty/wheel/aop/LoginCheck.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wheel-gateway/wheel-service-customer/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/wheel-gateway/wheel-service-customer/src/main/resources/application-dev.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wheel-gateway/wheel-service-customer/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/wheel-gateway/wheel-service-customer/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wx/wx-bo/src/main/java/com/zty/bo/api/PcAuthorizeApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/wx/wx-bo/src/main/java/com/zty/bo/api/PcAuthorizeApi.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wx/wx-bo/src/main/java/com/zty/bo/api/WxAuthorizeApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/wx/wx-bo/src/main/java/com/zty/bo/api/WxAuthorizeApi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/framework-common/src/main/java/com/zty/framework/exception/CommonException.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/framework-common/src/main/java/com/zty/framework/exception/CommonException.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -132,6 +81,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -139,7 +89,7 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/account/account-common/src/main/java/com/zty/common/dto" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../kuaididouble/pom.xml" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -150,7 +100,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.repository.indices" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
@@ -422,6 +372,9 @@
       <workItem from="1618244912373" duration="3634000" />
       <workItem from="1618315681729" duration="11455000" />
       <workItem from="1618341245247" duration="52000" />
+      <workItem from="1629197175738" duration="1120000" />
+      <workItem from="1629299758235" duration="3017000" />
+      <workItem from="1630227679420" duration="238000" />
     </task>
     <servers />
   </component>
