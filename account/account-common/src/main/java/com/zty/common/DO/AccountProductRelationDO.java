@@ -4,26 +4,14 @@ import java.util.Date;
 
 import com.zty.framework.dto.DataDTO;
 
-public class AccountInfoDO extends DataDTO {
+public class AccountProductRelationDO extends DataDTO {
     private Integer id;
 
-    private String account;
+    private Integer accountId;
 
-    private Byte accountType;
-
-    private String name;
-
-    private String phone;
-
-    private String openid;
-
-    private String password;
+    private Integer productId;
 
     private Byte disabled;
-
-    private String inviteCode;
-
-    private Integer inviterId;
 
     private Integer createBy;
 
@@ -39,8 +27,6 @@ public class AccountInfoDO extends DataDTO {
 
     private String fldS1;
 
-    private String fldS2;
-
     public Integer getId() {
         return id;
     }
@@ -49,52 +35,20 @@ public class AccountInfoDO extends DataDTO {
         this.id = id;
     }
 
-    public String getAccount() {
-        return account;
+    public Integer getAccountId() {
+        return accountId;
     }
 
-    public void setAccount(String account) {
-        this.account = account;
+    public void setAccountId(Integer accountId) {
+        this.accountId = accountId;
     }
 
-    public Byte getAccountType() {
-        return accountType;
+    public Integer getProductId() {
+        return productId;
     }
 
-    public void setAccountType(Byte accountType) {
-        this.accountType = accountType;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getPhone() {
-        return phone;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
-
-    public String getOpenid() {
-        return openid;
-    }
-
-    public void setOpenid(String openid) {
-        this.openid = openid;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
+    public void setProductId(Integer productId) {
+        this.productId = productId;
     }
 
     public Byte getDisabled() {
@@ -103,22 +57,6 @@ public class AccountInfoDO extends DataDTO {
 
     public void setDisabled(Byte disabled) {
         this.disabled = disabled;
-    }
-
-    public String getInviteCode() {
-        return inviteCode;
-    }
-
-    public void setInviteCode(String inviteCode) {
-        this.inviteCode = inviteCode;
-    }
-
-    public Integer getInviterId() {
-        return inviterId;
-    }
-
-    public void setInviterId(Integer inviterId) {
-        this.inviterId = inviterId;
     }
 
     public Integer getCreateBy() {
@@ -175,13 +113,5 @@ public class AccountInfoDO extends DataDTO {
 
     public void setFldS1(String fldS1) {
         this.fldS1 = fldS1;
-    }
-
-    public String getFldS2() {
-        return fldS2;
-    }
-
-    public void setFldS2(String fldS2) {
-        this.fldS2 = fldS2;
     }
 }

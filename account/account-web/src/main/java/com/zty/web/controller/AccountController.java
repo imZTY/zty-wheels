@@ -237,6 +237,7 @@ public class AccountController {
      */
     @PostMapping("/register")
     public ResultDTO register(AccountInfoDO accountInfoDO){
+        // TODO: 27/9/2021 验证码校验
         // 参数校验
         if (StringUtils.isBlank(accountInfoDO.getPhone())){
             return ResultDTO.error(403, "登录手机号不能为空");

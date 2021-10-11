@@ -31,6 +31,8 @@
         <module>redis</module>
         <module>wheel-gateway</module>
         <module>framework</module>
+        <module>msg</module>
+        <module>msg-common</module>
     </modules>
 
     <build>

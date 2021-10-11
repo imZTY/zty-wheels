@@ -18,6 +18,7 @@ import com.zty.framework.util.md5.MD5;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.Page;
+import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -86,54 +87,66 @@ public class AccountServiceImpl implements AccountService {
     /**
      * 用户注册
      *
-     * @param AccountInfoDO
+     * @param accountInfoDO
      * @return
      */
     @Override
-    public int register(AccountInfoDO AccountInfoDO) throws NoSuchAlgorithmException {
-        if (AccountInfoDO.getAccountType() == AccountType.PHONE_ACCOUNT) {
+    public int register(AccountInfoDO accountInfoDO) throws NoSuchAlgorithmException {
+        // 如果入参携带邀请码，则建立分销关系
+        if (StringUtils.isNotBlank(accountInfoDO.getInviteCode())) {
+            // 根据邀请码查邀请人
+            AccountInfoDOExample accountExample = new AccountInfoDOExample();
+            accountExample.createCriteria().andInviteCodeEqualTo(accountInfoDO.getInviteCode());
+            List<AccountInfoDO> inviter = accountInfoDOMapper.selectByExample(accountExample);
+            if (!CollectionUtils.isEmpty(inviter)) {
+                accountInfoDO.setInviterId(inviter.get(0).getId());
+            }
+            // 重置邀请码
+            accountInfoDO.setInviteCode(RandomStringUtils.random(10, true, true).toUpperCase());
+        }
+        if (accountInfoDO.getAccountType() == AccountType.PHONE_ACCOUNT) {
             // 检查手机号是否已存在
             AccountInfoDOExample phoneCheck = new AccountInfoDOExample();
             phoneCheck.createCriteria()
-                    .andAccountEqualTo(AccountInfoDO.getPhone());
+                    .andAccountEqualTo(accountInfoDO.getPhone());
             int phoneCount = accountInfoDOMapper.countByExample(phoneCheck);
             if (phoneCount != 0) {
                 // -1 表示手机号已存在
                 return -1;
             }
             // 密码加密
-            if (!StringUtils.isBlank(AccountInfoDO.getPassword())){
+            if (!StringUtils.isBlank(accountInfoDO.getPassword())){
                 try {
-                    AccountInfoDO.setPassword(MD5.encrypt(AccountInfoDO.getPassword()));
+                    accountInfoDO.setPassword(MD5.encrypt(accountInfoDO.getPassword()));
                 } catch (NoSuchAlgorithmException e) {
                     log.error("找不到加密算法", e);
                     throw e;
                 }
             }else{
-                log.warn("密码为空，参数={}",AccountInfoDO);
+                log.warn("密码为空，参数={}",accountInfoDO);
                 return 0;
             }
-            AccountInfoDO.setCreateTime(new Date());
-            AccountInfoDO.setUpdateTime(new Date());
-            int count = accountInfoDOMapper.insertSelective(AccountInfoDO);
+            accountInfoDO.setCreateTime(new Date());
+            accountInfoDO.setUpdateTime(new Date());
+            int count = accountInfoDOMapper.insertSelective(accountInfoDO);
             UserInfoDO userInfoDO = new UserInfoDO();
             userInfoDO.setAccountId(accountInfoDOMapper.selectByExample(phoneCheck).get(0).getId());
             userInfoDOMapper.insertSelective(userInfoDO);
             return count;
-        }else if (AccountInfoDO.getAccountType() == AccountType.WX_ACCOUNT){
+        }else if (accountInfoDO.getAccountType() == AccountType.WX_ACCOUNT){
             // 检查openid是否已存在
             AccountInfoDOExample openidCheck = new AccountInfoDOExample();
-            openidCheck.createCriteria().andOpenidEqualTo(AccountInfoDO.getOpenid());
+            openidCheck.createCriteria().andOpenidEqualTo(accountInfoDO.getOpenid());
             int openidCount = accountInfoDOMapper.countByExample(openidCheck);
             if (openidCount != 0) {
                 // -1 表示openid已存在
                 return -1;
             }
-            AccountInfoDO.setPhone(UUidUtil.uuid().substring(0,10));
-            AccountInfoDO.setPassword(UUidUtil.uuid().substring(0,20));
-            AccountInfoDO.setCreateTime(new Date());
-            AccountInfoDO.setUpdateTime(new Date());
-            return accountInfoDOMapper.insertSelective(AccountInfoDO);
+            accountInfoDO.setPhone(UUidUtil.uuid().substring(0,10));
+            accountInfoDO.setPassword(UUidUtil.uuid().substring(0,20));
+            accountInfoDO.setCreateTime(new Date());
+            accountInfoDO.setUpdateTime(new Date());
+            return accountInfoDOMapper.insertSelective(accountInfoDO);
         }else{
             return -2; //-2表示账号类型不合法
         }
@@ -185,14 +198,14 @@ public class AccountServiceImpl implements AccountService {
     /**
      * 检查用户是否拥有超管权限
      *
-     * @param userId
+     * @param accountId
      * @return
      */
     @Override
-    public boolean checkIsAdmin(int userId, Integer... roleIds) {
+    public boolean checkIsAdmin(int accountId, Integer... roleIds) {
         AccountRoleRelationDOExample example = new AccountRoleRelationDOExample();
         example.createCriteria()
-                .andAccountIdEqualTo(userId)
+                .andAccountIdEqualTo(accountId)
                 .andRoleIdIn(Arrays.asList(roleIds))
                 .andDisabledEqualTo(Disabled.FALSE);
         int count = accountRoleRelationDOMapper.countByExample(example);

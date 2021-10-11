@@ -9,11 +9,11 @@
         <module name="account-common" />
         <module name="wx-common" />
         <module name="redis-bo" />
+        <module name="msg-common" />
         <module name="framework-bo" />
         <module name="wx-web" />
         <module name="framework-common" />
         <module name="redis-common" />
-        <module name="wheel-service-customer" />
         <module name="account-bo" />
         <module name="redis-web" />
         <module name="file-web" />
@@ -28,6 +28,9 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="api-gateway" target="1.5" />
+      <module name="msg-common" target="8" />
+      <module name="wheel-service-customer" target="1.5" />
       <module name="zty-wheels" target="1.8" />
     </bytecodeTargetLevel>
   </component>
@@ -37,6 +40,7 @@
       <module name="account-bo" options="-parameters" />
       <module name="account-common" options="-parameters" />
       <module name="account-web" options="-parameters" />
+      <module name="api-gateway" options="-parameters" />
       <module name="file" options="-parameters" />
       <module name="file-bo" options="-parameters" />
       <module name="file-common" options="-parameters" />
@@ -47,11 +51,12 @@
       <module name="framework-springboot-app" options="-parameters" />
       <module name="framework-third" options="-parameters" />
       <module name="framework-web" options="-parameters" />
+      <module name="msg" options="-parameters" />
+      <module name="msg-common" options="-parameters" />
       <module name="redis" options="-parameters" />
       <module name="redis-bo" options="-parameters" />
       <module name="redis-common" options="-parameters" />
       <module name="redis-web" options="-parameters" />
-      <module name="wheel-gateway" options="-parameters" />
       <module name="wheel-service-customer" options="-parameters" />
       <module name="wx" options="-parameters" />
       <module name="wx-bo" options="-parameters" />

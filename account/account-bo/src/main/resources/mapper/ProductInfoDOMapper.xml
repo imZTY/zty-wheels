@@ -1,17 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.zty.bo.dao.AccountInfoDOMapper" >
-  <resultMap id="BaseResultMap" type="com.zty.common.DO.AccountInfoDO" >
+<mapper namespace="com.zty.bo.dao.ProductInfoDOMapper" >
+  <resultMap id="BaseResultMap" type="com.zty.common.DO.ProductInfoDO" >
     <id column="id" property="id" jdbcType="INTEGER" />
-    <result column="account" property="account" jdbcType="VARCHAR" />
-    <result column="account_type" property="accountType" jdbcType="TINYINT" />
+    <result column="parent_id" property="parentId" jdbcType="INTEGER" />
     <result column="name" property="name" jdbcType="VARCHAR" />
-    <result column="phone" property="phone" jdbcType="VARCHAR" />
-    <result column="openid" property="openid" jdbcType="VARCHAR" />
-    <result column="password" property="password" jdbcType="VARCHAR" />
+    <result column="description" property="description" jdbcType="VARCHAR" />
+    <result column="sort_index" property="sortIndex" jdbcType="INTEGER" />
     <result column="disabled" property="disabled" jdbcType="TINYINT" />
-    <result column="invite_code" property="inviteCode" jdbcType="VARCHAR" />
-    <result column="inviter_id" property="inviterId" jdbcType="INTEGER" />
     <result column="create_by" property="createBy" jdbcType="INTEGER" />
     <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
     <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
@@ -19,7 +15,6 @@
     <result column="fld_n2" property="fldN2" jdbcType="INTEGER" />
     <result column="fld_l1" property="fldL1" jdbcType="BIGINT" />
     <result column="fld_s1" property="fldS1" jdbcType="VARCHAR" />
-    <result column="fld_s2" property="fldS2" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Example_Where_Clause" >
     <where >
@@ -80,21 +75,17 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    id, account, account_type, name, phone, openid, password, disabled, create_by, create_time, 
-    update_time, fld_n1, fld_n2, fld_l1, fld_s1, fld_s2
+    id, parent_id, name, description, sort_index, disabled, create_by, create_time, update_time, 
+    fld_n1, fld_n2, fld_l1, fld_s1
   </sql>
-  <sql id="Account_Base_Column_List" >
-    a.id, a.account, a.account_type, a.name, a.phone, a.openid, a.password, a.disabled, a.create_by, a.create_time, a.
-    update_time, a.fld_n1, a.fld_n2, a.fld_l1, a.fld_s1, a.fld_s2
-  </sql>
-  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.zty.common.DO.example.AccountInfoDOExample" >
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.zty.common.DO.example.ProductInfoDOExample" >
     select
     <if test="distinct" >
       distinct
     </if>
     'true' as QUERYID,
     <include refid="Base_Column_List" />
-    from account_info
+    from product_info
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
@@ -105,65 +96,51 @@
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select
     <include refid="Base_Column_List" />
-    from account_info
+    from product_info
     where id = #{id,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
-    delete from account_info
+    delete from product_info
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <delete id="deleteByExample" parameterType="com.zty.common.DO.example.AccountInfoDOExample" >
-    delete from account_info
+  <delete id="deleteByExample" parameterType="com.zty.common.DO.example.ProductInfoDOExample" >
+    delete from product_info
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.zty.common.DO.AccountInfoDO" >
-    insert into account_info (id, account, account_type,
-                              name, phone, openid,
-                              password, disabled, invite_code,
-                              inviter_id, create_by, create_time,
-                              update_time, fld_n1, fld_n2,
-                              fld_l1, fld_s1, fld_s2)
-    values (#{id,jdbcType=INTEGER}, #{account,jdbcType=VARCHAR}, #{accountType,jdbcType=TINYINT},
-            #{name,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, #{openid,jdbcType=VARCHAR},
-            #{password,jdbcType=VARCHAR}, #{disabled,jdbcType=TINYINT}, #{inviteCode,jdbcType=VARCHAR},
-            #{inviterId,jdbcType=INTEGER}, #{createBy,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP},
-            #{updateTime,jdbcType=TIMESTAMP}, #{fldN1,jdbcType=INTEGER}, #{fldN2,jdbcType=INTEGER},
-            #{fldL1,jdbcType=BIGINT}, #{fldS1,jdbcType=VARCHAR}, #{fldS2,jdbcType=VARCHAR})
+  <insert id="insert" parameterType="com.zty.common.DO.ProductInfoDO" >
+    insert into product_info (id, parent_id, name,
+                              description, sort_index, disabled,
+                              create_by, create_time, update_time,
+                              fld_n1, fld_n2, fld_l1,
+                              fld_s1)
+    values (#{id,jdbcType=INTEGER}, #{parentId,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR},
+            #{description,jdbcType=VARCHAR}, #{sortIndex,jdbcType=INTEGER}, #{disabled,jdbcType=TINYINT},
+            #{createBy,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP},
+            #{fldN1,jdbcType=INTEGER}, #{fldN2,jdbcType=INTEGER}, #{fldL1,jdbcType=BIGINT},
+            #{fldS1,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.zty.common.DO.AccountInfoDO" >
-    insert into account_info
+  <insert id="insertSelective" parameterType="com.zty.common.DO.ProductInfoDO" >
+    insert into product_info
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
         id,
       </if>
-      <if test="account != null" >
-        account,
-      </if>
-      <if test="accountType != null" >
-        account_type,
+      <if test="parentId != null" >
+        parent_id,
       </if>
       <if test="name != null" >
         name,
       </if>
-      <if test="phone != null" >
-        phone,
+      <if test="description != null" >
+        description,
       </if>
-      <if test="openid != null" >
-        openid,
-      </if>
-      <if test="password != null" >
-        password,
+      <if test="sortIndex != null" >
+        sort_index,
       </if>
       <if test="disabled != null" >
         disabled,
-      </if>
-      <if test="inviteCode != null" >
-        invite_code,
-      </if>
-      <if test="inviterId != null" >
-        inviter_id,
       </if>
       <if test="createBy != null" >
         create_by,
@@ -186,40 +163,25 @@
       <if test="fldS1 != null" >
         fld_s1,
       </if>
-      <if test="fldS2 != null" >
-        fld_s2,
-      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="id != null" >
         #{id,jdbcType=INTEGER},
       </if>
-      <if test="account != null" >
-        #{account,jdbcType=VARCHAR},
-      </if>
-      <if test="accountType != null" >
-        #{accountType,jdbcType=TINYINT},
+      <if test="parentId != null" >
+        #{parentId,jdbcType=INTEGER},
       </if>
       <if test="name != null" >
         #{name,jdbcType=VARCHAR},
       </if>
-      <if test="phone != null" >
-        #{phone,jdbcType=VARCHAR},
+      <if test="description != null" >
+        #{description,jdbcType=VARCHAR},
       </if>
-      <if test="openid != null" >
-        #{openid,jdbcType=VARCHAR},
-      </if>
-      <if test="password != null" >
-        #{password,jdbcType=VARCHAR},
+      <if test="sortIndex != null" >
+        #{sortIndex,jdbcType=INTEGER},
       </if>
       <if test="disabled != null" >
         #{disabled,jdbcType=TINYINT},
-      </if>
-      <if test="inviteCode != null" >
-        #{inviteCode,jdbcType=VARCHAR},
-      </if>
-      <if test="inviterId != null" >
-        #{inviterId,jdbcType=INTEGER},
       </if>
       <if test="createBy != null" >
         #{createBy,jdbcType=INTEGER},
@@ -242,49 +204,34 @@
       <if test="fldS1 != null" >
         #{fldS1,jdbcType=VARCHAR},
       </if>
-      <if test="fldS2 != null" >
-        #{fldS2,jdbcType=VARCHAR},
-      </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.zty.common.DO.example.AccountInfoDOExample" resultType="java.lang.Integer" >
-    select count(*) from account_info
+  <select id="countByExample" parameterType="com.zty.common.DO.example.ProductInfoDOExample" resultType="java.lang.Integer" >
+    select count(*) from product_info
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
   </select>
   <update id="updateByExampleSelective" parameterType="map" >
-    update account_info
+    update product_info
     <set >
       <if test="record.id != null" >
         id = #{record.id,jdbcType=INTEGER},
       </if>
-      <if test="record.account != null" >
-        account = #{record.account,jdbcType=VARCHAR},
-      </if>
-      <if test="record.accountType != null" >
-        account_type = #{record.accountType,jdbcType=TINYINT},
+      <if test="record.parentId != null" >
+        parent_id = #{record.parentId,jdbcType=INTEGER},
       </if>
       <if test="record.name != null" >
         name = #{record.name,jdbcType=VARCHAR},
       </if>
-      <if test="record.phone != null" >
-        phone = #{record.phone,jdbcType=VARCHAR},
+      <if test="record.description != null" >
+        description = #{record.description,jdbcType=VARCHAR},
       </if>
-      <if test="record.openid != null" >
-        openid = #{record.openid,jdbcType=VARCHAR},
-      </if>
-      <if test="record.password != null" >
-        password = #{record.password,jdbcType=VARCHAR},
+      <if test="record.sortIndex != null" >
+        sort_index = #{record.sortIndex,jdbcType=INTEGER},
       </if>
       <if test="record.disabled != null" >
         disabled = #{record.disabled,jdbcType=TINYINT},
-      </if>
-      <if test="record.inviteCode != null" >
-        invite_code = #{record.inviteCode,jdbcType=VARCHAR},
-      </if>
-      <if test="record.inviterId != null" >
-        inviter_id = #{record.inviterId,jdbcType=INTEGER},
       </if>
       <if test="record.createBy != null" >
         create_by = #{record.createBy,jdbcType=INTEGER},
@@ -307,67 +254,47 @@
       <if test="record.fldS1 != null" >
         fld_s1 = #{record.fldS1,jdbcType=VARCHAR},
       </if>
-      <if test="record.fldS2 != null" >
-        fld_s2 = #{record.fldS2,jdbcType=VARCHAR},
-      </if>
     </set>
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
   <update id="updateByExample" parameterType="map" >
-    update account_info
+    update product_info
     set id = #{record.id,jdbcType=INTEGER},
-    account = #{record.account,jdbcType=VARCHAR},
-    account_type = #{record.accountType,jdbcType=TINYINT},
+    parent_id = #{record.parentId,jdbcType=INTEGER},
     name = #{record.name,jdbcType=VARCHAR},
-    phone = #{record.phone,jdbcType=VARCHAR},
-    openid = #{record.openid,jdbcType=VARCHAR},
-    password = #{record.password,jdbcType=VARCHAR},
+    description = #{record.description,jdbcType=VARCHAR},
+    sort_index = #{record.sortIndex,jdbcType=INTEGER},
     disabled = #{record.disabled,jdbcType=TINYINT},
-    invite_code = #{record.inviteCode,jdbcType=VARCHAR},
-    inviter_id = #{record.inviterId,jdbcType=INTEGER},
     create_by = #{record.createBy,jdbcType=INTEGER},
     create_time = #{record.createTime,jdbcType=TIMESTAMP},
     update_time = #{record.updateTime,jdbcType=TIMESTAMP},
     fld_n1 = #{record.fldN1,jdbcType=INTEGER},
     fld_n2 = #{record.fldN2,jdbcType=INTEGER},
     fld_l1 = #{record.fldL1,jdbcType=BIGINT},
-    fld_s1 = #{record.fldS1,jdbcType=VARCHAR},
-    fld_s2 = #{record.fldS2,jdbcType=VARCHAR}
+    fld_s1 = #{record.fldS1,jdbcType=VARCHAR}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.zty.common.DO.AccountInfoDO" >
-    update account_info
+  <update id="updateByPrimaryKeySelective" parameterType="com.zty.common.DO.ProductInfoDO" >
+    update product_info
     <set >
-      <if test="account != null" >
-        account = #{account,jdbcType=VARCHAR},
-      </if>
-      <if test="accountType != null" >
-        account_type = #{accountType,jdbcType=TINYINT},
+      <if test="parentId != null" >
+        parent_id = #{parentId,jdbcType=INTEGER},
       </if>
       <if test="name != null" >
         name = #{name,jdbcType=VARCHAR},
       </if>
-      <if test="phone != null" >
-        phone = #{phone,jdbcType=VARCHAR},
+      <if test="description != null" >
+        description = #{description,jdbcType=VARCHAR},
       </if>
-      <if test="openid != null" >
-        openid = #{openid,jdbcType=VARCHAR},
-      </if>
-      <if test="password != null" >
-        password = #{password,jdbcType=VARCHAR},
+      <if test="sortIndex != null" >
+        sort_index = #{sortIndex,jdbcType=INTEGER},
       </if>
       <if test="disabled != null" >
         disabled = #{disabled,jdbcType=TINYINT},
-      </if>
-      <if test="inviteCode != null" >
-        invite_code = #{inviteCode,jdbcType=VARCHAR},
-      </if>
-      <if test="inviterId != null" >
-        inviter_id = #{inviterId,jdbcType=INTEGER},
       </if>
       <if test="createBy != null" >
         create_by = #{createBy,jdbcType=INTEGER},
@@ -390,43 +317,23 @@
       <if test="fldS1 != null" >
         fld_s1 = #{fldS1,jdbcType=VARCHAR},
       </if>
-      <if test="fldS2 != null" >
-        fld_s2 = #{fldS2,jdbcType=VARCHAR},
-      </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.zty.common.DO.AccountInfoDO" >
-    update account_info
-    set account = #{account,jdbcType=VARCHAR},
-        account_type = #{accountType,jdbcType=TINYINT},
+  <update id="updateByPrimaryKey" parameterType="com.zty.common.DO.ProductInfoDO" >
+    update product_info
+    set parent_id = #{parentId,jdbcType=INTEGER},
         name = #{name,jdbcType=VARCHAR},
-        phone = #{phone,jdbcType=VARCHAR},
-        openid = #{openid,jdbcType=VARCHAR},
-        password = #{password,jdbcType=VARCHAR},
+        description = #{description,jdbcType=VARCHAR},
+        sort_index = #{sortIndex,jdbcType=INTEGER},
         disabled = #{disabled,jdbcType=TINYINT},
-        invite_code = #{inviteCode,jdbcType=VARCHAR},
-        inviter_id = #{inviterId,jdbcType=INTEGER},
         create_by = #{createBy,jdbcType=INTEGER},
         create_time = #{createTime,jdbcType=TIMESTAMP},
         update_time = #{updateTime,jdbcType=TIMESTAMP},
         fld_n1 = #{fldN1,jdbcType=INTEGER},
         fld_n2 = #{fldN2,jdbcType=INTEGER},
         fld_l1 = #{fldL1,jdbcType=BIGINT},
-        fld_s1 = #{fldS1,jdbcType=VARCHAR},
-        fld_s2 = #{fldS2,jdbcType=VARCHAR}
+        fld_s1 = #{fldS1,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <select id="selectByRoleIds" parameterType="java.util.List" resultMap="BaseResultMap">
-    select
-    <include refid="Account_Base_Column_List" />
-    from account_info a join account_role_relation r
-    ON a.id = r.account_id
-    where r.disabled = 0
-    AND a.disabled = 0
-    AND r.role_id IN
-    <foreach collection="list" item="roleId" open="(" close=")" separator="," >
-      #{roleId}
-    </foreach>
-  </select>
 </mapper>

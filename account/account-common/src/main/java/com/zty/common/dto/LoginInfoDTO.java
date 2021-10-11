@@ -34,6 +34,10 @@ public class LoginInfoDTO extends DataDTO {
 
     private Byte disabled;
 
+    private String inviteCode;
+
+    private Integer inviterId;
+
     // 设置字符串类型，是为了兼容多角色
     private String roleId = "1";
 
@@ -141,6 +145,22 @@ public class LoginInfoDTO extends DataDTO {
 
     public void setDisabled(Byte disabled) {
         this.disabled = disabled;
+    }
+
+    public String getInviteCode() {
+        return inviteCode;
+    }
+
+    public void setInviteCode(String inviteCode) {
+        this.inviteCode = inviteCode;
+    }
+
+    public Integer getInviterId() {
+        return inviterId;
+    }
+
+    public void setInviterId(Integer inviterId) {
+        this.inviterId = inviterId;
     }
 
     public String getRoleId() {
