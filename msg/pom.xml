@@ -12,4 +12,47 @@
     <artifactId>msg</artifactId>
 
     <packaging>pom</packaging>
+    <modules>
+        <module>msg-facade</module>
+        <module>msg-bo</module>
+        <module>msg-web</module>
+    </modules>
+
+    <properties>
+        <patchca.version>0.0.1</patchca.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.zty</groupId>
+                <artifactId>redis-bo</artifactId>
+                <version>${zty-wheels.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.zty</groupId>
+                <artifactId>framework-common</artifactId>
+                <version>${zty-wheels.version}</version>
+                <scope>compile</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.zty</groupId>
+                <artifactId>framework-bo</artifactId>
+                <version>${zty-wheels.version}</version>
+                <scope>compile</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.zty</groupId>
+                <artifactId>framework-web</artifactId>
+                <version>${zty-wheels.version}</version>
+                <scope>compile</scope>
+            </dependency>
+            <!-- 验证码 -->
+            <dependency>
+                <groupId>com.github.bingoohuang</groupId>
+                <artifactId>patchca</artifactId>
+                <version>${patchca.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 </project>

@@ -33,6 +33,8 @@
         <module>framework</module>
         <module>msg</module>
         <module>msg-common</module>
+        <module>pay</module>
+        <module>task</module>
     </modules>
 
     <build>

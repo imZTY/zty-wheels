@@ -5,60 +5,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="591a7ef7-1a26-4d97-a74b-59989a9f55c2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/account/account-bo/account-bo.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/account/account-bo/src/main/java/com/zty/bo/dao/AccountProductRelationDOMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/account/account-bo/src/main/java/com/zty/bo/dao/ProductInfoDOMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/account/account-bo/src/main/java/com/zty/bo/service/impl/ProductServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/account/account-bo/src/main/resources/mapper/AccountProductRelationDOMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/account/account-bo/src/main/resources/mapper/ProductInfoDOMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/account/account-common/account-common.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/account/account-common/src/main/java/com/zty/common/DO/AccountProductRelationDO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/account/account-common/src/main/java/com/zty/common/DO/ProductInfoDO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/account/account-common/src/main/java/com/zty/common/DO/example/AccountProductRelationDOExample.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/account/account-common/src/main/java/com/zty/common/DO/example/ProductInfoDOExample.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/account/account-common/src/main/java/com/zty/common/service/ProductService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/account/account-web/account-web.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/account/account-web/src/main/java/com/zty/web/controller/ProductController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/account/account-web/src/main/java/com/zty/web/request/QueryProductTreeRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/account/account-web/src/main/java/com/zty/web/response/QueryProductTreeResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/account/account.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/file/file-web/file-web.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/framework/framework-bo/framework-bo.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/framework/framework-bo/src/main/java/com/zty/framework/service/impl/SmtpMailServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/framework/framework-bo/src/test/java/com/zty/framework/service/impl/SmtpMailServiceImplTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/framework/framework-common/src/main/java/com/zty/framework/request/SmtpMailRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/framework/framework-common/src/main/java/com/zty/framework/response/SmtpMailResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/framework/framework-common/src/main/java/com/zty/framework/service/SmtpMailService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/msg/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/file/file-bo/file-bo.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/msg/msg-bo/msg-bo.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/msg/msg-bo/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/msg/msg-bo/src/main/java/com/zty/msg/config/CaptchaConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/msg/msg-bo/src/main/java/com/zty/msg/service/impl/CloopenSmsSendServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/msg/msg-facade/msg-facade.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/msg/msg-facade/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/msg/msg-facade/src/main/java/com/zty/msg/dto/MobileReqInfoDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/msg/msg-facade/src/main/java/com/zty/msg/dto/MobileRespInfoDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/msg/msg-facade/src/main/java/com/zty/msg/enums/SmsStatusEnum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/msg/msg-facade/src/main/java/com/zty/msg/request/SmsSendRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/msg/msg-facade/src/main/java/com/zty/msg/response/SmsSendResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/msg/msg-facade/src/main/java/com/zty/msg/service/SmsSendService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/msg/msg-web/msg-web.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/msg/msg-web/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/msg/msg-web/src/main/java/com/zty/msg/controller/CaptchaCodeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pay/pay-facade/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pay/pay-service/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pay/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/task/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account/account-bo/src/main/java/com/zty/bo/service/impl/AccountServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/account/account-bo/src/main/java/com/zty/bo/service/impl/AccountServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account/account-bo/src/main/resources/mapper/AccountInfoDOMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/account/account-bo/src/main/resources/mapper/AccountInfoDOMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account/account-common/src/main/java/com/zty/common/DO/AccountInfoDO.java" beforeDir="false" afterPath="$PROJECT_DIR$/account/account-common/src/main/java/com/zty/common/DO/AccountInfoDO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account/account-common/src/main/java/com/zty/common/DO/example/AccountInfoDOExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/account/account-common/src/main/java/com/zty/common/DO/example/AccountInfoDOExample.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account/account-common/src/main/java/com/zty/common/dto/LoginInfoDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/account/account-common/src/main/java/com/zty/common/dto/LoginInfoDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account/account-web/src/main/java/com/zty/web/controller/AccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/account/account-web/src/main/java/com/zty/web/controller/AccountController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/framework/framework-bo/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/framework/framework-bo/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/framework/framework-common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/framework/framework-common/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/account/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/msg/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/msg/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wheel-gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wheel-gateway/wheel-service-customer/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/wheel-service-customer/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wheel-gateway/wheel-service-customer/.mvn/wrapper/MavenWrapperDownloader.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/wheel-service-customer/.mvn/wrapper/MavenWrapperDownloader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wheel-gateway/wheel-service-customer/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/wheel-service-customer/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wheel-gateway/wheel-service-customer/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/wheel-service-customer/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wheel-gateway/wheel-service-customer/mvnw" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/wheel-service-customer/mvnw" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wheel-gateway/wheel-service-customer/mvnw.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/wheel-service-customer/mvnw.cmd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wheel-gateway/wheel-service-customer/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/wheel-service-customer/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wheel-gateway/wheel-service-customer/src/main/java/com/zty/wheel/WheelServiceCustomerApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/wheel-service-customer/src/main/java/com/zty/wheel/WheelServiceCustomerApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wheel-gateway/wheel-service-customer/src/main/java/com/zty/wheel/aop/LoginCheck.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/wheel-service-customer/src/main/java/com/zty/wheel/aop/LoginCheck.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wheel-gateway/wheel-service-customer/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/wheel-service-customer/src/main/resources/application-dev.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wheel-gateway/wheel-service-customer/src/main/resources/application-prod.yml" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/wheel-service-customer/src/main/resources/application-prod.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wheel-gateway/wheel-service-customer/src/main/resources/application-test.yml" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/wheel-service-customer/src/main/resources/application-test.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wheel-gateway/wheel-service-customer/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/wheel-service-customer/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wheel-gateway/wheel-service-customer/src/main/resources/mybatis-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/wheel-service-customer/src/main/resources/mybatis-config.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wheel-gateway/wheel-service-customer/src/test/java/com/zty/wheel/WheelServiceCustomerApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/wheel-service-customer/src/test/java/com/zty/wheel/WheelServiceCustomerApplicationTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,8 +60,9 @@
         <option value="AnnotationType" />
         <option value="JUnit4 Test Class" />
         <option value="JUnit5 Test Class" />
-        <option value="Enum" />
         <option value="Interface" />
+        <option value="Enum" />
+        <option value="FxmlFile" />
         <option value="Class" />
       </list>
     </option>
@@ -122,6 +95,9 @@
     <option name="skipTests" value="true" />
   </component>
   <component name="ProjectId" id="1bI2TakSnzlHbCARtdyCzFURW9r" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -224,17 +200,6 @@
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -435,7 +400,10 @@
       <workItem from="1632558269302" duration="1038000" />
       <workItem from="1632564414112" duration="32884000" />
       <workItem from="1632830207001" duration="14850000" />
-      <workItem from="1633066888060" duration="5905000" />
+      <workItem from="1633066888060" duration="8250000" />
+      <workItem from="1634519067823" duration="1350000" />
+      <workItem from="1634692541267" duration="10424000" />
+      <workItem from="1635247348057" duration="1151000" />
     </task>
     <servers />
   </component>

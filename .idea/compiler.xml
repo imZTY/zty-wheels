@@ -9,15 +9,19 @@
         <module name="account-common" />
         <module name="wx-common" />
         <module name="redis-bo" />
+        <module name="pay-service" />
         <module name="msg-common" />
         <module name="framework-bo" />
         <module name="wx-web" />
         <module name="framework-common" />
         <module name="redis-common" />
+        <module name="msg-facade" />
+        <module name="msg-web" />
         <module name="account-bo" />
         <module name="redis-web" />
         <module name="file-web" />
         <module name="file-bo" />
+        <module name="pay-facade" />
         <module name="file-common" />
         <module name="framework-spider" />
         <module name="framework-springboot-app" />
@@ -25,6 +29,7 @@
         <module name="framework-web" />
         <module name="account-web" />
         <module name="wx-bo" />
+        <module name="msg-bo" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -52,7 +57,13 @@
       <module name="framework-third" options="-parameters" />
       <module name="framework-web" options="-parameters" />
       <module name="msg" options="-parameters" />
+      <module name="msg-bo" options="-parameters" />
       <module name="msg-common" options="-parameters" />
+      <module name="msg-facade" options="-parameters" />
+      <module name="msg-web" options="-parameters" />
+      <module name="pay" options="-parameters" />
+      <module name="pay-facade" options="-parameters" />
+      <module name="pay-service" options="-parameters" />
       <module name="redis" options="-parameters" />
       <module name="redis-bo" options="-parameters" />
       <module name="redis-common" options="-parameters" />

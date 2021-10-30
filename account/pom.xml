@@ -21,6 +21,10 @@
         <module>account-web</module>
     </modules>
 
+    <properties>
+        <pagehelper.version>4.2.1</pagehelper.version>
+    </properties>
+
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -31,7 +35,7 @@
             <dependency>
                 <groupId>com.github.pagehelper</groupId>
                 <artifactId>pagehelper</artifactId>
-                <version>4.2.1</version>
+                <version>${pagehelper.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.zty</groupId>
