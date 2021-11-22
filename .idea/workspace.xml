@@ -5,32 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="591a7ef7-1a26-4d97-a74b-59989a9f55c2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/file/file-bo/file-bo.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/msg/msg-bo/msg-bo.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/msg/msg-bo/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/msg/msg-bo/src/main/java/com/zty/msg/config/CaptchaConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/msg/msg-bo/src/main/java/com/zty/msg/service/impl/CloopenSmsSendServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/msg/msg-facade/msg-facade.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/msg/msg-facade/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/msg/msg-facade/src/main/java/com/zty/msg/dto/MobileReqInfoDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/msg/msg-facade/src/main/java/com/zty/msg/dto/MobileRespInfoDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/msg/msg-facade/src/main/java/com/zty/msg/enums/SmsStatusEnum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/msg/msg-facade/src/main/java/com/zty/msg/request/SmsSendRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/msg/msg-facade/src/main/java/com/zty/msg/response/SmsSendResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/msg/msg-facade/src/main/java/com/zty/msg/service/SmsSendService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/msg/msg-web/msg-web.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/msg/msg-web/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/msg/msg-web/src/main/java/com/zty/msg/controller/CaptchaCodeController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pay/pay-facade/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pay/pay-service/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pay/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/task/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/account/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/msg/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/msg/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/framework-bo/src/test/java/com/zty/framework/service/impl/SmtpMailServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/framework-bo/src/test/java/com/zty/framework/service/impl/SmtpMailServiceImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/framework-spider/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/framework/framework-spider/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/msg/msg-bo/msg-bo.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/msg/msg-facade/msg-facade.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/msg/msg-web/msg-web.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pay/pay-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pay/pay-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pay/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pay/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +66,7 @@
     <option name="generalSettings">
       <MavenGeneralSettings>
         <option name="localRepository" value="D:\Program Files\JetBrains\repository" />
-        <option name="userSettingsFile" value="D:\Program Files\JetBrains\settings_zty.xml" />
+        <option name="userSettingsFile" value="D:\Program Files\JetBrains\settings.xml" />
       </MavenGeneralSettings>
     </option>
     <option name="importingSettings">
@@ -111,7 +95,7 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/account/account-bo/src/main/resources/mapper" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../2021/pj/payment-simple/pom.xml" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -404,6 +388,7 @@
       <workItem from="1634519067823" duration="1350000" />
       <workItem from="1634692541267" duration="10424000" />
       <workItem from="1635247348057" duration="1151000" />
+      <workItem from="1636030638788" duration="5776000" />
     </task>
     <servers />
   </component>

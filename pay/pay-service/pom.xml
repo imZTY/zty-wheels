@@ -11,5 +11,10 @@
 
     <artifactId>pay-service</artifactId>
 
-
+    <dependencies>
+        <dependency>
+            <groupId>org.thlws</groupId>
+            <artifactId>payment-thl</artifactId>
+        </dependency>
+    </dependencies>
 </project>

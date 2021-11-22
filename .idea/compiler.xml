@@ -35,7 +35,8 @@
     <bytecodeTargetLevel>
       <module name="api-gateway" target="1.5" />
       <module name="msg-common" target="8" />
-      <module name="wheel-service-customer" target="1.5" />
+      <module name="wheel-gateway" target="1.8" />
+      <module name="wheel-service-customer" target="1.8" />
       <module name="zty-wheels" target="1.8" />
     </bytecodeTargetLevel>
   </component>
