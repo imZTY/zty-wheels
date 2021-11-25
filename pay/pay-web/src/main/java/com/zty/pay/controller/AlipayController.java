@@ -134,6 +134,9 @@ public class AlipayController {
      */
     @RequestMapping("/pay/web")
     public String payInWebSite(@RequestParam(name = "amt",defaultValue = "0.01")String amt,
+                               @RequestParam(name = "orderId",defaultValue = "0")String orderId,
+                               @RequestParam(name = "subject",defaultValue = "subject")String subject,
+                               @RequestParam(name = "body",defaultValue = "body")String body,
                                ModelMap modelMap){
         try {
             AlipayCore.ClientBuilder clientBuilder = new AlipayCore.ClientBuilder();
@@ -152,9 +155,9 @@ public class AlipayController {
 
             AlipayWebSiteRequest.BizContent bizContent = new AlipayWebSiteRequest.BizContent();
             bizContent.setTotalAmount(amt);
-            bizContent.setSubject("测试电脑网站支付");
-            bizContent.setBody("测试");
-            bizContent.setOutTradeNo(System.currentTimeMillis()+"");
+            bizContent.setSubject(subject);
+            bizContent.setBody(body);
+            bizContent.setOutTradeNo(orderId);
             request.setBizContent(bizContent);
             String html = AlipayClient.payInWebSite(request,alipayCore);
             modelMap.addAttribute("form", html);
