@@ -15,6 +15,8 @@
     <modules>
         <module>pay-facade</module>
         <module>pay-service</module>
+        <module>pay-web</module>
+        <module>pay-app</module>
     </modules>
 
     <properties>
@@ -27,6 +29,21 @@
                 <groupId>org.thlws</groupId>
                 <artifactId>payment-thl</artifactId>
                 <version>${payment-thl.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.zty</groupId>
+                <artifactId>pay-facade</artifactId>
+                <version>${zty-wheels.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.zty</groupId>
+                <artifactId>pay-service</artifactId>
+                <version>${zty-wheels.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.zty</groupId>
+                <artifactId>pay-web</artifactId>
+                <version>${zty-wheels.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

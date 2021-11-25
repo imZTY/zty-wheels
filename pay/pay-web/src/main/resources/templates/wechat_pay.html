@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<!-- 公账号支付示例JSP -->
+
+<script type="text/javascript">
+
+	function onBridgeReady() {
+		WeixinJSBridge.invoke('getBrandWCPayRequest', {
+			"appId" : '${mp.appId}',
+			"timeStamp" : '${mp.timeStamp}',
+			"nonceStr" : '${mp.nonceStr}',
+			"package" : '${mp.packageStr}',
+			"signType" : '${mp.signType}',
+			"paySign" :  '${mp.paySign}'
+		}, function(res) {
+			if (res.err_msg == "get_brand_wcpay_request:ok") {
+
+                setTimeout(pay_ok,1500);//支付成功并进行页面跳转
+
+			}else{
+
+				if(res.err_msg == "get_brand_wcpay_request:cancel"){
+                    //支付被取消 FIXME
+				}else{
+                    //其他异常弹出对应异常信息 FIXME
+				}
+				setTimeout(pay_ng,1500);
+			}
+		});
+	}
+
+
+	if (typeof WeixinJSBridge == "undefined") {
+		if (document.addEventListener) {
+			document.addEventListener('WeixinJSBridgeReady',onBridgeReady, false);
+		} else if (document.attachEvent) {
+			document.attachEvent('WeixinJSBridgeReady', onBridgeReady);
+			document.attachEvent('onWeixinJSBridgeReady', onBridgeReady);
+		}
+	} else {
+		onBridgeReady();
+	}
+
+
+	function retry(){
+		window.location.reload();
+	}
+
+
+	/*支付成功*/
+	function pay_ok() {
+	    //跟进自己业务决定跳转页面,pay_ok.html仅为示例URL
+        window.location.href="${pageContext.request.contextPath}/pay_ok.html";
+    }
+
+    /*支付失败*/
+    function pay_ng() {
+        //跟进自己业务决定跳转页面,pay_ng.html仅为示例URL
+        window.location.href="${pageContext.request.contextPath}/pay_ng.html";
+    }
+
+</script>
+<head>
+
+</head>
+<body>
+<p th:text="">等待支付</p>
+</body>
+</html>

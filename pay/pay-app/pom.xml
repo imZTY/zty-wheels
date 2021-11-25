@@ -9,20 +9,21 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>pay-service</artifactId>
+    <artifactId>pay-app</artifactId>
 
     <dependencies>
         <dependency>
             <groupId>com.zty</groupId>
-            <artifactId>framework-bo</artifactId>
+            <artifactId>framework-springboot-app</artifactId>
+            <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>com.zty</groupId>
-            <artifactId>pay-facade</artifactId>
+            <artifactId>pay-service</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.thlws</groupId>
-            <artifactId>payment-thl</artifactId>
+            <groupId>com.zty</groupId>
+            <artifactId>pay-web</artifactId>
         </dependency>
     </dependencies>
 </project>

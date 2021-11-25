@@ -21,9 +21,6 @@
         <module>account-web</module>
     </modules>
 
-    <properties>
-        <pagehelper.version>4.2.1</pagehelper.version>
-    </properties>
 
     <dependencyManagement>
         <dependencies>
@@ -31,11 +28,6 @@
                 <groupId>com.zty</groupId>
                 <artifactId>redis-bo</artifactId>
                 <version>${zty-wheels.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.github.pagehelper</groupId>
-                <artifactId>pagehelper</artifactId>
-                <version>${pagehelper.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.zty</groupId>
@@ -46,24 +38,6 @@
             <dependency>
                 <groupId>com.zty</groupId>
                 <artifactId>account-bo</artifactId>
-                <version>${zty-wheels.version}</version>
-                <scope>compile</scope>
-            </dependency>
-            <dependency>
-                <groupId>com.zty</groupId>
-                <artifactId>framework-common</artifactId>
-                <version>${zty-wheels.version}</version>
-                <scope>compile</scope>
-            </dependency>
-            <dependency>
-                <groupId>com.zty</groupId>
-                <artifactId>framework-bo</artifactId>
-                <version>${zty-wheels.version}</version>
-                <scope>compile</scope>
-            </dependency>
-            <dependency>
-                <groupId>com.zty</groupId>
-                <artifactId>framework-web</artifactId>
                 <version>${zty-wheels.version}</version>
                 <scope>compile</scope>
             </dependency>

@@ -1,7 +1,7 @@
 package com.zty.msg.enums;
 
 /**
- * 短信第三方通道返回状态
+ * 短信第三方通道返回状态r
  */
 public enum SmsStatusEnum {
 
