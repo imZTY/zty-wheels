@@ -137,6 +137,7 @@ public class AlipayController {
                                @RequestParam(name = "orderId",defaultValue = "0")String orderId,
                                @RequestParam(name = "subject",defaultValue = "subject")String subject,
                                @RequestParam(name = "body",defaultValue = "body")String body,
+                               @RequestParam(name = "returnUrl",defaultValue = "returnUrl")String returnUrl,
                                ModelMap modelMap){
         try {
             AlipayCore.ClientBuilder clientBuilder = new AlipayCore.ClientBuilder();
@@ -151,7 +152,7 @@ public class AlipayController {
             //request.setNotifyUrl("http://你的异步处理地址/alipay/notify_mobile");
             request.setNotifyUrl(null);
 
-            request.setReturnUrl("http://39.105.94.70:7171/alipay/alipay_sync_web");
+            request.setReturnUrl(returnUrl);
 
             AlipayWebSiteRequest.BizContent bizContent = new AlipayWebSiteRequest.BizContent();
             bizContent.setTotalAmount(amt);
