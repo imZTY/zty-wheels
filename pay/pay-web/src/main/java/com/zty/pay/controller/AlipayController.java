@@ -125,12 +125,15 @@ public class AlipayController {
     }
 
     //http://你的异步处理地址/alipay/notify_mobile
+
     /**
      * 电脑网站支付.
-     *
-     * @param amt      the amt
-     * @param modelMap the model map
-     * @return the string
+     * @param amt 金额(元)
+     * @param orderId 订单号
+     * @param subject 交易主题(thl)
+     * @param body 内容(thl)
+     * @param returnUrl 支付完成后的跳转地址
+     * @return
      */
     @RequestMapping("/pay/web")
     public String payInWebSite(@RequestParam(name = "amt",defaultValue = "0.01")String amt,
@@ -139,6 +142,7 @@ public class AlipayController {
                                @RequestParam(name = "body",defaultValue = "body")String body,
                                @RequestParam(name = "returnUrl",defaultValue = "returnUrl")String returnUrl,
                                ModelMap modelMap){
+        // TODO 检查本地订单状态
         try {
             AlipayCore.ClientBuilder clientBuilder = new AlipayCore.ClientBuilder();
             AlipayCore alipayCore = clientBuilder.setAlipayPublicKey(alipayConfig.getAlipay_public_key())
@@ -148,9 +152,8 @@ public class AlipayController {
 
             AlipayWebSiteRequest request = new AlipayWebSiteRequest();
 
-            //http://你的异步处理地址/alipay/notify_mobile
+            //TODO http://你的异步处理地址/alipay/notify_mobile
             //request.setNotifyUrl("http://你的异步处理地址/alipay/notify_mobile");
-            request.setNotifyUrl(null);
 
             request.setReturnUrl(returnUrl);
 

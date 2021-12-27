@@ -21,7 +21,7 @@
     <version>${zty-wheels.version}</version>
 
     <properties>
-        <zty-wheels.version>0.8.1</zty-wheels.version>
+        <zty-wheels.version>1.0.0</zty-wheels.version>
         <pagehelper.version>4.2.1</pagehelper.version>
     </properties>
 
