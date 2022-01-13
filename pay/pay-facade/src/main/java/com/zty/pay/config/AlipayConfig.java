@@ -11,6 +11,8 @@ public class AlipayConfig {
     private String private_key;
     private String alipay_public_key;
 
+    private String notifyUrl;
+
     public String getAppid() {
         return appid;
     }
@@ -43,5 +45,13 @@ public class AlipayConfig {
                 ", private_key='" + private_key + '\'' +
                 ", alipay_public_key='" + alipay_public_key + '\'' +
                 '}';
+    }
+
+    public String getNotifyUrl() {
+        return notifyUrl;
+    }
+
+    public void setNotifyUrl(String notifyUrl) {
+        this.notifyUrl = notifyUrl;
     }
 }

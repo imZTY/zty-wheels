@@ -1,12 +1,19 @@
 package com.zty.pay.controller;
 
+import java.io.IOException;
+import java.util.Date;
 import java.util.Enumeration;
 
 import cn.hutool.log.Log;
 import cn.hutool.log.LogFactory;
 import com.alipay.api.AlipayConstants;
+import com.zty.framework.exception.ParamCheckException;
+import com.zty.pay.DO.OrderInfoDO;
 import com.zty.pay.config.AlipayConfig;
+import com.zty.pay.constant.OrderStatus;
+import com.zty.pay.service.PayOrderService;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,6 +47,9 @@ public class AlipayController {
 
     @Autowired
     private AlipayConfig alipayConfig;
+
+    @Autowired
+    private PayOrderService payOrderService;
 
     /**
      * 支付宝付款测试页.
@@ -141,8 +151,28 @@ public class AlipayController {
                                @RequestParam(name = "subject",defaultValue = "subject")String subject,
                                @RequestParam(name = "body",defaultValue = "body")String body,
                                @RequestParam(name = "returnUrl",defaultValue = "returnUrl")String returnUrl,
-                               ModelMap modelMap){
-        // TODO 检查本地订单状态
+                               ModelMap modelMap, HttpServletResponse response) throws IOException {
+        OrderInfoDO localOrder = null;
+        try {
+            // 检查本地订单状态
+            OrderInfoDO queryOrder = new OrderInfoDO();
+            queryOrder.setId(Long.valueOf(orderId));
+            localOrder = payOrderService.checkAndGet(queryOrder);
+            if (localOrder == null) {
+                throw new ParamCheckException("订单不存在", "orderId", orderId);
+            }
+            if (!OrderStatus.canPay(localOrder.getStatus())) {
+                throw new ParamCheckException("订单不是可支付状态"+localOrder.getStatus());
+            }
+            // 修改订单状态
+            localOrder.setStatus(OrderStatus.DEALING);
+            localOrder.setUpdateTime(new Date());
+            payOrderService.updateOrder(localOrder);
+        } catch (Exception e) {
+            log.error("本地订单处理异常, ",e);
+            response.sendRedirect(returnUrl);
+        }
+
         try {
             AlipayCore.ClientBuilder clientBuilder = new AlipayCore.ClientBuilder();
             AlipayCore alipayCore = clientBuilder.setAlipayPublicKey(alipayConfig.getAlipay_public_key())
@@ -165,11 +195,16 @@ public class AlipayController {
             request.setBizContent(bizContent);
             String html = AlipayClient.payInWebSite(request,alipayCore);
             modelMap.addAttribute("form", html);
-
         } catch (Exception e) {
             log.error("电脑网站支付失败",e);
+            if (null != localOrder) {
+                localOrder.setStatus(OrderStatus.FAIL);
+                localOrder.setRemarks(e.getMessage());
+                localOrder.setUpdateTime(new Date());
+                payOrderService.updateOrder(localOrder);
+            }
+            response.sendRedirect(returnUrl);
         }
-
         return "alipay/alipay_web";
     }
 

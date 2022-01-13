@@ -9,8 +9,8 @@ spring:
       max-file-size: 300MB
       max-request-size: 320MB
 
-#mybatis:
-#  typeAliasesPackage: com.zty.pay.dao
-#  mapperLocations: classpath*:mapper/*.xml
-#  config-location: classpath:mybatis-config.xml
+mybatis:
+  typeAliasesPackage: com.zty.pay.dao
+  mapperLocations: classpath*:mapper/*.xml
+  config-location: classpath:mybatis-config.xml
 

@@ -24,6 +24,9 @@ public class PayConfigFactory {
     @Value("${payment.alipay.alipay_public_key:}")
     private String alipayPublicKey;
 
+    @Value("${payment.alipay.notifyUrl:http://你的异步处理地址/alipay/notify_mobile}")
+    private String notifyUrl;
+
     @Bean
     public AlipayConfig alipayConfig() {
         AlipayConfig alipayConfig = new AlipayConfig();

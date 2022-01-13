@@ -35,15 +35,33 @@ public class OrderStatus {
     /**
      * 退款中
      */
-    public static final byte REFUNDING = 4;
+    public static final byte REFUNDING = 5;
 
     /**
      * 已退款
      */
-    public static final byte REFUNDED = 4;
+    public static final byte REFUNDED = 6;
 
     /**
      * 已冲正
      */
-    public static final byte REVERSED = 4;
+    public static final byte REVERSED = 7;
+
+    /**
+     * 检查状态是否是终态
+     * @param status
+     * @return
+     */
+    public static boolean isFinalStatus(byte status) {
+        return status == CLOSED || status == REFUNDED || status == REVERSED;
+    }
+
+    /**
+     * 检查状态是否可支付
+     * @param status
+     * @return
+     */
+    public static boolean canPay(byte status) {
+        return status == INIT;
+    }
 }

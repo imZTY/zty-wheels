@@ -12,7 +12,7 @@ spring:
 
 server:
   servlet:
-    context-path: /
+    context-path: /paycenter
   port: 7171
 
 #开启sql语句打印
