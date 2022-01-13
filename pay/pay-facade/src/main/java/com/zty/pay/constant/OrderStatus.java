@@ -1,5 +1,7 @@
 package com.zty.pay.constant;
 
+import com.zty.framework.exception.ParamCheckException;
+
 /**
  * 订单状态
  * @author tianyi
@@ -48,12 +50,17 @@ public class OrderStatus {
     public static final byte REVERSED = 7;
 
     /**
+     * 已终止
+     */
+    public static final byte FINISHED = 8;
+
+    /**
      * 检查状态是否是终态
      * @param status
      * @return
      */
     public static boolean isFinalStatus(byte status) {
-        return status == CLOSED || status == REFUNDED || status == REVERSED;
+        return status == CLOSED || status == REFUNDED || status == REVERSED || status == FINISHED;
     }
 
     /**
@@ -63,5 +70,19 @@ public class OrderStatus {
      */
     public static boolean canPay(byte status) {
         return status == INIT;
+    }
+
+    public static byte fromTradeStatus(String tradeStatus) {
+        switch (tradeStatus) {
+            // 交易创建，等待买家付款
+            case "WAIT_BUYER_PAY": return INIT;
+            // 未付款交易超时关闭，或支付完成后全额退款
+            case "TRADE_CLOSED": return CLOSED;
+            // 交易支付成功
+            case "TRADE_SUCCESS": return SUCCESS;
+            // 交易结束，不可退款
+            case "TRADE_FINISHED": return FINISHED;
+            default: throw new ParamCheckException("订单状态"+tradeStatus+"解析异常");
+        }
     }
 }

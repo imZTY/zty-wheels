@@ -214,7 +214,7 @@ public class AlipayController {
      * @param outTradeNo the out trade no
      * @return the object
      */
-    @RequestMapping(value = "/query",produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    @RequestMapping(value = "/query",produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
     public Object query(@RequestParam(name = "out_trade_no")String outTradeNo){
 
