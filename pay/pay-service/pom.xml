@@ -20,5 +20,10 @@
             <groupId>com.zty</groupId>
             <artifactId>pay-facade</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.zty</groupId>
+            <artifactId>framework-third</artifactId>
+            <scope>compile</scope>
+        </dependency>
     </dependencies>
 </project>

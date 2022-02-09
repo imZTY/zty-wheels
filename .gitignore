@@ -19,3 +19,4 @@
 .idea/compiler.xml
 .idea/encodings.xml
 .idea/workspace.xml
+*.iml
