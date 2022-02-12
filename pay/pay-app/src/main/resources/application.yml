@@ -3,7 +3,7 @@
 spring:
   profiles:
     # 环境 dev|test|prod
-    active: dev
+    active: prod
   servlet:
     multipart:
       max-file-size: 300MB

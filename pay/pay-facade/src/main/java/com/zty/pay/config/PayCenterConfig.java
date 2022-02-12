@@ -17,7 +17,7 @@ public class PayCenterConfig {
     /**
      * 支付宝网站支付，跳转url
      */
-    @Value("${paycenter.baseUrl:http://127.0.0.1:8088/paycenter}")
+    @Value("${paycenter.baseUrl:http://127.0.0.1:8088/paycenter/}")
     private String baseUrl;
 
     /**

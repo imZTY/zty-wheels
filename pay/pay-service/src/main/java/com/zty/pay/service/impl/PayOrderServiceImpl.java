@@ -37,8 +37,8 @@ public class PayOrderServiceImpl implements PayOrderService {
      */
     @Override
     public OrderInfoDO checkAndGet(OrderInfoDO orderInfoDO) {
-        if (orderInfoDO.getId() != null) {
-            return orderInfoDOMapper.selectByPrimaryKey(orderInfoDO.getId());
+        if (orderInfoDO.getIdValue() != null) {
+            return orderInfoDOMapper.selectByPrimaryKey(orderInfoDO.getIdValue());
         }
         OrderInfoDOExample example = new OrderInfoDOExample();
         example.createCriteria()
@@ -58,9 +58,9 @@ public class PayOrderServiceImpl implements PayOrderService {
     @Override
     public Page<OrderInfoDO> pageOrderListByPage(OrderInfoDO pageDo) {
         OrderInfoDOExample example = new OrderInfoDOExample();
-        if (pageDo.getId() != null) {
+        if (pageDo.getIdValue() != null) {
             example.createCriteria()
-                    .andIdEqualTo(pageDo.getId());
+                    .andIdEqualTo(pageDo.getIdValue());
         }
         if (pageDo.getAccountId() != null) {
             // 充值账号
@@ -98,9 +98,10 @@ public class PayOrderServiceImpl implements PayOrderService {
         orderInfoDO.setId(OrderUtil.getOrderId());
         orderInfoDO.setStatus(OrderStatus.INIT);
         orderInfoDO.setCreateTime(new Date());
+        orderInfoDO.setFldN3((byte) 0); // 未充值
         log.info("即将落库新订单:{}", JSON.toJSONString(orderInfoDO));
         orderInfoDOMapper.insertSelective(orderInfoDO);
-        return orderInfoDO.getId();
+        return orderInfoDO.getIdValue();
     }
 
     /**
@@ -111,8 +112,8 @@ public class PayOrderServiceImpl implements PayOrderService {
      */
     @Override
     public int updateOrder(OrderInfoDO orderInfoDO) {
-        if (orderInfoDO.getId() == null) {
-            log.warn("输入的id为空值: {}", orderInfoDO.getId());
+        if (orderInfoDO.getIdValue() == null) {
+            log.warn("输入的id为空值: {}", orderInfoDO.getIdValue());
         }
         orderInfoDO.setUpdateTime(new Date());
         return orderInfoDOMapper.updateByPrimaryKeySelective(orderInfoDO);

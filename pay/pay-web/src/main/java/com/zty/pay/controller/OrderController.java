@@ -63,12 +63,12 @@ public class OrderController {
                     .setPrivateKey(alipayConfig.getPrivate_key())
                     .setSignType(AlipayConstants.SIGN_TYPE_RSA2).build();
 
-            AlipayQueryResponse response = AlipayClient.query(String.valueOf(localOrder.getId()), alipayCore);
+            AlipayQueryResponse response = AlipayClient.query(String.valueOf(localOrder.getIdValue()), alipayCore);
             if (response.isSuccess()) {
                 updateOrderData(localOrder, response);
             } else {
-                log.warn("订单查询不成功, orderId:{}, response:{}", localOrder.getId(), response);
-                return ResultDTO.error(500, "第三方响应失败," + response.getCode() + response.getSubMsg() + response.getSubCode());
+                log.warn("订单查询不成功, orderId:{}, response:{}", localOrder.getIdValue(), response);
+                return ResultDTO.error(500, "第三方响应失败," + response.getCode() + ":" + response.getDesc() + ":" + response.getSubCode());
             }
             localOrder.setUpdateTime(new Date());
             payOrderService.updateOrder(localOrder);

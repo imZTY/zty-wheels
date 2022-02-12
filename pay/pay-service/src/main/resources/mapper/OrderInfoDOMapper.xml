@@ -408,6 +408,9 @@
       </if>
     </set>
     where id = #{id,jdbcType=BIGINT}
+    <if test="beforeStatus != null" >
+      AND status = #{beforeStatus,jdbcType=TINYINT},
+    </if>
   </update>
   <update id="updateByPrimaryKey" parameterType="com.zty.pay.DO.OrderInfoDO" >
     update order_info

@@ -1,8 +1,20 @@
-# 开发环境配置文件
+# 生产环境配置文件
+
+spring:
+  datasource:
+    driver-class-apartmentName: com.mysql.jdbc.Driver   #mysql的驱动
+    url: jdbc:mysql://${KDD_DB:10.0.4.4:3306/kuaididouble}?useUnicode=true&characterEncoding=utf-8&useLegacyDatetimeCode=false&serverTimezone=GMT%2B8   #有时若不设置时>区有时会报错
+    username: ${KDD_DB_USERNAME:kdd}
+    password: ${KDD_DB_PASSWORD:w3S7GNckK5rPtis5}
+  redis:
+    host: ${KDD_REDIS_IP:10.0.4.4}
+    port: ${KDD_REDIS_PORT:6380}
+    database: ${KDD_REDIS_DATABASE:1}
+
 
 server:
   servlet:
-    context-path: /paycenter
+    context-path: /
   port: 7171
 
 #开启sql语句打印

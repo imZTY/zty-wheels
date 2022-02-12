@@ -7,6 +7,7 @@ import java.util.Enumeration;
 import cn.hutool.log.Log;
 import cn.hutool.log.LogFactory;
 import com.alipay.api.AlipayConstants;
+import com.zty.framework.exception.BusinessException;
 import com.zty.framework.exception.ParamCheckException;
 import com.zty.pay.DO.OrderInfoDO;
 import com.zty.pay.config.AlipayConfig;
@@ -20,6 +21,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -134,7 +136,10 @@ public class AlipayController {
         return "alipay/alipay_mobile";
     }
 
-    //http://你的异步处理地址/alipay/notify_mobile
+    /**
+    @PostMapping("/notify")
+    @ResponseBody
+    pub
 
     /**
      * 电脑网站支付.
@@ -165,12 +170,17 @@ public class AlipayController {
                 throw new ParamCheckException("订单不是可支付状态"+localOrder.getStatus());
             }
             // 修改订单状态
+            localOrder.setBeforeStatus(localOrder.getStatus());
             localOrder.setStatus(OrderStatus.DEALING);
             localOrder.setUpdateTime(new Date());
-            payOrderService.updateOrder(localOrder);
+            int row = payOrderService.updateOrder(localOrder);
+            if (row == 0) {
+                throw new BusinessException("500", "修改订单状态失败");
+            }
         } catch (Exception e) {
             log.error("本地订单处理异常, ",e);
             response.sendRedirect(returnUrl);
+            return "alipay/alipay_web";
         }
 
         try {
@@ -204,6 +214,7 @@ public class AlipayController {
                 payOrderService.updateOrder(localOrder);
             }
             response.sendRedirect(returnUrl);
+            return "alipay/alipay_web";
         }
         return "alipay/alipay_web";
     }

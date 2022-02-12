@@ -7,16 +7,15 @@ import java.util.Objects;
 
 import cn.hutool.core.net.URLEncoder;
 import com.zty.framework.dto.ResultDTO;
+import com.zty.framework.exception.NetworkException;
 import com.zty.framework.third.converter.StringConverterFactory;
 import com.zty.pay.DO.OrderInfoDO;
 import com.zty.pay.api.OrderRestApi;
 import com.zty.pay.config.PayCenterConfig;
 import javax.annotation.PostConstruct;
 import okhttp3.Interceptor;
-import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
-import okhttp3.RequestBody;
 import org.apache.http.HttpStatus;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -102,21 +101,22 @@ public class PayCenterHelper {
     }
 
     public ResultDTO<OrderInfoDO> queryOrder(OrderInfoDO orderInfoDO) {
-        logger.info("即将: curl -X POST --H 'Content-Type: application/x-www-form-urlencoded' {}/order/query -d 'orderId={}'", payCenterConfig.getBaseUrl(), orderInfoDO.getId());
-        Call<ResultDTO<OrderInfoDO>> call = orderRestApi.query(String.valueOf(orderInfoDO.getId()));
+        logger.info("即将: curl -X POST --H 'Content-Type: application/x-www-form-urlencoded' {}order/query -d 'orderId={}'", payCenterConfig.getBaseUrl(), orderInfoDO.getIdValue());
+        Call<ResultDTO<OrderInfoDO>> call = orderRestApi.query(String.valueOf(orderInfoDO.getIdValue()));
         try {
             Response<ResultDTO<OrderInfoDO>> response = call.execute();
             int statusCode = response.code();
             logger.info("响应code：{}", statusCode);
             if (statusCode == HttpStatus.SC_OK) {
+                logger.info("响应body：{}", response.body());
                 return response.body();
             } else {
                 logger.error("响应内容：{}", response.body());
-                throw new SystemException("创建任务失败, 响应code非200");
+                throw new NetworkException("支付中心查订单失败, httpcode非200");
             }
         } catch (IOException e) {
             logger.error("请求支付中心queryOrder失败, 网络异常，", e);
-            throw new SystemException("创建任务失败, 网络异常" + e.getMessage());
+            throw new NetworkException("创建任务失败, 网络异常" + e.getMessage());
         }
     }
 

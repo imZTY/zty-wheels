@@ -35,6 +35,11 @@ public class OrderInfoDO extends DataDTO {
     private Byte status;
 
     /**
+     * 仅用于修改数据库时，修改前状态的校验
+     */
+    private Byte beforeStatus;
+
+    /**
      * 余额变化(在kdd是条数)
      */
     private Long balanceChange;
@@ -53,10 +58,17 @@ public class OrderInfoDO extends DataDTO {
 
     private Integer fldN2;
 
+    /**
+     * 充值状态(0=未充值，1=已充值)
+     */
     private Byte fldN3;
 
-    public Long getId() {
+    public Long getIdValue() {
         return id;
+    }
+
+    public String getId() {
+        return String.valueOf(id);
     }
 
     public void setId(Long id) {
@@ -135,6 +147,14 @@ public class OrderInfoDO extends DataDTO {
         this.status = status;
     }
 
+    public Byte getBeforeStatus() {
+        return beforeStatus;
+    }
+
+    public void setBeforeStatus(Byte beforeStatus) {
+        this.beforeStatus = beforeStatus;
+    }
+
     public Long getBalanceChange() {
         return balanceChange;
     }
@@ -205,5 +225,31 @@ public class OrderInfoDO extends DataDTO {
 
     public void setFldN3(Byte fldN3) {
         this.fldN3 = fldN3;
+    }
+
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("OrderInfoDO{");
+        sb.append("id=").append(id);
+        sb.append(", thirdOrderNo='").append(thirdOrderNo).append('\'');
+        sb.append(", accountId=").append(accountId);
+        sb.append(", orderMethod=").append(orderMethod);
+        sb.append(", orderType=").append(orderType);
+        sb.append(", orderAmount=").append(orderAmount);
+        sb.append(", discountType=").append(discountType);
+        sb.append(", discountAmount=").append(discountAmount);
+        sb.append(", actualAmount=").append(actualAmount);
+        sb.append(", status=").append(status);
+        sb.append(", balanceChange=").append(balanceChange);
+        sb.append(", createBy=").append(createBy);
+        sb.append(", createTime=").append(createTime);
+        sb.append(", updateTime=").append(updateTime);
+        sb.append(", remarks='").append(remarks).append('\'');
+        sb.append(", fldS1='").append(fldS1).append('\'');
+        sb.append(", fldN1=").append(fldN1);
+        sb.append(", fldN2=").append(fldN2);
+        sb.append(", fldN3=").append(fldN3);
+        sb.append('}');
+        return sb.toString();
     }
 }

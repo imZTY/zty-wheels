@@ -20,7 +20,7 @@ public interface OrderRestApi {
      * 查询订单
      * @param postBody 报文体
      */
-    @POST("/order/query")
+    @POST("order/query")
     @FormUrlEncoded
     public Call<ResultDTO<OrderInfoDO>> query(@Field("orderId") String orderId);
 }
