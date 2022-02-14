@@ -26,6 +26,12 @@ public class PayCenterConfig {
     @Value("${paycenter.alipay.webpay:/paycenter/alipay/pay/web}")
     private String alipayWebpay;
 
+    /**
+     * 支付宝网站支付，同步回调地址
+     */
+    @Value("${paycenter.alipay.syncNotofy:alipay/alipay_sync_notify}")
+    private String syncNotofy;
+
     public String getBaseUrl() {
         return baseUrl;
     }
@@ -36,6 +42,14 @@ public class PayCenterConfig {
 
     public String getAlipayWebpay() {
         return alipayWebpay;
+    }
+
+    public String getSyncNotofy() {
+        return syncNotofy;
+    }
+
+    public void setSyncNotofy(String syncNotofy) {
+        this.syncNotofy = syncNotofy;
     }
 
     public void setAlipayWebpay(String alipayWebpay) {

@@ -13,6 +13,8 @@ public class AlipayConfig {
 
     private String notifyUrl;
 
+    private String retrunUrl;
+
     public String getAppid() {
         return appid;
     }
@@ -40,11 +42,14 @@ public class AlipayConfig {
 
     @Override
     public String toString() {
-        return "AlipayConfig{" +
-                "appid='" + appid + '\'' +
-                ", private_key='" + private_key + '\'' +
-                ", alipay_public_key='" + alipay_public_key + '\'' +
-                '}';
+        final StringBuilder sb = new StringBuilder("AlipayConfig{");
+        sb.append("appid='").append(appid).append('\'');
+        sb.append(", private_key='").append(private_key).append('\'');
+        sb.append(", alipay_public_key='").append(alipay_public_key).append('\'');
+        sb.append(", notifyUrl='").append(notifyUrl).append('\'');
+        sb.append(", retrunUrl='").append(retrunUrl).append('\'');
+        sb.append('}');
+        return sb.toString();
     }
 
     public String getNotifyUrl() {
@@ -53,5 +58,13 @@ public class AlipayConfig {
 
     public void setNotifyUrl(String notifyUrl) {
         this.notifyUrl = notifyUrl;
+    }
+
+    public String getRetrunUrl() {
+        return retrunUrl;
+    }
+
+    public void setRetrunUrl(String retrunUrl) {
+        this.retrunUrl = retrunUrl;
     }
 }

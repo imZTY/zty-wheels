@@ -3,24 +3,32 @@ package com.zty.pay.controller;
 import java.io.IOException;
 import java.util.Date;
 import java.util.Enumeration;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 import cn.hutool.log.Log;
 import cn.hutool.log.LogFactory;
+import com.alibaba.fastjson.JSONObject;
+import com.alipay.api.AlipayApiException;
 import com.alipay.api.AlipayConstants;
+import com.alipay.api.internal.util.AlipaySignature;
 import com.zty.framework.exception.BusinessException;
 import com.zty.framework.exception.ParamCheckException;
 import com.zty.pay.DO.OrderInfoDO;
 import com.zty.pay.config.AlipayConfig;
 import com.zty.pay.constant.OrderStatus;
+import com.zty.pay.request.AlipaySyncNotifyRequest;
 import com.zty.pay.service.PayOrderService;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -137,9 +145,116 @@ public class AlipayController {
     }
 
     /**
-    @PostMapping("/notify")
+     * 支付宝支付 异步通知
+     * @return
+     */
     @ResponseBody
-    pub
+    @PostMapping("/alipay_async_notify")
+    public String alipayAsyncNotify(AlipaySyncNotifyRequest request) throws IOException {
+        // 编码格式
+        String charset = StringUtils.isBlank(request.getCharset()) ? "utf-8" : request.getCharset();
+        // 支付宝公钥
+        String alipaypublicKey = alipayConfig.getAlipay_public_key();
+        // 签名方式
+        String sign_type = StringUtils.isBlank(request.getSign_type()) ? "RSA2" : request.getSign_type();
+        // 入参转Map
+        JSONObject jsonObject = (JSONObject) JSONObject.toJSON(request);
+        Map<String, String> paramStrMap = jsonObject.getInnerMap().entrySet().stream()
+                .collect(Collectors.toMap(Map.Entry::getKey, v -> String.valueOf(v)));
+        //验签
+        boolean signVerified = false;
+        try {
+            signVerified = AlipaySignature.rsaCheckV1(paramStrMap, alipaypublicKey, charset, sign_type);
+        } catch (AlipayApiException e) {
+            log.error("验签异常, ", e);
+            throw new ParamCheckException("check sign execption");
+        }
+        if(!signVerified){
+            throw new ParamCheckException("check sign fail");
+        }
+        // 验签成功后，更新本地订单状态
+        OrderInfoDO localOrder = null;
+        try {
+            OrderInfoDO queryOrder = new OrderInfoDO();
+            queryOrder.setId(Long.valueOf(request.getOut_trade_no()));
+            localOrder = payOrderService.checkAndGet(queryOrder);
+            if (localOrder == null) {
+                throw new ParamCheckException("订单不存在", "out_trade_no", request.getOut_trade_no());
+            }
+            if (OrderStatus.isFinalStatus(localOrder.getStatus())) {
+                throw new ParamCheckException("订单已是支付完成状态"+localOrder.getStatus());
+            }
+            // 修改订单状态
+            localOrder.setBeforeStatus(localOrder.getStatus());
+            localOrder.setStatus(OrderStatus.fromTradeStatus(request.getTrade_status()));
+            localOrder.setUpdateTime(new Date());
+            int row = payOrderService.updateOrder(localOrder);
+            if (row == 0) {
+                throw new BusinessException("500", "修改订单状态失败");
+            }
+        } catch (Exception e) {
+            log.error("本地订单处理异常, ",e);
+            throw new BusinessException("500", e.getMessage());
+        }
+        return "success";
+    }
+
+    /**
+     * 支付宝支付 同步通知
+     * @return
+     */
+    @GetMapping("/alipay_sync_notify")
+    public String alipaySyncNotify(AlipaySyncNotifyRequest request,
+                                   @RequestParam(name = "returnUrl", defaultValue = "returnUrl") String returnUrl,
+                                    HttpServletResponse response) throws IOException {
+        // 编码格式
+        String charset = StringUtils.isBlank(request.getCharset()) ? "utf-8" : request.getCharset();
+        // 支付宝公钥
+        String alipaypublicKey = alipayConfig.getAlipay_public_key();
+        // 签名方式
+        String sign_type = StringUtils.isBlank(request.getSign_type()) ? "RSA2" : request.getSign_type();
+        // 入参转Map
+        JSONObject jsonObject = (JSONObject) JSONObject.toJSON(request);
+        Map<String, String> paramStrMap = jsonObject.getInnerMap().entrySet().stream()
+                .collect(Collectors.toMap(Map.Entry::getKey, v -> String.valueOf(v)));
+        //验签
+        boolean signVerified = false;
+        try {
+            signVerified = AlipaySignature.rsaCheckV1(paramStrMap, alipaypublicKey, charset, sign_type);
+        } catch (AlipayApiException e) {
+            log.error("验签异常, ", e);
+            throw new ParamCheckException("check sign execption");
+        }
+        if(!signVerified){
+            throw new ParamCheckException("check sign fail");
+        }
+        // 验签成功后，更新本地订单状态
+        OrderInfoDO localOrder = null;
+        try {
+            OrderInfoDO queryOrder = new OrderInfoDO();
+            queryOrder.setId(Long.valueOf(request.getOut_trade_no()));
+            localOrder = payOrderService.checkAndGet(queryOrder);
+            if (localOrder == null) {
+                throw new ParamCheckException("订单不存在", "out_trade_no", request.getOut_trade_no());
+            }
+            if (OrderStatus.isFinalStatus(localOrder.getStatus())) {
+                throw new ParamCheckException("订单已是支付完成状态"+localOrder.getStatus());
+            }
+            // 修改订单状态
+            localOrder.setBeforeStatus(localOrder.getStatus());
+            localOrder.setStatus(OrderStatus.fromTradeStatus(request.getTrade_status()));
+            localOrder.setUpdateTime(new Date());
+            int row = payOrderService.updateOrder(localOrder);
+            if (row == 0) {
+                throw new BusinessException("500", "修改订单状态失败");
+            }
+        } catch (Exception e) {
+            log.error("本地订单处理异常, ",e);
+            response.sendRedirect(returnUrl);
+            return "alipay/alipay_sync_web";
+        }
+        return "alipay/alipay_sync_web";
+    }
 
     /**
      * 电脑网站支付.
@@ -192,10 +307,11 @@ public class AlipayController {
 
             AlipayWebSiteRequest request = new AlipayWebSiteRequest();
 
-            //TODO http://你的异步处理地址/alipay/notify_mobile
-            //request.setNotifyUrl("http://你的异步处理地址/alipay/notify_mobile");
+            // 设置异步通知地址
+            request.setNotifyUrl(alipayConfig.getNotifyUrl());
 
-            request.setReturnUrl(returnUrl);
+            // 设置同步跳转地址
+            request.setReturnUrl(alipayConfig.getRetrunUrl() + "?returnUrl=" + returnUrl);
 
             AlipayWebSiteRequest.BizContent bizContent = new AlipayWebSiteRequest.BizContent();
             bizContent.setTotalAmount(amt);

@@ -52,6 +52,9 @@ public class OrderInfoDO extends DataDTO {
 
     private String remarks;
 
+    /**
+     * 订单所属业务线，如 KDD
+     */
     private String fldS1;
 
     private Long fldN1;

@@ -96,7 +96,9 @@ public class PayCenterHelper {
         sb.append("&orderId=" + URLEncoder.QUERY.encode(orderId, StandardCharsets.UTF_8));
         sb.append("&subject=" + URLEncoder.QUERY.encode(subject, StandardCharsets.UTF_8));
         sb.append("&body=" + URLEncoder.QUERY.encode(body, StandardCharsets.UTF_8));
-        sb.append("&returnUrl=" + URLEncoder.QUERY.encode(returnUrl == null ? "" : returnUrl, StandardCharsets.UTF_8));
+        sb.append("&returnUrl=" + URLEncoder.QUERY.encode(returnUrl == null ?
+                payCenterConfig.getBaseUrl() + payCenterConfig.getSyncNotofy() :
+                returnUrl, StandardCharsets.UTF_8));
         return payCenterConfig.getAlipayWebpay() + sb.toString().replaceFirst("&", "?");
     }
 

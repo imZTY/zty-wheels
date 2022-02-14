@@ -24,8 +24,11 @@ public class PayConfigFactory {
     @Value("${payment.alipay.alipay_public_key:}")
     private String alipayPublicKey;
 
-    @Value("${payment.alipay.notifyUrl:http://你的异步处理地址/alipay/notify_mobile}")
+    @Value("${payment.alipay.notifyUrl:http://你的异步处理地址/alipay/notify_async}")
     private String notifyUrl;
+
+    @Value("${payment.alipay.returnUrl:http://你的同步处理地址/alipay/notify_sync}")
+    private String returnUrl;
 
     @Bean
     public AlipayConfig alipayConfig() {
@@ -33,6 +36,8 @@ public class PayConfigFactory {
         alipayConfig.setAppid(alipayAppid);
         alipayConfig.setPrivate_key(alipayPrivateKey);
         alipayConfig.setAlipay_public_key(alipayPublicKey);
+        alipayConfig.setNotifyUrl(this.notifyUrl);
+        alipayConfig.setRetrunUrl(this.returnUrl);
         return alipayConfig;
     }
 
