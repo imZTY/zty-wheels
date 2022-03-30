@@ -29,6 +29,10 @@
             <groupId>com.zty</groupId>
             <artifactId>pay-web</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.zty</groupId>
+            <artifactId>task-service</artifactId>
+        </dependency>
     </dependencies>
 
     <build>

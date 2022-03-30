@@ -5,12 +5,39 @@
     <parent>
         <artifactId>wheels</artifactId>
         <groupId>com.zty</groupId>
-        <version>0.8.1</version>
+        <version>${zty-wheels.version}</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
     <!-- 定时任务的实现模块 -->
     <artifactId>task</artifactId>
     <packaging>pom</packaging>
+    <modules>
+        <module>task-facade</module>
+        <module>task-service</module>
+    </modules>
 
+    <properties>
+        <quartz.version>2.2.1</quartz.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.zty</groupId>
+                <artifactId>task-facade</artifactId>
+                <version>${zty-wheels.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.zty</groupId>
+                <artifactId>task-service</artifactId>
+                <version>${zty-wheels.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.quartz-scheduler</groupId>
+                <artifactId>quartz</artifactId>
+                <version>${quartz.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 </project>

@@ -62,4 +62,10 @@ public interface ProductService {
      * @return
      */
     public boolean checkIsLink(int accountId, Integer... productIds);
+
+    /**
+     * 获取默认产品
+     * @return
+     */
+    public ProductInfoDO getDefalutProduct();
 }

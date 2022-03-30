@@ -116,6 +116,7 @@ public class PayOrderServiceImpl implements PayOrderService {
             log.warn("输入的id为空值: {}", orderInfoDO.getIdValue());
         }
         orderInfoDO.setUpdateTime(new Date());
+        log.debug("更新参数:{}", JSON.toJSONString(orderInfoDO));
         return orderInfoDOMapper.updateByPrimaryKeySelective(orderInfoDO);
     }
 }

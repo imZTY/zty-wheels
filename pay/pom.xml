@@ -45,6 +45,16 @@
                 <artifactId>pay-web</artifactId>
                 <version>${zty-wheels.version}</version>
             </dependency>
+            <dependency>
+                <groupId>com.zty</groupId>
+                <artifactId>task-facade</artifactId>
+                <version>${zty-wheels.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.zty</groupId>
+                <artifactId>task-service</artifactId>
+                <version>${zty-wheels.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 </project>

@@ -15,6 +15,7 @@ import com.zty.common.DO.ProductInfoDO;
 import com.zty.common.DO.example.AccountProductRelationDOExample;
 import com.zty.common.DO.example.AccountRoleRelationDOExample;
 import com.zty.common.DO.example.ProductInfoDOExample;
+import com.zty.common.constant.ProductConstant;
 import com.zty.common.service.ProductService;
 import com.zty.framework.exception.ParamCheckException;
 import org.apache.commons.lang3.StringUtils;
@@ -231,5 +232,19 @@ public class ProductServiceImpl implements ProductService {
         example.createCriteria().andAccountIdEqualTo(accountId).andProductIdIn(Arrays.asList(productIds)).andDisabledEqualTo((byte)0);
         int count = productRelationDOMapper.countByExample(example);
         return count != 0;
+    }
+
+    /**
+     * 获取默认产品
+     *
+     * @return
+     */
+    @Override
+    public ProductInfoDO getDefalutProduct() {
+        ProductInfoDOExample example = new ProductInfoDOExample();
+        example.createCriteria()
+                .andFldS1EqualTo(ProductConstant.DEFAULT_FLAG);
+        List<ProductInfoDO> result = productInfoDOMapper.selectByExample(example);
+        return CollectionUtils.isEmpty(result) ? null : result.get(0);
     }
 }
