@@ -55,6 +55,16 @@
                 <artifactId>task-service</artifactId>
                 <version>${zty-wheels.version}</version>
             </dependency>
+            <dependency>
+                <groupId>com.zty</groupId>
+                <artifactId>redis-common</artifactId>
+                <version>${zty-wheels.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.zty</groupId>
+                <artifactId>redis-bo</artifactId>
+                <version>${zty-wheels.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 </project>

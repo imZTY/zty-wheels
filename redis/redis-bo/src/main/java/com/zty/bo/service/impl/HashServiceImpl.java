@@ -23,7 +23,7 @@ public class HashServiceImpl implements HashService {
 
     @Override
     public void put(String hash, String hashKey, String hashValue) {
-        stringRedisTemplate.opsForHash().put(RedisConstant.ROLE_HASH_NAME, hashKey, hashValue);
+        stringRedisTemplate.opsForHash().put(hash, hashKey, hashValue);
     }
 
     @Override

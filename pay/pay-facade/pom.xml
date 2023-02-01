@@ -18,6 +18,11 @@
             <scope>compile</scope>
         </dependency>
         <dependency>
+            <groupId>com.zty</groupId>
+            <artifactId>redis-common</artifactId>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-configuration-processor</artifactId>
             <optional>true</optional>

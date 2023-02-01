@@ -12,12 +12,14 @@ import com.alibaba.fastjson.JSONObject;
 import com.alipay.api.AlipayApiException;
 import com.alipay.api.AlipayConstants;
 import com.alipay.api.internal.util.AlipaySignature;
+import com.zty.common.dto.MessageDTO;
 import com.zty.framework.exception.BusinessException;
 import com.zty.framework.exception.ParamCheckException;
 import com.zty.pay.DO.OrderInfoDO;
 import com.zty.pay.config.AlipayConfig;
 import com.zty.pay.constant.OrderStatus;
 import com.zty.pay.request.AlipaySyncNotifyRequest;
+import com.zty.pay.service.OrderMqService;
 import com.zty.pay.service.PayOrderService;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -60,6 +62,9 @@ public class AlipayController {
 
     @Autowired
     private PayOrderService payOrderService;
+
+    @Autowired
+    private OrderMqService orderMqService;
 
     /**
      * 支付宝付款测试页.
@@ -192,6 +197,8 @@ public class AlipayController {
             if (row == 0) {
                 throw new BusinessException("500", "修改订单状态失败");
             }
+            // 订单放入mq
+            orderMqService.pushToPayNotify(localOrder.getFldS1(), new MessageDTO(localOrder.getId()));
         } catch (Exception e) {
             log.error("本地订单处理异常, ",e);
             throw new BusinessException("500", e.getMessage());

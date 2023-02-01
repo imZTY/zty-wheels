@@ -22,4 +22,4 @@ logging:
   level:
     com.zty.bo.service.impl: DEBUG
     com.zty.bo.dao: DEBUG
-    com.zty.kdd: INFO
+    com.zty.pay: INFO
