@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>pay</artifactId>
+        <groupId>com.zty</groupId>
+        <version>${zty-wheels.version}</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>pay-app</artifactId>
+
+    <properties>
+        <payment-thl.version>1.1.9-dev</payment-thl.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.zty</groupId>
+            <artifactId>framework-springboot-app</artifactId>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.zty</groupId>
+            <artifactId>pay-service</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.zty</groupId>
+            <artifactId>pay-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.zty</groupId>
+            <artifactId>task-service</artifactId>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+</project>

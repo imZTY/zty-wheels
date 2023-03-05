@@ -2,7 +2,9 @@ package com.zty.common.DO;
 
 import java.util.Date;
 
-public class AccountInfoDO {
+import com.zty.framework.dto.DataDTO;
+
+public class AccountInfoDO extends DataDTO {
     private Integer id;
 
     private String account;
@@ -18,6 +20,10 @@ public class AccountInfoDO {
     private String password;
 
     private Byte disabled;
+
+    private String inviteCode;
+
+    private Integer inviterId;
 
     private Integer createBy;
 
@@ -97,6 +103,22 @@ public class AccountInfoDO {
 
     public void setDisabled(Byte disabled) {
         this.disabled = disabled;
+    }
+
+    public String getInviteCode() {
+        return inviteCode;
+    }
+
+    public void setInviteCode(String inviteCode) {
+        this.inviteCode = inviteCode;
+    }
+
+    public Integer getInviterId() {
+        return inviterId;
+    }
+
+    public void setInviterId(Integer inviterId) {
+        this.inviterId = inviterId;
     }
 
     public Integer getCreateBy() {

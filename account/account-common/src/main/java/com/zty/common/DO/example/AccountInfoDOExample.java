@@ -635,6 +635,136 @@ public class AccountInfoDOExample {
             return (Criteria) this;
         }
 
+        public Criteria andInviteCodeIsNull() {
+            addCriterion("invite_code is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andInviteCodeIsNotNull() {
+            addCriterion("invite_code is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andInviteCodeEqualTo(String value) {
+            addCriterion("invite_code =", value, "inviteCode");
+            return (Criteria) this;
+        }
+
+        public Criteria andInviteCodeNotEqualTo(String value) {
+            addCriterion("invite_code <>", value, "inviteCode");
+            return (Criteria) this;
+        }
+
+        public Criteria andInviteCodeGreaterThan(String value) {
+            addCriterion("invite_code >", value, "inviteCode");
+            return (Criteria) this;
+        }
+
+        public Criteria andInviteCodeGreaterThanOrEqualTo(String value) {
+            addCriterion("invite_code >=", value, "inviteCode");
+            return (Criteria) this;
+        }
+
+        public Criteria andInviteCodeLessThan(String value) {
+            addCriterion("invite_code <", value, "inviteCode");
+            return (Criteria) this;
+        }
+
+        public Criteria andInviteCodeLessThanOrEqualTo(String value) {
+            addCriterion("invite_code <=", value, "inviteCode");
+            return (Criteria) this;
+        }
+
+        public Criteria andInviteCodeLike(String value) {
+            addCriterion("invite_code like", value, "inviteCode");
+            return (Criteria) this;
+        }
+
+        public Criteria andInviteCodeNotLike(String value) {
+            addCriterion("invite_code not like", value, "inviteCode");
+            return (Criteria) this;
+        }
+
+        public Criteria andInviteCodeIn(List<String> values) {
+            addCriterion("invite_code in", values, "inviteCode");
+            return (Criteria) this;
+        }
+
+        public Criteria andInviteCodeNotIn(List<String> values) {
+            addCriterion("invite_code not in", values, "inviteCode");
+            return (Criteria) this;
+        }
+
+        public Criteria andInviteCodeBetween(String value1, String value2) {
+            addCriterion("invite_code between", value1, value2, "inviteCode");
+            return (Criteria) this;
+        }
+
+        public Criteria andInviteCodeNotBetween(String value1, String value2) {
+            addCriterion("invite_code not between", value1, value2, "inviteCode");
+            return (Criteria) this;
+        }
+
+        public Criteria andInviterIdIsNull() {
+            addCriterion("inviter_id is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andInviterIdIsNotNull() {
+            addCriterion("inviter_id is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andInviterIdEqualTo(Integer value) {
+            addCriterion("inviter_id =", value, "inviterId");
+            return (Criteria) this;
+        }
+
+        public Criteria andInviterIdNotEqualTo(Integer value) {
+            addCriterion("inviter_id <>", value, "inviterId");
+            return (Criteria) this;
+        }
+
+        public Criteria andInviterIdGreaterThan(Integer value) {
+            addCriterion("inviter_id >", value, "inviterId");
+            return (Criteria) this;
+        }
+
+        public Criteria andInviterIdGreaterThanOrEqualTo(Integer value) {
+            addCriterion("inviter_id >=", value, "inviterId");
+            return (Criteria) this;
+        }
+
+        public Criteria andInviterIdLessThan(Integer value) {
+            addCriterion("inviter_id <", value, "inviterId");
+            return (Criteria) this;
+        }
+
+        public Criteria andInviterIdLessThanOrEqualTo(Integer value) {
+            addCriterion("inviter_id <=", value, "inviterId");
+            return (Criteria) this;
+        }
+
+        public Criteria andInviterIdIn(List<Integer> values) {
+            addCriterion("inviter_id in", values, "inviterId");
+            return (Criteria) this;
+        }
+
+        public Criteria andInviterIdNotIn(List<Integer> values) {
+            addCriterion("inviter_id not in", values, "inviterId");
+            return (Criteria) this;
+        }
+
+        public Criteria andInviterIdBetween(Integer value1, Integer value2) {
+            addCriterion("inviter_id between", value1, value2, "inviterId");
+            return (Criteria) this;
+        }
+
+        public Criteria andInviterIdNotBetween(Integer value1, Integer value2) {
+            addCriterion("inviter_id not between", value1, value2, "inviterId");
+            return (Criteria) this;
+        }
+
         public Criteria andCreateByIsNull() {
             addCriterion("create_by is null");
             return (Criteria) this;

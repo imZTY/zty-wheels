@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>wheels</artifactId>
+        <groupId>com.zty</groupId>
+        <version>${zty-wheels.version}</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>msg</artifactId>
+
+    <packaging>pom</packaging>
+    <modules>
+        <module>msg-facade</module>
+        <module>msg-bo</module>
+        <module>msg-web</module>
+    </modules>
+
+    <properties>
+        <patchca.version>0.0.1</patchca.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.zty</groupId>
+                <artifactId>redis-bo</artifactId>
+                <version>${zty-wheels.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.zty</groupId>
+                <artifactId>framework-common</artifactId>
+                <version>${zty-wheels.version}</version>
+                <scope>compile</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.zty</groupId>
+                <artifactId>framework-bo</artifactId>
+                <version>${zty-wheels.version}</version>
+                <scope>compile</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.zty</groupId>
+                <artifactId>framework-web</artifactId>
+                <version>${zty-wheels.version}</version>
+                <scope>compile</scope>
+            </dependency>
+            <!-- 验证码 -->
+            <dependency>
+                <groupId>com.github.bingoohuang</groupId>
+                <artifactId>patchca</artifactId>
+                <version>${patchca.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+</project>

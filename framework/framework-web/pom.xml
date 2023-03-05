@@ -10,7 +10,6 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>framework-web</artifactId>
-    <groupId>com.zty</groupId>
     <version>${zty-wheels.version}</version>
 
     <dependencies>

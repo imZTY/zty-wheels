@@ -24,7 +24,7 @@ import java.util.stream.Collectors;
  */
 public class BasicTest {
 
-    Logger logger = LoggerFactory.getLogger(BasicTest.class);
+    private static final Logger logger = LoggerFactory.getLogger(BasicTest.class);
 
 //    @Test
     public void dealTest(){

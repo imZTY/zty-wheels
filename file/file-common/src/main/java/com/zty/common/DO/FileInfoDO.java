@@ -2,12 +2,22 @@ package com.zty.common.DO;
 
 import java.util.Date;
 
-public class FileInfoDO {
+import com.zty.framework.dto.DataDTO;
+
+public class FileInfoDO extends DataDTO {
     private Integer id;
 
     private String name;
 
-    private Byte fileKind;
+    /**
+     * 文件类型:
+     * 0 = 未知
+     * 1 = 身份证正面
+     * 2 = 身份证反面
+     * 3 = 营业执照
+     * 4 = 真人与证件合照
+     */
+    private Byte fileKind = 0;
 
     private String publicUrl;
 
@@ -33,6 +43,48 @@ public class FileInfoDO {
 
     private String fldS2;
 
+    public FileMsg parseFileMsg() {
+        return new FileMsg(this.name,
+                this.publicUrl,
+                this.fileKind);
+    }
+
+    public class FileMsg {
+        private String name;
+        private String path;
+        private Byte fileKind;
+
+        public FileMsg(String name, String path, Byte fileKind) {
+            this.name = name;
+            this.path = path;
+            this.fileKind = fileKind;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public String getPath() {
+            return path;
+        }
+
+        public void setPath(String path) {
+            this.path = path;
+        }
+
+        public Byte getFileKind() {
+            return fileKind;
+        }
+
+        public void setFileKind(Byte fileKind) {
+            this.fileKind = fileKind;
+        }
+    }
+
     public Integer getId() {
         return id;
     }
@@ -49,8 +101,8 @@ public class FileInfoDO {
         this.name = name;
     }
 
-    public Byte getFileKind() {
-        return fileKind;
+    public byte getFileKind() {
+        return fileKind.byteValue();
     }
 
     public void setFileKind(Byte fileKind) {

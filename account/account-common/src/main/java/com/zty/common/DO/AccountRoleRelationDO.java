@@ -2,7 +2,9 @@ package com.zty.common.DO;
 
 import java.util.Date;
 
-public class AccountRoleRelationDO {
+import com.zty.framework.dto.DataDTO;
+
+public class AccountRoleRelationDO extends DataDTO {
     private Integer id;
 
     private Integer accountId;

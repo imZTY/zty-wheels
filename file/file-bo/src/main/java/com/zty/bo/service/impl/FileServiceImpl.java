@@ -19,7 +19,7 @@ import java.util.List;
 @Service
 public class FileServiceImpl implements FileService {
 
-    Logger log = LoggerFactory.getLogger(FileServiceImpl.class);
+    private static final Logger log = LoggerFactory.getLogger(FileServiceImpl.class);
 
     @Autowired
     private FileInfoDOMapper fileInfoDOMapper;
@@ -36,25 +36,20 @@ public class FileServiceImpl implements FileService {
      * @return
      */
     @Override
-    public List<FileInfoDO> listMine(int userId) {
-        FileInfoDOExample createBy = new FileInfoDOExample();
-        createBy.createCriteria().andCreateByEqualTo(userId);
-        return fileInfoDOMapper.selectByExample(createBy);
+    public List<FileInfoDO> listMine(int userId, List<Byte> fileKindList) {
+        FileInfoDOExample example = new FileInfoDOExample();
+        example.createCriteria()
+                .andCreateByEqualTo(userId)
+                .andFileKindIn(fileKindList);
+        return fileInfoDOMapper.selectByExample(example);
     }
 
     @Override
     @Transactional
-    public FileInfoDO createAndReturnRecord(FileInfoDO fileInfoDO) {
+    public int createAndReturnRows(FileInfoDO fileInfoDO) {
         int count = fileInfoDOMapper.insertSelective(fileInfoDO);
-        int maxId = 0;
-        if (count == 0){
-            return null;
-        }else{
-            // FIXME: 2021/2/21 
-//            maxId = fileInfoDOMapper.getMaxID();
-        }
-        FileInfoDO rt = fileInfoDOMapper.selectByPrimaryKey(maxId);
-        return rt;
+        log.info("插入文件 影响行数：{}", count);
+        return count;
     }
 
     @Override
@@ -64,5 +59,19 @@ public class FileServiceImpl implements FileService {
             return null;
         }
         return rt;
+    }
+
+    @Override
+    public int update(FileInfoDO fileInfoDO) {
+        return fileInfoDOMapper.updateByPrimaryKeySelective(fileInfoDO);
+    }
+
+    @Override
+    public List<FileInfoDO> findByFileKind(int userId, byte fileKind) {
+        FileInfoDOExample createBy = new FileInfoDOExample();
+        createBy.createCriteria()
+                .andCreateByEqualTo(userId)
+                .andFileKindEqualTo(fileKind);
+        return fileInfoDOMapper.selectByExample(createBy);
     }
 }

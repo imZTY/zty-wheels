@@ -14,17 +14,19 @@
     <version>${zty-wheels.version}</version>
 
     <dependencies>
+        <!-- 内部依赖 -->
+        <dependency>
+            <groupId>com.zty</groupId>
+            <artifactId>redis-bo</artifactId>
+        </dependency>
         <dependency>
             <groupId>com.zty</groupId>
             <artifactId>account-common</artifactId>
-            <version>${zty-wheels.version}</version>
             <scope>compile</scope>
         </dependency>
-
         <dependency>
             <groupId>com.zty</groupId>
             <artifactId>framework-bo</artifactId>
-            <version>${zty-wheels.version}</version>
             <scope>compile</scope>
         </dependency>
     </dependencies>

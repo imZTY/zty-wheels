@@ -26,5 +26,11 @@
             <version>${zty-wheels.version}</version>
             <scope>compile</scope>
         </dependency>
+        <dependency>
+            <groupId>com.zty</groupId>
+            <artifactId>account-bo</artifactId>
+            <version>${zty-wheels.version}</version>
+            <scope>compile</scope>
+        </dependency>
     </dependencies>
 </project>

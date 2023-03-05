@@ -7,7 +7,7 @@ package com.zty.bo.service;
  */
 public interface HashService {
 
-    public String put(String hash, String hashKey, String hashValue);
+    public void put(String hash, String hashKey, String hashValue);
 
     public String get(String hash, String hashKey);
 

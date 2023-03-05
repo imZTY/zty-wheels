@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>糖葫芦支付</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" />
+    <script th:src="@{/js/jquery.slim.min.js}"></script>
+    <script th:src="@{/js/popper.min.js}"></script>
+    <script th:src="@{/js/bootstrap.min.js}"></script>
+</head>
+<body>
+
+<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+    <h1 class="display-4">糖葫芦支付</h1>
+</div>
+
+<div class="container">
+    <div class="card-deck text-center">
+
+
+        <div class="card mb-4 shadow-sm">
+            <div class="card-header">
+                <h4 class="my-0 font-weight-normal">支付宝支付</h4>
+            </div>
+            <div class="card-body">
+                <ul class="list-unstyled mt-3 mb-4">
+                    <li>当面付(刷卡)</li>
+                    <li>电脑网站支付</li>
+                    <li>手机网站支付</li>
+                    <li>支付订单退款</li>
+                </ul>
+                <a class="btn btn-outline-warning" href="alipay/index" role="button">查看示例</a>
+            </div>
+        </div>
+
+
+        <div class="card mb-4 shadow-sm">
+            <div class="card-header">
+                <h4 class="my-0 font-weight-normal">微信支付</h4>
+            </div>
+            <div class="card-body">
+                <ul class="list-unstyled mt-3 mb-4">
+                    <li>刷卡支付</li>
+                    <li>扫码支付</li>
+                    <li>公众号支付</li>
+                    <li>支付订单退款</li>
+                </ul>
+                <a class="btn btn-outline-success" href="wechat/index" role="button">查看示例</a>
+            </div>
+        </div>
+
+
+        <div class="card mb-4 shadow-sm">
+            <div class="card-header">
+                <h4 class="my-0 font-weight-normal">翼支付</h4>
+            </div>
+            <div class="card-body">
+                <ul class="list-unstyled mt-3 mb-4">
+                    <li>刷卡支付</li>
+                    <li>支付信息查询</li>
+                    <li>支付订单撤销</li>
+                    <li>支付订单退款</li>
+                </ul>
+                <a class="btn btn-outline-danger" href="bestpay/index" role="button">查看示例</a>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div style="padding: 60px" class="container-fluid text-center">
+        <a href="https://gitee.com/thlws/payment-thl">Gitee</a>
+        <a href="https://github.com/thlws/payment-thl">| Github</a>
+        <a href="https://thlws.gitee.io/payment-thl"> | 文档</a>
+    </div>
+
+
+</div>
+
+</body>
+</html>

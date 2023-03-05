@@ -1,6 +1,6 @@
 //package com.zty.bo.api;
 //
-//import com.zty.bo.service.UserService;
+//import com.zty.common.service.UserService;
 //import com.zty.bo.service.WxService;
 //import com.zty.common.DO.UserInfoDO;
 //import com.zty.common.ao.CreateTokenReqAO;
@@ -25,7 +25,7 @@
 //@Service
 //public class PcAuthorizeApi {
 //
-//    Logger log = LoggerFactory.getLogger(PcAuthorizeApi.class);
+//    private static final Logger log = LoggerFactory.getLogger(PcAuthorizeApi.class);
 //
 //    @Autowired
 //    private WxService wxService;

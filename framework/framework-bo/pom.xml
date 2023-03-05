@@ -15,17 +15,22 @@
 
     <dependencies>
         <!-- 内部依赖 -->
-<!--        <dependency>-->
-<!--            <groupId>com.zty</groupId>-->
-<!--            <artifactId>framework-common</artifactId>-->
-<!--            <version>${zty-wheels.version}</version>-->
-<!--            <scope>compile</scope>-->
-<!--        </dependency>-->
+        <dependency>
+            <groupId>com.zty</groupId>
+            <artifactId>framework-common</artifactId>
+            <version>${zty-wheels.version}</version>
+            <scope>compile</scope>
+        </dependency>
         <!-- 外部依赖 -->
         <dependency>
             <groupId>org.mybatis.spring.boot</groupId>
             <artifactId>mybatis-spring-boot-starter</artifactId>
             <version>2.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.mail</groupId>
+            <artifactId>mail</artifactId>
+            <version>1.4</version>
         </dependency>
     </dependencies>
 </project>

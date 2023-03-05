@@ -2,7 +2,9 @@ package com.zty.common.DO;
 
 import java.util.Date;
 
-public class RoleInfoDO {
+import com.zty.framework.dto.DataDTO;
+
+public class RoleInfoDO extends DataDTO {
     private Integer id;
 
     private String name;

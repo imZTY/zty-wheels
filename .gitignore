@@ -8,9 +8,15 @@
 *.jar
 
 /.idea/*
+.idea/
 
 **/target
 
 /.idea/workspace.xml
 
 **/.flattened-pom.xml
+.idea/
+.idea/compiler.xml
+.idea/encodings.xml
+.idea/workspace.xml
+*.iml

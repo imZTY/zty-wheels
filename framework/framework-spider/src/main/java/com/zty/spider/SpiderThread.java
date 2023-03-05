@@ -86,7 +86,11 @@ public abstract class SpiderThread extends Thread {
 
     protected void logWithThreadName(String logStr, Object ...args) {
         for (Object obj : args) {
-            logStr = logStr.replaceFirst("\\{\\}", String.valueOf(obj));
+            String str = String.valueOf(obj);
+            if (str.length() > 1000) {
+                str = str.substring(0, 1000);
+            }
+            logStr = logStr.replaceFirst("\\{\\}", str);
         }
         System.out.println(new Date().toString() + "["+threadName+"]_"+logStr);
     }

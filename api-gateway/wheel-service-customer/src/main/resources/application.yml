@@ -1,0 +1,16 @@
+# 公共配置文件
+
+spring:
+  profiles:
+    # 环境 dev|test|prod
+    active: dev
+  servlet:
+    multipart:
+      max-file-size: 300MB
+      max-request-size: 320MB
+
+mybatis:
+  typeAliasesPackage: com.zty.bo.dao
+  mapperLocations: classpath*:mapper/*.xml
+  config-location: classpath:mybatis-config.xml
+

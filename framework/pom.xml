@@ -22,5 +22,6 @@
         <module>framework-bo</module>
         <module>framework-springboot-app</module>
         <module>framework-spider</module>
+        <module>framework-third</module>
     </modules>
 </project>
